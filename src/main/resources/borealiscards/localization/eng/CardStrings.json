@@ -27,5 +27,9 @@
     "EXTENDED_DESCRIPTION": [
       "I haven't lost HP this turn."
     ]
+  },
+  "${modID}:Rondelmancy": {
+    "NAME": "Rondelmancy",
+    "DESCRIPTION": "Whenever you would create Shivs, create !M! more. If you do not have hand space to create Shivs, play them instead."
   }
 }

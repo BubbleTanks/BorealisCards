@@ -8,7 +8,7 @@ import javassist.CtBehavior;
 public class LostHealthThisTurnPatch {
     public static boolean hurtThisTurn = false;
 
-    @SpirePatch(clz=AbstractPlayer.class,method="updateCardsOnDamage")
+    @SpirePatch(clz = AbstractPlayer.class, method = "updateCardsOnDamage")
     public static class LoseHPCheck {
         @SpirePrefixPatch()
         public static void updateCardsPatch (AbstractPlayer __instance) {
