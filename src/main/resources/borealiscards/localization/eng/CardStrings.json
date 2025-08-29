@@ -1,0 +1,31 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description. NL Second line.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Bonk": {
+    "NAME": "Bonk",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL The image behaved. It wasted like twenty minutes of my time."
+  },
+  "${modID}:DevastatingStrike": {
+    "NAME": "Devastating Strike",
+    "DESCRIPTION": "Startup - Add a *Blood *Surge to your draw and discard piles. Unplayable while a *Blood *Surge exists. NL Deal !D! damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Grave. Startup - Add a *Blood *Surge+ to your draw and discard piles. Unplayable while a *Blood *Surge exists. NL Deal !D! damage. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I have a Blood Surge in play."
+    ]
+  },
+  "${modID}:BloodSurge": {
+    "NAME": "Blood Surge",
+    "DESCRIPTION": "Unplayable until you lose HP this turn. NL Gain !M! Strength and heal 1 HP for every time you lost HP this combat. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I haven't lost HP this turn."
+    ]
+  }
+}
