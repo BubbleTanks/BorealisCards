@@ -1,9 +1,7 @@
 package borealiscards.powers;
 
-import basemod.helpers.CardModifierManager;
-import borealiscards.actions.RondelmancyAction;
-import borealiscards.cardmods.RondelmancyMod;
 import com.evacipated.cardcrawl.mod.stslib.patches.bothInterfaces.OnCreateCardInterface;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
@@ -23,15 +21,23 @@ public class RondelmancyPower extends BasePower implements OnCreateCardInterface
     }
 
     @Override
-    public void onCreateCard(AbstractCard abstractCard) {
-        if(abstractCard.cardID == Shiv.ID && !CardModifierManager.hasModifier(abstractCard, RondelmancyMod.ID) && !rondelmancyVar) {
+    public void onCreateCard(AbstractCard card) {
+        if(Shiv.ID.equals(card.cardID) && !rondelmancyVar) {
             rondelmancyVar = true;
-            for (int i = this.amount; i > 0; i--) {
-                AbstractCard card = new Shiv();
-                CardModifierManager.addModifier(card, new RondelmancyMod());
-                addToBot(new MakeTempCardInHandAction(card, 1));
-            }
-            addToBot(new RondelmancyAction(this));
+            flash();
+            addToBot(new MakeTempCardInHandAction(new Shiv(), amount));
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    rondelmancyVar = false;
+                    this.isDone = true;
+                }
+            });
         }
+    }
+
+    @Override
+    public void updateDescription() {
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 }

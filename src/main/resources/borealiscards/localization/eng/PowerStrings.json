@@ -4,5 +4,11 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:RondelmancyPower": {
+    "NAME": "Rondelmancy",
+    "DESCRIPTIONS": [
+      "When you gain *Shivs, gain #b%d more *Shivs. If your hand is full, play them instead."
+    ]
   }
 }
