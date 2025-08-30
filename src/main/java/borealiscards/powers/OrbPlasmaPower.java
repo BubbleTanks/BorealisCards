@@ -1,6 +1,8 @@
 package borealiscards.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Plasma;
 
@@ -12,7 +14,11 @@ public class OrbPlasmaPower extends BasePower {
     private static final boolean TURN_BASED = false;
     private static final AbstractOrb PLASMAORB = new Plasma();
 
-    public OrbPlasmaPower(AbstractCreature owner, int amount) {super(POWER_ID, TYPE, TURN_BASED, owner, amount);}
+    public OrbPlasmaPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        PLASMAORB.cX = AbstractDungeon.player.drawX;
+        PLASMAORB.cY = AbstractDungeon.player.drawY + 100F * Settings.scale;
+    }
 
     @Override
     public void atStartOfTurn() {

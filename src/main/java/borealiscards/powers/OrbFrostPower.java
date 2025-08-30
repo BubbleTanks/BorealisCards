@@ -1,6 +1,8 @@
 package borealiscards.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Frost;
 
@@ -12,11 +14,16 @@ public class OrbFrostPower extends BasePower {
     private static final boolean TURN_BASED = false;
     private static final AbstractOrb FROSTORB = new Frost();
 
-    public OrbFrostPower(AbstractCreature owner, int amount) {super(POWER_ID, TYPE, TURN_BASED, owner, amount);}
+    public OrbFrostPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        FROSTORB.cX = AbstractDungeon.player.drawX;
+        FROSTORB.cY = AbstractDungeon.player.drawY + 100F * Settings.scale;
+    }
 
     @Override
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         for (int i = 0; i < amount; i++) {
+            FROSTORB.applyFocus();
             FROSTORB.onEndOfTurn();
             flash();
         }

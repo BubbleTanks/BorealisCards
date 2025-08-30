@@ -1,6 +1,8 @@
 package borealiscards.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -13,11 +15,16 @@ public class OrbShockPower extends BasePower {
     private static final boolean TURN_BASED = false;
     private static final AbstractOrb LIGHTNINGORB = new Lightning();
 
-    public OrbShockPower(AbstractCreature owner, int amount) {super(POWER_ID, TYPE, TURN_BASED, owner, amount);}
+    public OrbShockPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        LIGHTNINGORB.cX = AbstractDungeon.player.drawX;
+        LIGHTNINGORB.cY = AbstractDungeon.player.drawY + 100F * Settings.scale;
+    }
 
     @Override
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         for (int i = 0; i < amount; i++) {
+            LIGHTNINGORB.applyFocus();
             LIGHTNINGORB.onEndOfTurn();
             flash();
         }

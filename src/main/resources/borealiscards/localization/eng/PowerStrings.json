@@ -41,5 +41,17 @@
     "DESCRIPTIONS": [
       "Activate #b%d passive #yPlasma #yOrb%s at the start of your turns."
     ]
+  },
+  "${modID}:CruelSunPower": {
+    "NAME": "Cruel Sun",
+    "DESCRIPTIONS": [
+      "You cannot exit #yWrath."
+    ]
+  },
+  "${modID}:DoubleAttacksPower": {
+    "NAME": "Double Attacks",
+    "DESCRIPTIONS": [
+      "All your #yAttacks are played twice for the next #b%d turn%s."
+    ]
   }
 }
