@@ -38,6 +38,8 @@ public class RondelmancyPower extends BasePower implements OnCreateCardInterface
 
     @Override
     public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
+        String plural = "s";
+        if(this.amount == 1) plural = "";
+        description = String.format(DESCRIPTIONS[0], amount, plural);
     }
 }
