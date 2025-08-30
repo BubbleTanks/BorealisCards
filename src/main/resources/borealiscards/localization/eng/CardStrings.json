@@ -30,6 +30,10 @@
   },
   "${modID}:Rondelmancy": {
     "NAME": "Rondelmancy",
-    "DESCRIPTION": "Whenever you would create Shivs, create !M! more. If you do not have hand space to create Shivs, play them instead."
+    "DESCRIPTION": "Whenever you would create *Shivs, create !M! more. If you do not have hand space to create *Shivs, play them instead."
+  },
+  "${modID}:UpdateJammer": {
+    "NAME": "Update Jammer",
+    "DESCRIPTION": "Orbs continue their passive effects after being Evoked."
   }
 }
