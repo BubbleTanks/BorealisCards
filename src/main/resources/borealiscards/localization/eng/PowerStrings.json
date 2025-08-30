@@ -8,7 +8,38 @@
   "${modID}:RondelmancyPower": {
     "NAME": "Rondelmancy",
     "DESCRIPTIONS": [
-      "When you gain *Shivs, gain #b%d more *Shivs. If your hand is full, play them instead."
+      "When you gain #yShivs, gain #b%d more #yShiv%s. If your hand is full, play them instead."
+    ]
+  },
+  "${modID}:UpdateJammerPower": {
+    "NAME": "Update Jammer",
+    "DESCRIPTIONS": [
+      "#yOrbs continue their passive effects after being #yEvoked.",
+      "I can't jam this!"
+    ]
+  },
+  "${modID}:OrbShockPower": {
+    "NAME": "Jammed Lightning",
+    "DESCRIPTIONS": [
+      "Activate #b%d passive #yLightning #yOrb%s at the end of your turns."
+    ]
+  },
+  "${modID}:OrbFrostPower": {
+    "NAME": "Jammed Frost",
+    "DESCRIPTIONS": [
+      "Activate #b%d passive #yFrost #yOrb%s at the end of your turns."
+    ]
+  },
+  "${modID}:OrbDarkPower": {
+    "NAME": "Jammed Darkness",
+    "DESCRIPTIONS": [
+      "Activate #b%d passive #yDark #yOrb%s at the end of your turns."
+    ]
+  },
+  "${modID}:OrbPlasmaPower": {
+    "NAME": "Jammed Plasma",
+    "DESCRIPTIONS": [
+      "Activate #b%d passive #yPlasma #yOrb%s at the start of your turns."
     ]
   }
 }
