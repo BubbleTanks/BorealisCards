@@ -53,5 +53,11 @@
     "DESCRIPTIONS": [
       "All your #yAttacks are played twice for the next #b%d turn%s."
     ]
+  },
+  "${modID}:FracturePower": {
+    "NAME": "Fracture",
+    "DESCRIPTIONS": [
+      "Receive #b%d additional damage from #yAttacks. Reduce #yFracture by #b1 each turn."
+    ]
   }
 }

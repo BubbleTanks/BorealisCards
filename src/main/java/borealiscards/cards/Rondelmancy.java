@@ -25,6 +25,6 @@ public class Rondelmancy extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new RondelmancyPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new RondelmancyPower(p, magicNumber), magicNumber));
     }
 };

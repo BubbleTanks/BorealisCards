@@ -25,4 +25,6 @@ public class UpdateJammer extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new UpdateJammerPower(p)));
     }
-};
+}
+
+// wawa :3

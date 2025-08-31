@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:Corestone": {
+    "NAME": "Corestone",
+    "FLAVOR": "You can hear faint, ethereal sounds from within.",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain 5 #yInvincible until you play a card."
+    ]
   }
 }

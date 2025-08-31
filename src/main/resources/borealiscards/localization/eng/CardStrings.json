@@ -40,5 +40,13 @@
     "NAME": "Cruel Sun",
     "DESCRIPTION": "Enter Wrath. NL This turn, your Attacks are played twice. NL You cannot exit Wrath this combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Enter Wrath. NL This turn, your Attacks are played twice. NL You cannot exit Wrath this combat."
+  },
+  "${modID}:CrushBones": {
+    "NAME": "Crush Bones",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Fracture."
+  },
+  "${modID}:Toxicology": {
+    "NAME": "Toxicology",
+    "DESCRIPTION": "Unplayable. NL Whenever you apply Poison, apply !M! more."
   }
 }
