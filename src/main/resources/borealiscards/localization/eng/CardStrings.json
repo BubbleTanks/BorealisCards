@@ -47,6 +47,6 @@
   },
   "${modID}:Toxicology": {
     "NAME": "Toxicology",
-    "DESCRIPTION": "Unplayable. NL Whenever you apply Poison, apply !M! more."
+    "DESCRIPTION": "Unplayable. NL Whenever you apply Poison while this is in your hand, apply !M! more."
   }
 }

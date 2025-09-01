@@ -33,6 +33,6 @@
     "NAMES": [
       "Fracture"
     ],
-    "DESCRIPTION": "Fractured creatures receive additional damage from Attacks."
+    "DESCRIPTION": "Fractured creatures receive additional damage from Attacks. Each turn, ${modID}:Fracture is reduced by 1."
   }
 ]
