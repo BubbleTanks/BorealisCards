@@ -16,7 +16,7 @@ public class Toxicology extends BaseCard {
 
     public Toxicology() {
         super(ID, info);
-        setMagic(2,1);
+        setMagic(3,2);
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

@@ -14,32 +14,32 @@
   "${modID}:UpdateJammerPower": {
     "NAME": "Update Jammer",
     "DESCRIPTIONS": [
-      "#yOrbs continue their passive effects after being #yEvoked.",
+      "Orbs continue their passive effects after being #yEvoked.",
       "I can't jam this!"
     ]
   },
   "${modID}:OrbShockPower": {
     "NAME": "Jammed Lightning",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yLightning #yOrb%s at the end of your turns."
+      "Activate #b%d passive #yLightning%s at the end of your turns."
     ]
   },
   "${modID}:OrbFrostPower": {
     "NAME": "Jammed Frost",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yFrost #yOrb%s at the end of your turns."
+      "Activate #b%d passive #yFrost%s at the end of your turns."
     ]
   },
   "${modID}:OrbDarkPower": {
     "NAME": "Jammed Darkness",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yDark #yOrb%s at the end of your turns."
+      "Activate #b%d passive #yDark%s at the end of your turns."
     ]
   },
   "${modID}:OrbPlasmaPower": {
     "NAME": "Jammed Plasma",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yPlasma #yOrb%s at the start of your turns."
+      "Activate #b%d passive #yPlasma%s at the start of your turns."
     ]
   },
   "${modID}:CruelSunPower": {
@@ -58,6 +58,18 @@
     "NAME": "Fracture",
     "DESCRIPTIONS": [
       "Receive #b%d additional damage from #yAttacks. Reduce #yFracture by #b1 each turn."
+    ]
+  },
+  "${modID}:LoseFocusPower": {
+    "NAME": "Focus Down",
+    "DESCRIPTIONS": [
+      "At the end of your turn, lose #b%d #yFocus."
+    ]
+  },
+  "${modID}:HyperPropellantPower": {
+    "NAME": "No Channeling",
+    "DESCRIPTIONS": [
+      "Cannot #yChannel Orbs for #b%d turn%s."
     ]
   }
 }
