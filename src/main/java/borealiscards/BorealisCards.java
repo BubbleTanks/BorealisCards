@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.ParanoiaBoxPreventSkip;
 import borealiscards.relics.BaseRelic;
 import borealiscards.util.GeneralUtils;
 import borealiscards.util.KeywordInfo;
@@ -15,14 +16,19 @@ import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
+import com.evacipated.cardcrawl.mod.stslib.patches.CenterGridCardSelectScreen;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
@@ -39,7 +45,9 @@ public class BorealisCards implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        PostUpdateSubscriber {
+    public static boolean choosingTransformCard;
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -298,6 +306,27 @@ public class BorealisCards implements
         }
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
+        }
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        if(choosingTransformCard) {
+            AbstractDungeon.overlayMenu.proceedButton.hide();
+            AbstractDungeon.overlayMenu.cancelButton.hide();
+            AbstractDungeon.topPanel.mapHb.move(ParanoiaBoxPreventSkip.ReplayRewardSkipPositionPatch.HIDE_X, AbstractDungeon.topPanel.mapHb.cY);
+        }
+        if (choosingTransformCard && AbstractDungeon.gridSelectScreen.selectedCards.size() == 3) {
+            for(AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                AbstractDungeon.player.masterDeck.removeCard(c);// 79
+                AbstractDungeon.transformCard(c, false, AbstractDungeon.miscRng);// 80
+                AbstractCard transCard = AbstractDungeon.getTransformedCard();// 81
+                AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(transCard, c.current_x, c.current_y));// 82
+            }
+            choosingTransformCard = false;
+            CenterGridCardSelectScreen.centerGridSelect = false;
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
         }
     }
 }

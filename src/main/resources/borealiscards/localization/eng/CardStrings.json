@@ -47,6 +47,13 @@
   },
   "${modID}:Toxicology": {
     "NAME": "Toxicology",
-    "DESCRIPTION": "Unplayable. NL Whenever you apply Poison while this is in your hand, apply !M! more."
+    "DESCRIPTION": "Unplayable. NL Whenever you apply Poison while this is in your hand, apply !M! more.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
+  "${modID}:HyperPropellant": {
+    "NAME": "Hyper Propellant",
+    "DESCRIPTION": "Gain !M! Focus this turn. You cannot Channel more Orbs until next turn."
   }
 }
