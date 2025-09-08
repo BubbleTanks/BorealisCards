@@ -55,5 +55,28 @@
   "${modID}:HyperPropellant": {
     "NAME": "Hyper Propellant",
     "DESCRIPTION": "Gain !M! Focus this turn. You cannot Channel more Orbs until next turn."
+  },
+  "${modID}:LivingBlade": {
+    "NAME": "Living Blade",
+    "DESCRIPTION": "Deal !D! damage !M! times. Permanently increase the number of times this hits by X. NL Exhaust."
+  },
+  "${modID}:Mordhau": {
+    "NAME": "Mordhau",
+    "DESCRIPTION": "Until the end of this turn, your attacks apply 1 ${modID}:Fracture.",
+    "UPGRADE_DESCRIPTION": "Until the end of next turn, your attacks apply 1 ${modID}:Fracture."
+  },
+  "${modID}:Splatter": {
+    "NAME": "Splatter",
+    "DESCRIPTION": "Discard 2 cards. NL Deal !D! damage. Apply 6 Poison.",
+    "UPGRADE_DESCRIPTION": "Discard 1 card. NL Deal !D! damage. Apply 6 Poison."
+  },
+  "${modID}:StackTrace": {
+    "NAME": "Stack Trace",
+    "DESCRIPTION": "Gain 1 Orb slot. NL Add a *Void into your discard pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Orb slot. NL Add a *Dazed into your discard pile. NL Exhaust."
+  },
+    "${modID}:StormyPetrel": {
+      "NAME": "Stormy Petrel",
+      "DESCRIPTION": "Deal !D! damage. If you are in Wrath, enter Calm. If you are in Calm, enter Wrath."
+    }
   }
-}

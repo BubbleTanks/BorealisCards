@@ -1,5 +1,6 @@
 package borealiscards.relics;
 
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.PandorasBox;
 
@@ -29,8 +30,20 @@ public class ParanoiasBox extends BaseRelic {
         }
     }
 
+    public void instantObtain(AbstractPlayer p, int slot, boolean callOnEquip) {
+        if (slot >= p.relics.size() && AbstractDungeon.player.hasRelic(relicReplaceID)) {
+            for (int i=0; i<AbstractDungeon.player.relics.size(); ++i) {
+                if (AbstractDungeon.player.relics.get(i).relicId.equals(relicReplaceID)) {
+                    super.instantObtain(p, i, callOnEquip);
+                    break;
+                }
+            }
+        }
+        super.instantObtain(p,slot,callOnEquip);
+    }
+
     public boolean canSpawn() {
-        return AbstractDungeon.player.hasRelic("Pandora's Box");
+        return AbstractDungeon.player.hasRelic(relicReplaceID);
     }
     @Override
     public String getUpdatedDescription() {
