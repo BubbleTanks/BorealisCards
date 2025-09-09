@@ -94,16 +94,19 @@
   },
   "${modID}:SpiritWalk": {
     "NAME": "Spirit Walk",
-    "DESCRIPTION": "Deal !D! damage. If you are in Wrath, add a Safety to your hand. If you are in Calm, add a Smite to your hand. Exit your Stance."
+    "DESCRIPTION": "Deal !D! damage. If you are in Wrath, add a *Safety to your hand. If you are in Calm, add a *Smite to your hand. Exit your Stance."
   },
   "${modID}:BatteringRam": {
     "NAME": "Battering Ram",
-    "DESCRIPTION": "Deal !D! damage. Whenever you play an Attack this turn, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. Whenever you attack an enemy this turn, deal !D! damage."
   },
   "${modID}:Vanish": {
     "NAME": "Vanish",
     "DESCRIPTION": "Apply 1 Poison for every card that was discarded this combat.",
-    "UPGRADE_DESCRIPTION": "Apply 1 Poison (+3) for every card that was discarded this combat."
+    "UPGRADE_DESCRIPTION": "Apply 1 Poison (+3) for every card that was discarded this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Applies %d Poison.)"
+    ]
   },
   "${modID}:PublicVoid": {
     "NAME": "Public Void",

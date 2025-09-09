@@ -83,5 +83,11 @@
     "DESCRIPTIONS": [
       "Cost 0 cards trigger the passive ability of all #yDark Orbs #b%d time%s."
     ]
+  },
+  "${modID}:BatteringRamPower": {
+    "NAME": "Battering",
+    "DESCRIPTIONS": [
+      "Deal #b%d damage to enemies when you attack them."
+    ]
   }
 }
