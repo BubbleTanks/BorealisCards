@@ -78,5 +78,40 @@
     "${modID}:StormyPetrel": {
       "NAME": "Stormy Petrel",
       "DESCRIPTION": "Deal !D! damage. If you are in Wrath, enter Calm. If you are in Calm, enter Wrath."
-    }
+    },
+  "${modID}:Spinebuster": {
+    "NAME": "Spinebuster",
+    "DESCRIPTION": "Deal !D! damage. If the enemy has Vulnerable, apply !M! ${modID}:Fracture."
+  },
+  "${modID}:Plunge": {
+    "NAME": "Plunge",
+    "DESCRIPTION": "Apply 3 Poison. If the target already has Poison, apply !M! more."
+  },
+  "${modID}:TemperatureShock": {
+    "NAME": "Temperature Shock",
+    "DESCRIPTION": "Channel 1 Lightning. Channel 1 Frost. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Lightning. Channel 1 Frost."
+  },
+  "${modID}:SpiritWalk": {
+    "NAME": "Spirit Walk",
+    "DESCRIPTION": "Deal !D! damage. If you are in Wrath, add a Safety to your hand. If you are in Calm, add a Smite to your hand. Exit your Stance."
+  },
+  "${modID}:BatteringRam": {
+    "NAME": "Battering Ram",
+    "DESCRIPTION": "Deal !D! damage. Whenever you play an Attack this turn, deal !D! damage again."
+  },
+  "${modID}:Vanish": {
+    "NAME": "Vanish",
+    "DESCRIPTION": "Apply 1 Poison for every card that was discarded this combat.",
+    "UPGRADE_DESCRIPTION": "Apply 1 Poison (+3) for every card that was discarded this combat."
+  },
+  "${modID}:PublicVoid": {
+    "NAME": "Public Void",
+    "DESCRIPTION": "Whenever you play a cost 0 card, trigger the passive ability of all Dark Orbs."
+  },
+  "${modID}:FindThePieces": {
+    "NAME": "Find the Pieces",
+    "DESCRIPTION": "Gain 1 Mantra for every card in your hand that was created this combat.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain 1 Mantra for every card in your hand that was created this combat."
   }
+}

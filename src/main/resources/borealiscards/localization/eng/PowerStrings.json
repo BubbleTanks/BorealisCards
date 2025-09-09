@@ -77,5 +77,11 @@
     "DESCRIPTIONS": [
       "Your #yAttacks apply #yFracture for the next #b%d turn%s."
     ]
+  },
+  "${modID}:PublicVoidPower": {
+    "NAME": "Public Void",
+    "DESCRIPTIONS": [
+      "Cost 0 cards trigger the passive ability of all #yDark Orbs #b%d time%s."
+    ]
   }
 }
