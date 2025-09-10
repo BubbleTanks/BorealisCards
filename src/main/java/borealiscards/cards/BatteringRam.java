@@ -23,7 +23,7 @@ public class BatteringRam extends BaseCard {
 
     public BatteringRam() {
         super(ID, info);
-        setDamage(8,2);
+        setDamage(5,2);
     }
 
     @Override

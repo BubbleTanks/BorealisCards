@@ -62,8 +62,8 @@
   },
   "${modID}:Mordhau": {
     "NAME": "Mordhau",
-    "DESCRIPTION": "Until the end of this turn, your attacks apply 1 ${modID}:Fracture.",
-    "UPGRADE_DESCRIPTION": "Until the end of next turn, your attacks apply 1 ${modID}:Fracture."
+    "DESCRIPTION": "Until the end of this turn, whenever you play an Attack, apply 1 ${modID}:Fracture to all enemies.",
+    "UPGRADE_DESCRIPTION": "Until the end of next turn, whenever you play an Attack, apply 1 ${modID}:Fracture to all enemies."
   },
   "${modID}:Splatter": {
     "NAME": "Splatter",
