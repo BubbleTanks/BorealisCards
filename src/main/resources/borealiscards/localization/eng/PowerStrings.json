@@ -42,6 +42,12 @@
       "Activate #b%d passive #yPlasma%s at the start of your turns."
     ]
   },
+  "${modID}:OrbStarlightPower": {
+    "NAME": "Jammed Starlight",
+    "DESCRIPTIONS": [
+      "Activate #b%d passive #yStarlight%s at the start of your turns."
+    ]
+  },
   "${modID}:CruelSunPower": {
     "NAME": "Cruel Sun",
     "DESCRIPTIONS": [

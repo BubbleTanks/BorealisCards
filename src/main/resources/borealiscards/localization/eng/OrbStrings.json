@@ -1,12 +1,9 @@
 {
-  "${modID}:OrbID": {
-    "NAME": "Orb Name",
+  "${modID}:Starlight": {
+    "NAME": "Starlight",
     "DESCRIPTION": [
-      "#yPassive: At the start of your turn, draw #b",
-      " card.",
-      " cards.",
-      " NL #yEvoke: Deal #b",
-      " damage to all enemies."
+      "At the start of your turn, #yScry #b%d cards.",
+      "Draw #b%d card."
     ]
   }
 }

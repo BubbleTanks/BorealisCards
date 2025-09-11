@@ -34,6 +34,9 @@ public class UpdateJammerPower extends BasePower {
             case Plasma.ORB_ID:
                 addToBot(new ApplyPowerAction(owner, owner, new OrbPlasmaPower(owner, 1)));
                 break;
+            case "borealiscards:Starlight":
+                addToBot(new ApplyPowerAction(owner, owner, new OrbStarlightPower(owner, 1)));
+                break;
             default:
                 BorealisCards.logger.warn("Modded orb detected!");
                 AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, DESCRIPTIONS[1], true));
