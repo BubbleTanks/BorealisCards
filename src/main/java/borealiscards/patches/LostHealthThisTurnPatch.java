@@ -7,6 +7,7 @@ import javassist.CtBehavior;
 
 public class LostHealthThisTurnPatch {
     public static boolean hurtThisTurn = false;
+    public static boolean hurtLastTurn = false;
 
     @SpirePatch(clz = AbstractPlayer.class, method = "updateCardsOnDamage")
     public static class LoseHPCheck {
@@ -20,6 +21,8 @@ public class LostHealthThisTurnPatch {
     public static class ResetCounters {
         @SpirePrefixPatch
         public static void reset() {
+            hurtLastTurn = false;
+            if(hurtThisTurn) hurtLastTurn = true;
             hurtThisTurn = false;
         }
     }
@@ -28,6 +31,8 @@ public class LostHealthThisTurnPatch {
     public static class NewTurnCounters {
         @SpireInsertPatch(locator = Locator.class)
         public static void reset() {
+            hurtLastTurn = false;
+            if(hurtThisTurn) hurtLastTurn = true;
             hurtThisTurn = false;
         }
 

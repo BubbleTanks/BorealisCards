@@ -9,6 +9,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.LoopPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.EmotionChip;
+import com.megacrit.cardcrawl.relics.GoldPlatedCables;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 
 import java.util.ArrayList;
@@ -19,17 +23,36 @@ public class StarlightOrbPatches {
     public static class StarlightOrbStartOfTurn {
         @SpirePrefixPatch
         public static void StartTurn(AbstractCreature __instance) {
-            if(__instance.isPlayer) {
+            if(__instance.isPlayer && AbstractDungeon.player.maxOrbs > 0) {
                 int starlightCount = 0;
-                for (AbstractOrb o : AbstractDungeon.player.orbs)
+                for (AbstractOrb o : AbstractDungeon.player.orbs) {
                     if (o.ID == Starlight.ORB_ID) {
                         starlightCount += o.passiveAmount;
                     }
-                for (AbstractPower p : AbstractDungeon.player.powers)
+                }
+                for (AbstractPower p : AbstractDungeon.player.powers) {
                     if (p.ID == OrbStarlightPower.POWER_ID) {
                         starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
                     }
-                AbstractDungeon.actionManager.addToBottom(new ScryAction(starlightCount));
+                }
+                if(AbstractDungeon.player.orbs.get(0).ID == Starlight.ORB_ID) {
+                    for (AbstractPower p : AbstractDungeon.player.powers) {
+                        if (p.ID == LoopPower.POWER_ID) {
+                            starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
+                        }
+                    }
+                    for (AbstractRelic r : AbstractDungeon.player.relics) {
+                        if (r.relicId == GoldPlatedCables.ID) {
+                            starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
+                        }
+                    }
+                    for (AbstractRelic r : AbstractDungeon.player.relics) {
+                        if (r.relicId == EmotionChip.ID && LostHealthThisTurnPatch.hurtLastTurn) {
+                            starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
+                        }
+                    }
+                }
+                if(starlightCount > 0) AbstractDungeon.actionManager.addToBottom(new ScryAction(starlightCount));
             }
         }
     }

@@ -23,7 +23,6 @@ public class CrushBones extends BaseCard {
         super(ID, info);
         setDamage(11, 3);
         setMagic(3,1);
-
     }
 
     @Override

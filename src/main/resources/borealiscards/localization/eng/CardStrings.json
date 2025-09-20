@@ -23,7 +23,7 @@
   },
   "${modID}:BloodSurge": {
     "NAME": "Blood Surge",
-    "DESCRIPTION": "Unplayable until you lose HP this turn. NL Gain !M! Strength and heal 1 HP for every time you lost HP this combat. NL Exhaust.",
+    "DESCRIPTION": "Unplayable until you lose HP this turn. NL Gain !M! Strength and heal 1 HP for every time you lost HP this combat.",
     "EXTENDED_DESCRIPTION": [
       "I haven't lost HP this turn."
     ]
@@ -85,7 +85,7 @@
   },
   "${modID}:Plunge": {
     "NAME": "Plunge",
-    "DESCRIPTION": "Apply 3 Poison. If the target already has Poison, apply !M! more."
+    "DESCRIPTION": "Apply 3 Poison. If the target already has Poison, apply !M! instead."
   },
   "${modID}:TemperatureShock": {
     "NAME": "Temperature Shock",
@@ -94,7 +94,7 @@
   },
   "${modID}:SpiritWalk": {
     "NAME": "Spirit Walk",
-    "DESCRIPTION": "Deal !D! damage. If you are in Wrath, add a *Safety to your hand. If you are in Calm, add a *Smite to your hand. Exit your Stance."
+    "DESCRIPTION": "If you are in Wrath, add a *Safety to your hand. If you are in Calm, add a *Smite to your hand. Exit your Stance."
   },
   "${modID}:BatteringRam": {
     "NAME": "Battering Ram",
@@ -114,7 +114,48 @@
   },
   "${modID}:FindThePieces": {
     "NAME": "Find the Pieces",
-    "DESCRIPTION": "Gain 1 Mantra for every card in your hand that was created this combat.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain 1 Mantra for every card in your hand that was created this combat."
+    "DESCRIPTION": "Retain. NL When you draw this card, add an Insight into your hand. NL Gain 1 Mantra for every card in your hand that was created this combat.",
+    "UPGRADE_DESCRIPTION": "Retain. NL When you draw this card, add an Insight+ into your hand. NL Gain 1 Mantra for every card in your hand that was created this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gain %d Mantra.)"
+    ]
+  },
+  "${modID}:Telescope": {
+    "NAME": "Telescope",
+    "DESCRIPTION": "Channel 1 ${modID}:Starlight. NL Scry !M!."
+  },
+  "${modID}:HubbleWave": {
+    "NAME": "Hubble Wave",
+    "DESCRIPTION": "Channel 1 ${modID}:Starlight for every 2 cards in your hand. NL Exhaust."
+  },
+  "${modID}:Stargazer": {
+    "NAME": "Stargazer",
+    "DESCRIPTION": "Channel 1 ${modID}:Starlight at the end of your turns.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Channel 1 ${modID}:Starlight at the end of your turn."
+  },
+  "${modID}:Backpedal": {
+    "NAME": "Backpedal",
+    "DESCRIPTION": "Gain !B! Block. If you lost HP this turn, gain !${modID}:block2! Block."
+  },
+  "${modID}:DotExe": {
+    "NAME": "DOT EXE",
+    "DESCRIPTION": "Choose one: Channel 3 Lightning, Channel 3 Frost, Channel 3 Dark, or Channel 1 Plasma and 1 ${modID}:Starlight. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose one: Channel 3 Lightning, Channel 3 Frost, Channel 3 Dark, or Channel 1 Plasma and 1 ${modID}:Starlight."
+  },
+  "${modID}:Thunderbolt": {
+    "NAME": "Thunderbolt",
+    "DESCRIPTION": "Channel 3 Lightning."
+  },
+  "${modID}:Permafrost": {
+    "NAME": "Permafrost",
+    "DESCRIPTION": "Channel 3 Frost."
+  },
+  "${modID}:Shadowfall": {
+    "NAME": "Shadowfall",
+    "DESCRIPTION": "Channel 2 Dark."
+  },
+  "${modID}:Cosmos": {
+    "NAME": "Cosmos",
+    "DESCRIPTION": "Channel 1 Plasma. NL Channel 1 ${modID}:Starlight."
   }
 }

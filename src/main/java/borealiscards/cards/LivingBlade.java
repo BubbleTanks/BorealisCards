@@ -11,7 +11,7 @@ public class LivingBlade extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.PURPLE,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.ENEMY,
             -1
     );
@@ -36,7 +36,7 @@ public class LivingBlade extends BaseCard {
     public LivingBlade() {
         super(ID, info);
         setExhaust(true);
-        setDamage(2,1);
+        setDamage(3,1);
         misc = 2;
         setMagic(misc);
     }
@@ -45,4 +45,4 @@ public class LivingBlade extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LivingBladeAction(uuid, p, m, magicNumber, damage, damageTypeForTurn, freeToPlayOnce, energyOnUse));
     }
-};
+}

@@ -1,14 +1,14 @@
 package borealiscards.cards;
 
+import borealiscards.orbs.Starlight;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Frost;
-import com.megacrit.cardcrawl.orbs.Lightning;
 
-public class TemperatureShock extends BaseCard {
-    public static final String ID = makeID(TemperatureShock.class.getSimpleName());
+public class Telescope extends BaseCard {
+    public static final String ID = makeID(Telescope.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.SKILL,
@@ -17,14 +17,14 @@ public class TemperatureShock extends BaseCard {
             1
     );
 
-    public TemperatureShock() {
+    public Telescope() {
         super(ID, info);
-        setExhaust(true,false);
+        setMagic(2,1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChannelAction(new Lightning()));
-        this.addToBot(new ChannelAction(new Frost()));
+        addToBot(new ChannelAction(new Starlight()));
+        addToBot(new ScryAction(magicNumber));
     }
 }

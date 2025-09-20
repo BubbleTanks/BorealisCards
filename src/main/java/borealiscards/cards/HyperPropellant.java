@@ -29,4 +29,4 @@ public class HyperPropellant extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new LoseFocusPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new HyperPropellantPower(p, 1)));
     }
-};
+}

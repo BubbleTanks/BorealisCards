@@ -34,5 +34,12 @@
       "Fracture"
     ],
     "DESCRIPTION": "#yFractured creatures receive additional damage from Attacks. Each turn, #yFracture is reduced by 1."
+  },
+  {
+    "PROPER_NAME": "Starlight",
+    "NAMES": [
+      "Starlight"
+    ],
+    "DESCRIPTION": "Orb: #yScrys every turn. When #yEvoked, draws cards."
   }
 ]

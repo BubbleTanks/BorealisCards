@@ -4,25 +4,30 @@ import borealiscards.orbs.Starlight;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StarlightChannelCard extends BaseCard {
-    public static final String ID = makeID(StarlightChannelCard.class.getSimpleName());
+public class HubbleWave extends BaseCard {
+    public static final String ID = makeID(HubbleWave.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            2
     );
 
-    public StarlightChannelCard() {
+    public HubbleWave() {
         super(ID, info);
-        setExhaust(true,false);
+        setExhaust(true);
+        setCostUpgrade(1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChannelAction(new Starlight()));
+        int hubbleCards = AbstractDungeon.player.hand.size() / 2;
+        for(int hubbleChannel = 0; hubbleChannel < hubbleCards; ++hubbleChannel) {
+            addToBot(new ChannelAction(new Starlight()));
+        }
     }
-};
+}

@@ -30,4 +30,4 @@ public class CruelSun extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new DoubleAttacksPower(p, 1)));
         addToBot(new ApplyPowerAction(p, p, new CruelSunPower(p)));
     }
-};
+}

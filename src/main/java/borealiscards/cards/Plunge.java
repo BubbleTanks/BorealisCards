@@ -26,4 +26,4 @@ public class Plunge extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, 3), magicNumber, AbstractGameAction.AttackEffect.POISON));
     }
-};
+}

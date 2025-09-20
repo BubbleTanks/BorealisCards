@@ -3,7 +3,7 @@
     "NAME": "Starlight",
     "DESCRIPTION": [
       "At the start of your turn, #yScry #b%d cards.",
-      "Draw #b%d card."
+      "Draw #b%d card. NL Starlight is unaffected by #yFocus."
     ]
   }
 }

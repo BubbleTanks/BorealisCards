@@ -1,30 +1,30 @@
 package borealiscards.cards;
 
-import borealiscards.powers.RondelmancyPower;
+import borealiscards.powers.StargazerPower;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Rondelmancy extends BaseCard {
-    public static final String ID = makeID(Rondelmancy.class.getSimpleName());
+public class Stargazer extends BaseCard {
+    public static final String ID = makeID(Stargazer.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            CardColor.GREEN,
+            CardColor.BLUE,
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
             1
     );
 
-    public Rondelmancy() {
+    public Stargazer() {
         super(ID, info);
-        cardsToPreview = new Shiv();
-        setMagic(1,1);
+        setInnate(false,true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new RondelmancyPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StargazerPower(p,1)));
     }
 }
+
+// wawa :3

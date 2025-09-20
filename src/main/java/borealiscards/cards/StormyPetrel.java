@@ -28,4 +28,4 @@ public class StormyPetrel extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new StormyPetrelAction());
     }
-};
+}

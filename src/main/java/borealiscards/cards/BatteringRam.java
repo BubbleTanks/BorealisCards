@@ -34,4 +34,4 @@ public class BatteringRam extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new ApplyPowerAction(p, p, new BatteringRamPower(p, damage)));
     }
-};
+}

@@ -42,5 +42,4 @@ public class StackTrace extends BaseCard {
             cardsToPreview = new Dazed();
         }
     }
-
-};
+}

@@ -1,30 +1,28 @@
 package borealiscards.cards;
 
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import borealiscards.util.CardStats;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 
 import java.util.ArrayList;
 
+@NoCompendium
 public class DevastatingStrike extends BaseCard implements StartupCard {
     public static final String ID = makeID(DevastatingStrike.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.RED,
             CardType.ATTACK,
-            CardRarity.RARE,
+            CardRarity.SPECIAL,
             CardTarget.ENEMY,
             3
     );
@@ -36,6 +34,7 @@ public class DevastatingStrike extends BaseCard implements StartupCard {
         cardsToPreview = new BloodSurge();
         setDamage(DAMAGE);
         setExhaust(true);
+        setDisplayRarity(CardRarity.RARE);
         tags.add(CardTags.STRIKE);
     }
 

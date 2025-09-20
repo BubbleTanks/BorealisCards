@@ -25,4 +25,4 @@ public class Mordhau extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new MordhauPower(p, magicNumber)));
     }
-};
+}

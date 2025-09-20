@@ -22,7 +22,7 @@ public class Splatter extends BaseCard {
 
     public Splatter() {
         super(ID, info);
-        setDamage(4);
+        setDamage(3);
         setMagic(2,-1); // wawa
     }
 
@@ -30,6 +30,6 @@ public class Splatter extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DiscardAction(p, p, magicNumber, false));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, 6), 6, AbstractGameAction.AttackEffect.POISON));
+        addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, 5), 5, AbstractGameAction.AttackEffect.POISON));
     }
-};
+}

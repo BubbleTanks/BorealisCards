@@ -21,7 +21,7 @@ public class Spinebuster extends BaseCard {
     public Spinebuster() {
         super(ID, info);
         setDamage(9,3);
-        setMagic(1,1);
+        setMagic(2,1);
     }
 
     @Override
@@ -29,4 +29,4 @@ public class Spinebuster extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new SpinebusterAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), magicNumber, p, m));
     }
-};
+}

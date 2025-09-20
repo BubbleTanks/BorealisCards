@@ -2,25 +2,21 @@ package borealiscards.cards;
 
 import borealiscards.patches.LostHealthThisTurnPatch;
 import borealiscards.util.CardStats;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 
 public class BloodSurge extends BaseCard {
     public static final String ID = makeID(BloodSurge.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS,
+            CardColor.RED,
             CardType.SKILL,
-            CardRarity.SPECIAL,
+            CardRarity.RARE,
             CardTarget.SELF,
             1
     );
@@ -28,8 +24,7 @@ public class BloodSurge extends BaseCard {
     public BloodSurge() {
         super(ID, info);
         setMagic(1,1);
-        setExhaust(true);
-        setDisplayRarity(CardRarity.RARE);
+        tags.add(CardTags.HEALING);
     }
 
     @Override // Gain Strength and HP

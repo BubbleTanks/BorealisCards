@@ -21,31 +21,31 @@
   "${modID}:OrbShockPower": {
     "NAME": "Jammed Lightning",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yLightning%s at the end of your turns."
+      "Activate #b%d passive #yLightning%s at the end of your turn."
     ]
   },
   "${modID}:OrbFrostPower": {
     "NAME": "Jammed Frost",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yFrost%s at the end of your turns."
+      "Activate #b%d passive #yFrost%s at the end of your turn."
     ]
   },
   "${modID}:OrbDarkPower": {
     "NAME": "Jammed Darkness",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yDark%s at the end of your turns."
+      "Activate #b%d passive #yDark%s at the end of your turn."
     ]
   },
   "${modID}:OrbPlasmaPower": {
     "NAME": "Jammed Plasma",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yPlasma%s at the start of your turns."
+      "Activate #b%d passive #yPlasma%s at the start of your turn."
     ]
   },
   "${modID}:OrbStarlightPower": {
     "NAME": "Jammed Starlight",
     "DESCRIPTIONS": [
-      "Activate #b%d passive #yStarlight%s at the start of your turns."
+      "Activate #b%d passive #yStarlight%s at the start of your turn."
     ]
   },
   "${modID}:CruelSunPower": {
@@ -94,6 +94,18 @@
     "NAME": "Battering",
     "DESCRIPTIONS": [
       "Deal #b%d damage to enemies when you attack them."
+    ]
+  },
+  "${modID}:StargazerPower": {
+    "NAME": "Stargazer",
+    "DESCRIPTIONS": [
+      "Channel #b%d #yStarlight%s at the end of your turn."
+    ]
+  },
+  "${modID}:AcrimonyPower": {
+    "NAME": "Acrimony",
+    "DESCRIPTIONS": [
+      "Receive #b5%% additional damage for every card in your hand. Reduce #yAcrimony by #b1 each turn."
     ]
   }
 }
