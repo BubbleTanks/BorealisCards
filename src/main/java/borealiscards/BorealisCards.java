@@ -77,11 +77,41 @@ public class BorealisCards implements
         new AutoAdd(modID) //Loads files from this mod
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
-                .cards(); //Adds the cards
+                .any(AbstractCard.class,(info, card)->{
+
+                    if(card.color == AbstractCard.CardColor.RED && ModConfig.ColorsRed) {
+                        BaseMod.addCard(card);
+                    }
+
+                    if(card.color == AbstractCard.CardColor.GREEN && ModConfig.ColorsGreen) {
+                        BaseMod.addCard(card);
+                    }
+
+                    if(card.color == AbstractCard.CardColor.BLUE && ModConfig.ColorsBlue) {
+                        BaseMod.addCard(card);
+                    }
+
+                    if(card.color == AbstractCard.CardColor.PURPLE && ModConfig.ColorsPurple) {
+                        BaseMod.addCard(card);
+                    }
+
+                    if(card.color == AbstractCard.CardColor.COLORLESS && ModConfig.ColorsGray) {
+                        BaseMod.addCard(card);
+                    }
+
+                    if(card.color == AbstractCard.CardColor.CURSE && ModConfig.ColorsBlack) {
+                        BaseMod.addCard(card);
+                    }
+
+                    if (info.seen) {
+                        UnlockTracker.unlockCard(card.cardID);
+                    }
+                });
     }
 
     @Override
     public void receiveEditRelics() { //somewhere in the class
+        if(!ModConfig.Relics) return;
         new AutoAdd(modID) //Loads files from this mod
                 .packageFilter(BaseRelic.class) //In the same package as this class
                 .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class

@@ -10,7 +10,7 @@ import static borealiscards.BorealisCards.makeID;
 
 public class ReturnHPPower extends BasePower {
     public static final String POWER_ID = makeID(ReturnHPPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
+    private static final PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;
 
     public ReturnHPPower(AbstractCreature owner, int amount) {

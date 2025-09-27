@@ -105,7 +105,7 @@
   "${modID}:AcrimonyPower": {
     "NAME": "Acrimony",
     "DESCRIPTIONS": [
-      "Receive #b5% additional damage for every card in your hand. Reduce #yAcrimony by #b1 each turn."
+      "Receive #b5%% additional damage for every card in your hand. Reduce #yAcrimony by #b1 each turn."
     ]
   },
   "${modID}:CausticsPower": {

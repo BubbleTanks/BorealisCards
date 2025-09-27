@@ -21,7 +21,15 @@
   },
   "${modID}:ModConfig": {
     "TEXT_DICT": {
-    "HappyPrideMoth": "Happy Pride Moth?"
+      "UselessConfig": "(NOT A CONFIG) Enabling/Disabling any content always requires a restart.",
+      "HappyPrideMoth": "Happy Pride Moth?",
+      "Relics": "Enable Relics.",
+      "ColorsRed": "Enable Ironclad cards.",
+      "ColorsGreen": "Enable Silent cards.",
+      "ColorsBlue": "Enable Defect cards.",
+      "ColorsPurple": "Enable Watcher cards.",
+      "ColorsGray": "Enable Colorless cards.",
+      "ColorsBlack": "Enable Curses."
     }
   }
 }
