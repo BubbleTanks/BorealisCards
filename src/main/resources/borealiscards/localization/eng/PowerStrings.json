@@ -105,7 +105,49 @@
   "${modID}:AcrimonyPower": {
     "NAME": "Acrimony",
     "DESCRIPTIONS": [
-      "Receive #b5%% additional damage for every card in your hand. Reduce #yAcrimony by #b1 each turn."
+      "Receive #b5% additional damage for every card in your hand. Reduce #yAcrimony by #b1 each turn."
+    ]
+  },
+  "${modID}:CausticsPower": {
+    "NAME": "Caustics",
+    "DESCRIPTIONS": [
+      "Your #yShivs apply #b1 #yAcrimony for the next #b%d turn%s."
+    ]
+  },
+  "${modID}:SadomasochismPower": {
+    "NAME": "Sadomasochism",
+    "DESCRIPTIONS": [
+      "Draw #b%d card%s whenever you apply #yPoison."
+    ]
+  },
+  "${modID}:TachycardiaPower": {
+    "NAME": "Tachycardia",
+    "DESCRIPTIONS": [
+      "Apply #b%d #yAcrimony to enemies whenever you discard. At the end of your turns, enemies gain #yPoison equal to their #yAcrimony."
+    ]
+  },
+  "${modID}:AmbientDeathPower": {
+    "NAME": "Ambient Death",
+    "DESCRIPTIONS": [
+      "Playing #ySkills applies #b%d #yPoison to all enemies."
+    ]
+  },
+  "${modID}:FoolhardyPower": {
+    "NAME": "Foolhardy",
+    "DESCRIPTIONS": [
+      "Every #b10 #yBlock gained, reduce the cost of a random card in your hand by #b%d."
+    ]
+  },
+  "${modID}:ReturnHPPower": {
+    "NAME": "Return HP",
+    "DESCRIPTIONS": [
+      "When attacked, you heal #b%d HP."
+    ]
+  },
+  "${modID}:BurningMontantePower": {
+    "NAME": "Burning Montante",
+    "DESCRIPTIONS": [
+      "Your #yAttacks that cost 2 or more cost 1 more, and are played #b%d additional time%s."
     ]
   }
 }

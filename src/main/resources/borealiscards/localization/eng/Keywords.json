@@ -41,5 +41,12 @@
       "Starlight"
     ],
     "DESCRIPTION": "Orb: #yScrys every turn. When #yEvoked, draws cards."
+  },
+  {
+    "PROPER_NAME": "Acrimony",
+    "NAMES": [
+      "Acrimony"
+    ],
+    "DESCRIPTION": "Enemies with #yAcrimony receive #b5%% additional damage for every card in your hand. Each turn, #yAcrimony is reduced by 1."
   }
 ]

@@ -19,7 +19,7 @@ public class Plunge extends BaseCard {
 
     public Plunge() {
         super(ID, info);
-        setMagic(5,1);
+        setMagic(5,2);
     }
 
     @Override

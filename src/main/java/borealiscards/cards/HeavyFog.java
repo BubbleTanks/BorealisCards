@@ -1,6 +1,5 @@
 package borealiscards.cards;
 
-import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import borealiscards.powers.AcrimonyPower;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -9,13 +8,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
-@NoCompendium
 public class HeavyFog extends BaseCard {
     public static final String ID = makeID(HeavyFog.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.GREEN,
             CardType.SKILL,
-            CardRarity.SPECIAL,
+            CardRarity.COMMON,
             CardTarget.ENEMY,
             2
     );

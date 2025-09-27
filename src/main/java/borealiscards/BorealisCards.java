@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import borealiscards.cards.BaseCard;
 import borealiscards.patches.ParanoiaBoxPreventSkip;
 import borealiscards.relics.BaseRelic;
+import borealiscards.ui.ModConfig;
 import borealiscards.util.GeneralUtils;
 import borealiscards.util.KeywordInfo;
 import borealiscards.util.Sounds;
@@ -105,7 +106,7 @@ public class BorealisCards implements
 
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new ModConfig());
     }
 
     /*----------Localization----------*/

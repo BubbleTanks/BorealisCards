@@ -13,13 +13,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
 
-@NoCompendium
 public class FindThePieces extends BaseCard {
     public static final String ID = makeID(FindThePieces.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.PURPLE,
             CardType.SKILL,
-            CardRarity.SPECIAL,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );
@@ -27,18 +26,6 @@ public class FindThePieces extends BaseCard {
     public FindThePieces() {
         super(ID, info);
         setSelfRetain(true);
-        cardsToPreview = new Insight();
-    }
-
-    public void triggerWhenDrawn() {
-        addToTop(new MakeTempCardInHandAction(cardsToPreview, 1));
-    }
-
-    @Override
-    public void upgrade() {
-        if(!upgraded) {
-            cardsToPreview.upgrade();
-        }
     }
 
     @Override

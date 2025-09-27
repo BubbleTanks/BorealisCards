@@ -29,5 +29,15 @@
     "DESCRIPTIONS": [
       "Replaces #yPandora's #yBox. At the end of combat, choose #b3 cards in your deck to permanently #yTransform."
     ]
+  },
+  "${modID}:BottledMoth": {
+    "NAME": "Bottled Moth",
+    "FLAVOR": "The bottle doesn't actually have a cork to keep the moth in. It seems to just like you.",
+    "DESCRIPTIONS": [
+      "Upon pick up, choose a #ycost #y0 #ycard. Start each combat with this card in your hand, then draw #b1 card.",
+      "Choose a card for ",
+      "Start each combat with ",
+      " in your hand, then draw #b1 card."
+    ]
   }
 }

@@ -18,5 +18,10 @@
       "The cycle continues...",
       "Choose 3 Cards to Transform."
     ]
+  },
+  "${modID}:ModConfig": {
+    "TEXT_DICT": {
+    "HappyPrideMoth": "Happy Pride Moth?"
+    }
   }
 }

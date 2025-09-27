@@ -32,13 +32,13 @@ public class StarlightOrbPatches {
                 }
                 for (AbstractPower p : AbstractDungeon.player.powers) {
                     if (p.ID == OrbStarlightPower.POWER_ID) {
-                        starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
+                        starlightCount += (OrbStarlightPower.STARLIGHTORB.passiveAmount * p.amount);
                     }
                 }
                 if(AbstractDungeon.player.orbs.get(0).ID == Starlight.ORB_ID) {
                     for (AbstractPower p : AbstractDungeon.player.powers) {
                         if (p.ID == LoopPower.POWER_ID) {
-                            starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
+                            starlightCount += (OrbStarlightPower.STARLIGHTORB.passiveAmount * p.amount);
                         }
                     }
                     for (AbstractRelic r : AbstractDungeon.player.relics) {
@@ -46,12 +46,17 @@ public class StarlightOrbPatches {
                             starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
                         }
                     }
-                    for (AbstractRelic r : AbstractDungeon.player.relics) {
-                        if (r.relicId == EmotionChip.ID && LostHealthThisTurnPatch.hurtLastTurn) {
-                            starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
+                }
+                for (AbstractRelic r : AbstractDungeon.player.relics) {
+                    if (r.relicId == EmotionChip.ID && LostHealthThisTurnPatch.hurtLastTurn) {
+                        for (AbstractOrb o : AbstractDungeon.player.orbs){
+                            if (o.ID == Starlight.ORB_ID) {
+                                starlightCount += OrbStarlightPower.STARLIGHTORB.passiveAmount;
+                            }
                         }
                     }
                 }
+
                 if(starlightCount > 0) AbstractDungeon.actionManager.addToBottom(new ScryAction(starlightCount));
             }
         }
