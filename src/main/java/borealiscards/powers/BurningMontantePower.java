@@ -31,7 +31,7 @@ public class BurningMontantePower extends BasePower implements OnCreateCardInter
             addAll(AbstractDungeon.player.discardPile.group);
             addAll(AbstractDungeon.player.drawPile.group);
             addAll(AbstractDungeon.player.limbo.group);
-        }}) if(c.type == AbstractCard.CardType.ATTACK && c.cost == 2 && !CardModifierManager.hasModifier(c, BurningMontanteMod.ID)) CardModifierManager.addModifier(c, new BurningMontanteMod());
+        }}) if(c.type == AbstractCard.CardType.ATTACK && c.cost >= 2 && !CardModifierManager.hasModifier(c, BurningMontanteMod.ID)) CardModifierManager.addModifier(c, new BurningMontanteMod());
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
