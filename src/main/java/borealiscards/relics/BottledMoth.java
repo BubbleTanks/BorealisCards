@@ -100,6 +100,7 @@ public class BottledMoth extends BaseRelic implements CustomBottleRelic, CustomS
     }
 
     public boolean canSpawn() {
+        if(!ModConfig.Relics) return false;
         return !mothCards().group.isEmpty();
     }
 

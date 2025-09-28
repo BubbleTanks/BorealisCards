@@ -3,6 +3,7 @@ package borealiscards.relics;
 import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomSavable;
 import borealiscards.SpireFields.BottledSinFieldHandler;
+import borealiscards.ui.ModConfig;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -82,6 +83,7 @@ public class BottledSin extends BaseRelic implements CustomBottleRelic, CustomSa
     }
 
     public boolean canSpawn() {
+        if(!ModConfig.Relics) return false;
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c.type == AbstractCard.CardType.CURSE) {
                 return true;

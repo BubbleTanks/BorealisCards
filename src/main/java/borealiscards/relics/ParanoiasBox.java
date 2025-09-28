@@ -1,5 +1,6 @@
 package borealiscards.relics;
 
+import borealiscards.ui.ModConfig;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.PandorasBox;
@@ -42,7 +43,9 @@ public class ParanoiasBox extends BaseRelic {
         super.instantObtain(p,slot,callOnEquip);
     }
 
-    public boolean canSpawn() {
+    public boolean canSpawn()
+    {
+        if(!ModConfig.Relics) return false;
         return AbstractDungeon.player.hasRelic(relicReplaceID);
     }
     @Override

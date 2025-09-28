@@ -2,6 +2,7 @@ package borealiscards;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import basemod.interfaces.*;
 import borealiscards.cards.BaseCard;
 import borealiscards.patches.ParanoiaBoxPreventSkip;
@@ -26,7 +27,10 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -38,6 +42,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @SpireInitializer
 public class BorealisCards implements
@@ -47,7 +52,8 @@ public class BorealisCards implements
         EditKeywordsSubscriber,
         AddAudioSubscriber,
         PostInitializeSubscriber,
-        PostUpdateSubscriber {
+        PostUpdateSubscriber,
+        StartGameSubscriber {
     public static boolean choosingTransformCard;
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -77,41 +83,136 @@ public class BorealisCards implements
         new AutoAdd(modID) //Loads files from this mod
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
-                .any(AbstractCard.class,(info, card)->{
+                .cards();
+    }
 
-                    if(card.color == AbstractCard.CardColor.RED && ModConfig.ColorsRed) {
-                        BaseMod.addCard(card);
-                    }
+    @Override
+    public void receiveStartGame() {
+        ArrayList<AbstractCard> cardsToRemove = new ArrayList<AbstractCard>();
 
-                    if(card.color == AbstractCard.CardColor.GREEN && ModConfig.ColorsGreen) {
-                        BaseMod.addCard(card);
-                    }
+        cardsToRemove.addAll(AbstractDungeon.commonCardPool.group.stream().filter(card ->
+                card instanceof BaseCard
+        ).collect(Collectors.toList()));
+        cardsToRemove.addAll(AbstractDungeon.uncommonCardPool.group.stream().filter(card ->
+                card instanceof BaseCard
+        ).collect(Collectors.toList()));
+        cardsToRemove.addAll(AbstractDungeon.rareCardPool.group.stream().filter(card ->
+                card instanceof BaseCard
+        ).collect(Collectors.toList()));
+        cardsToRemove.addAll(AbstractDungeon.colorlessCardPool.group.stream().filter(card ->
+                card instanceof BaseCard
+        ).collect(Collectors.toList()));
+        cardsToRemove.addAll(AbstractDungeon.curseCardPool.group.stream().filter(card ->
+                card instanceof BaseCard
+        ).collect(Collectors.toList()));
 
-                    if(card.color == AbstractCard.CardColor.BLUE && ModConfig.ColorsBlue) {
-                        BaseMod.addCard(card);
-                    }
+        for(AbstractCard c : cardsToRemove) {
+            if(!ModConfig.ColorsRed && c.color == AbstractCard.CardColor.RED) {
+                removeCard(c);
+            }
+            if(!ModConfig.ColorsGreen && c.color == AbstractCard.CardColor.GREEN) {
+                removeCard(c);
+            }
+            if(!ModConfig.ColorsBlue && c.color == AbstractCard.CardColor.BLUE) {
+                removeCard(c);
+            }
+            if(!ModConfig.ColorsPurple && c.color == AbstractCard.CardColor.PURPLE) {
+                removeCard(c);
+            }
+            if(!ModConfig.ColorsGray && c.color == AbstractCard.CardColor.COLORLESS) {
+                removeCard(c);
+            }
+            if(!ModConfig.ColorsBlack && c.color == AbstractCard.CardColor.CURSE) {
+                removeCard(c);
+            }
+        }
 
-                    if(card.color == AbstractCard.CardColor.PURPLE && ModConfig.ColorsPurple) {
-                        BaseMod.addCard(card);
-                    }
 
-                    if(card.color == AbstractCard.CardColor.COLORLESS && ModConfig.ColorsGray) {
-                        BaseMod.addCard(card);
-                    }
+    }
 
-                    if(card.color == AbstractCard.CardColor.CURSE && ModConfig.ColorsBlack) {
-                        BaseMod.addCard(card);
-                    }
+    private void removeCard(AbstractCard c) {
+        AbstractDungeon.commonCardPool.removeCard(c);
+        AbstractDungeon.uncommonCardPool.removeCard(c);
+        AbstractDungeon.rareCardPool.removeCard(c);
+        AbstractDungeon.colorlessCardPool.removeCard(c);
+        AbstractDungeon.curseCardPool.removeCard(c);
+        AbstractDungeon.srcCommonCardPool.removeCard(c);
+        AbstractDungeon.srcUncommonCardPool.removeCard(c);
+        AbstractDungeon.srcRareCardPool.removeCard(c);
+        AbstractDungeon.srcColorlessCardPool.removeCard(c);
+        AbstractDungeon.srcCurseCardPool.removeCard(c);
+        // the great pool wall
+    }
 
-                    if (info.seen) {
-                        UnlockTracker.unlockCard(card.cardID);
-                    }
-                });
+    private void killCompendium() {
+        ArrayList<AbstractCard> cardsToRemove = new ArrayList<AbstractCard>();
+        ArrayList<AbstractRelic> relicsToRemove = new ArrayList<AbstractRelic>();
+
+        for(AbstractCard c : CardLibrary.getAllCards()) {
+            if(c instanceof BaseCard) {
+                cardsToRemove.add(c);
+            }
+        }
+
+        for (AbstractRelic r : new ArrayList<AbstractRelic>() {{
+            addAll(RelicLibrary.commonList);
+            addAll(RelicLibrary.uncommonList);
+            addAll(RelicLibrary.rareList);
+            addAll(RelicLibrary.bossList);
+            addAll(RelicLibrary.shopList);
+            addAll(RelicLibrary.specialList);
+            addAll(RelicLibrary.redList);
+            addAll(RelicLibrary.greenList);
+            addAll(RelicLibrary.blueList);
+            addAll(RelicLibrary.whiteList); // Watcher Rushdown White. Ironclad we need to COOK
+        }}) if(r instanceof BaseRelic) relicsToRemove.add(r);
+
+        for(AbstractCard c : cardsToRemove) {
+            if(!ModConfig.ColorsRed && c.color == AbstractCard.CardColor.RED) {
+                CardLibrary.cards.remove(c.cardID);
+            }
+            if(!ModConfig.ColorsGreen && c.color == AbstractCard.CardColor.GREEN) {
+                CardLibrary.cards.remove(c.cardID);
+            }
+            if(!ModConfig.ColorsBlue && c.color == AbstractCard.CardColor.BLUE) {
+                CardLibrary.cards.remove(c.cardID);
+            }
+            if(!ModConfig.ColorsPurple && c.color == AbstractCard.CardColor.PURPLE) {
+                CardLibrary.cards.remove(c.cardID);
+            }
+            if(!ModConfig.ColorsGray && c.color == AbstractCard.CardColor.COLORLESS) {
+                CardLibrary.cards.remove(c.cardID);
+            }
+            if(!ModConfig.ColorsBlack && c.color == AbstractCard.CardColor.CURSE) {
+                CardLibrary.cards.remove(c.cardID);
+                ReflectionHacks.<HashMap>getPrivateStatic(CardLibrary.class, "curses").remove(c.cardID);
+
+            }
+        }
+
+        for(AbstractRelic r : relicsToRemove) {
+            if(!ModConfig.Relics) {
+                ReflectionHacks.<HashMap>getPrivateStatic(RelicLibrary.class, "sharedRelics").remove(r.relicId);
+                ReflectionHacks.<HashMap>getPrivateStatic(RelicLibrary.class, "redRelics").remove(r.relicId);
+                ReflectionHacks.<HashMap>getPrivateStatic(RelicLibrary.class, "greenRelics").remove(r.relicId);
+                ReflectionHacks.<HashMap>getPrivateStatic(RelicLibrary.class, "blueRelics").remove(r.relicId);
+                ReflectionHacks.<HashMap>getPrivateStatic(RelicLibrary.class, "purpleRelics").remove(r.relicId);
+                RelicLibrary.commonList.remove(r);
+                RelicLibrary.uncommonList.remove(r);
+                RelicLibrary.rareList.remove(r);
+                RelicLibrary.bossList.remove(r);
+                RelicLibrary.shopList.remove(r);
+                RelicLibrary.specialList.remove(r);
+                RelicLibrary.redList.remove(r);
+                RelicLibrary.greenList.remove(r);
+                RelicLibrary.blueList.remove(r);
+                RelicLibrary.whiteList.remove(r);
+            }
+        }
     }
 
     @Override
     public void receiveEditRelics() { //somewhere in the class
-        if(!ModConfig.Relics) return;
         new AutoAdd(modID) //Loads files from this mod
                 .packageFilter(BaseRelic.class) //In the same package as this class
                 .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
@@ -137,6 +238,7 @@ public class BorealisCards implements
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new ModConfig());
+        killCompendium();
     }
 
     /*----------Localization----------*/

@@ -21,7 +21,8 @@
   },
   "${modID}:ModConfig": {
     "TEXT_DICT": {
-      "UselessConfig": "(NOT A CONFIG) Enabling/Disabling any content always requires a restart.",
+      "UselessConfig": "(NOT A CONFIG) Enabling/Disabling any content WILL work immediately,",
+      "UselessConfig2": "but the Compendium may not update until a restart.",
       "HappyPrideMoth": "Happy Pride Moth?",
       "Relics": "Enable Relics.",
       "ColorsRed": "Enable Ironclad cards.",

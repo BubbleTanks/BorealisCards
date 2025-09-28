@@ -9,6 +9,7 @@ public class ModConfig extends EasyConfigPanel {
     }
 
     public static boolean UselessConfig = false;
+    public static boolean UselessConfig2 = false;
     public static boolean HappyPrideMoth = false;
     public static boolean Relics = true;
     public static boolean ColorsRed = true;

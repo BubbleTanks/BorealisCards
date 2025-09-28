@@ -2,6 +2,7 @@ package borealiscards.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
+import borealiscards.ui.ModConfig;
 import borealiscards.util.GeneralUtils;
 import borealiscards.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -82,6 +83,10 @@ public abstract class BaseRelic extends CustomRelic {
                 this.pool = pool;
                 break;
         }
+    }
+
+    public boolean canSpawn() {
+        return ModConfig.Relics;
     }
 
     /**
