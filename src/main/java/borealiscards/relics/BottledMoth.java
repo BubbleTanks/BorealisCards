@@ -2,7 +2,7 @@ package borealiscards.relics;
 
 import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomSavable;
-import borealiscards.SpireFields.BottledMothFieldHandler;
+import borealiscards.SpireFields.BottleFieldHandler;
 import borealiscards.ui.ModConfig;
 import borealiscards.util.TextureLoader;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -35,10 +35,6 @@ public class BottledMoth extends BaseRelic implements CustomBottleRelic, CustomS
         return DESCRIPTIONS[0];
     }
 
-    public AbstractCard getCard() {
-        return card.makeCopy();
-    }
-
     private CardGroup mothCards(){
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for(AbstractCard c : AbstractDungeon.player.masterDeck.getPurgeableCards().group) {
@@ -66,7 +62,7 @@ public class BottledMoth extends BaseRelic implements CustomBottleRelic, CustomS
         if (card != null) {
             AbstractCard cardInDeck = AbstractDungeon.player.masterDeck.getSpecificCard(card);
             if (cardInDeck != null) {
-                BottledMothFieldHandler.BottledMothField.inBottleMoth.set(card, false);
+                BottleFieldHandler.BottleField.inBottleMoth.set(card, false);
             }
         }
     }
@@ -76,7 +72,7 @@ public class BottledMoth extends BaseRelic implements CustomBottleRelic, CustomS
         if (!cardSelected && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             cardSelected = true;
             card = (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            BottledMothFieldHandler.BottledMothField.inBottleMoth.set(card, true);
+            BottleFieldHandler.BottleField.inBottleMoth.set(card, true);
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             description = DESCRIPTIONS[2] + FontHelper.colorString(card.name, "y") + DESCRIPTIONS[3];
@@ -106,7 +102,7 @@ public class BottledMoth extends BaseRelic implements CustomBottleRelic, CustomS
 
     @Override
     public Predicate<AbstractCard> isOnCard() {
-        return BottledMothFieldHandler.BottledMothField.inBottleMoth::get;
+        return BottleFieldHandler.BottleField.inBottleMoth::get;
     }
 
     @Override
@@ -124,7 +120,7 @@ public class BottledMoth extends BaseRelic implements CustomBottleRelic, CustomS
         if (cardIndex >= 0 && cardIndex < AbstractDungeon.player.masterDeck.group.size()) {
             card = AbstractDungeon.player.masterDeck.group.get(cardIndex);
             if (card != null) {
-                BottledMothFieldHandler.BottledMothField.inBottleMoth.set(card, true);
+                BottleFieldHandler.BottleField.inBottleMoth.set(card, true);
                 setDescriptionAfterLoading();
             }
         }

@@ -39,5 +39,25 @@
       "Start each combat with ",
       " in your hand, then draw #b1 card."
     ]
+  },
+  "${modID}:SprightedTiara": {
+    "NAME": "Sprighted Tiara",
+    "FLAVOR": "It sparkles with faint electricity around the tips.",
+    "DESCRIPTIONS": [
+      "At the end of your turns, deal #b5 damage to a random enemy."
+    ]
+  },
+  "${modID}:BlackIndigonium": {
+    "NAME": "Black Indigonium",
+    "FLAVOR": "The bottle doesn't actually have a cork to keep the moth in. It seems to just like you.",
+    "DESCRIPTIONS": [
+      "Upon pick up, choose #b2 cards in your deck. Playing one also plays the other.",
+      " Become #rCursed - #rPrisma #rDisruption [REMOVE_SPACE].",
+      " Become #rCursed - #rAscender's #rBane [REMOVE_SPACE].",
+      "Choose 2 cards for ",
+      "Whenever you play ",
+      " or ",
+      " [REMOVE_SPACE], play the other as well."
+    ]
   }
 }

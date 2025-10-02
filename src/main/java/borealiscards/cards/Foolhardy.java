@@ -18,7 +18,8 @@ public class Foolhardy extends BaseCard {
 
     public Foolhardy() {
         super(ID, info);
-        setMagic(1,1);
+        setMagic(1,0);
+        setEthereal(true, false);
     }
 
     @Override

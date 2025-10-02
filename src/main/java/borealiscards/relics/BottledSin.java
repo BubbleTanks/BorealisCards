@@ -2,7 +2,7 @@ package borealiscards.relics;
 
 import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomSavable;
-import borealiscards.SpireFields.BottledSinFieldHandler;
+import borealiscards.SpireFields.BottleFieldHandler;
 import borealiscards.ui.ModConfig;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -29,10 +29,6 @@ public class BottledSin extends BaseRelic implements CustomBottleRelic, CustomSa
         return DESCRIPTIONS[0];
     }
 
-    public AbstractCard getCard() {
-        return card.makeCopy();
-    }
-
     public void onEquip() {
         if (!AbstractDungeon.player.masterDeck.getCardsOfType(AbstractCard.CardType.CURSE).isEmpty()) {
             cardSelected = false;
@@ -50,7 +46,7 @@ public class BottledSin extends BaseRelic implements CustomBottleRelic, CustomSa
         if (card != null) {
             AbstractCard cardInDeck = AbstractDungeon.player.masterDeck.getSpecificCard(card);
             if (cardInDeck != null) {
-                BottledSinFieldHandler.BottledSinField.inBottleSin.set(card, false);
+                BottleFieldHandler.BottleField.inBottleSin.set(card, false);
             }
         }
     }
@@ -60,7 +56,7 @@ public class BottledSin extends BaseRelic implements CustomBottleRelic, CustomSa
         if (!cardSelected && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             cardSelected = true;
             card = (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            BottledSinFieldHandler.BottledSinField.inBottleSin.set(card, true);
+            BottleFieldHandler.BottleField.inBottleSin.set(card, true);
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             description = DESCRIPTIONS[2] + FontHelper.colorString(card.name, "r") + DESCRIPTIONS[3];
@@ -94,7 +90,7 @@ public class BottledSin extends BaseRelic implements CustomBottleRelic, CustomSa
 
     @Override
     public Predicate<AbstractCard> isOnCard() {
-        return BottledSinFieldHandler.BottledSinField.inBottleSin::get;
+        return BottleFieldHandler.BottleField.inBottleSin::get;
     }
 
     @Override
@@ -112,7 +108,7 @@ public class BottledSin extends BaseRelic implements CustomBottleRelic, CustomSa
         if (cardIndex >= 0 && cardIndex < AbstractDungeon.player.masterDeck.group.size()) {
             card = AbstractDungeon.player.masterDeck.group.get(cardIndex);
             if (card != null) {
-                BottledSinFieldHandler.BottledSinField.inBottleSin.set(card, true);
+                BottleFieldHandler.BottleField.inBottleSin.set(card, true);
                 setDescriptionAfterLoading();
             }
         }

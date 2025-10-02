@@ -195,7 +195,8 @@
   },
   "${modID}:Foolhardy": {
     "NAME": "Foolhardy",
-    "DESCRIPTION": "For every 10 Block you gain, reduce the cost of a random card in your hand by !M!."
+    "DESCRIPTION": "Ethereal. NL For every 10 Block you gain, reduce the cost of a random card in your hand by !M!.",
+    "UPGRADE_DESCRIPTION": "For every 10 Block you gain, reduce the cost of a random card in your hand by !M!."
   },
   "${modID}:Callous": {
     "NAME": "Callous",
