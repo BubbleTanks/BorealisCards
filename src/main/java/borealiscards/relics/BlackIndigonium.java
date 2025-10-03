@@ -3,18 +3,23 @@ package borealiscards.relics;
 import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomSavable;
 import borealiscards.SpireFields.BottleFieldHandler;
+import borealiscards.cards.PrismaDisruption;
 import borealiscards.ui.ModConfig;
 import borealiscards.util.TwoInteger;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.AscendersBane;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -29,7 +34,7 @@ public class BlackIndigonium extends BaseRelic implements CustomBottleRelic, Cus
     public boolean indigoVar = false;
 
     public BlackIndigonium() {
-        super(ID, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, RelicTier.BOSS, LandingSound.SOLID);
     }
 
     public String getUpdatedDescription() {
@@ -47,6 +52,7 @@ public class BlackIndigonium extends BaseRelic implements CustomBottleRelic, Cus
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
             AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), 2, DESCRIPTIONS[3] + name + LocalizedStrings.PERIOD, false, false, false, false);
         }
+
     }
 
     public void onUnequip() {
@@ -60,20 +66,20 @@ public class BlackIndigonium extends BaseRelic implements CustomBottleRelic, Cus
 
     public void onUseCard(AbstractCard c1, UseCardAction action) {
         if (BottleFieldHandler.BottleField.inBlackIndigonium.get(c1) && !BottleFieldHandler.BottleField.playedByIndigonium.get(c1)) {
-           // BottleFieldHandler.BottleField.playedByIndigonium.set(c1, true);
+            flash();
+            addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             for (AbstractCard c2 : new ArrayList<AbstractCard>() {{
                 addAll(AbstractDungeon.player.hand.group);
                 addAll(AbstractDungeon.player.drawPile.group);
                 addAll(AbstractDungeon.player.discardPile.group);
-            }})
-                if (BottleFieldHandler.BottleField.inBlackIndigonium.get(c2)) {
+            }}) {
+                if (BottleFieldHandler.BottleField.inBlackIndigonium.get(c2) && c2 != c1) {
                     BottleFieldHandler.BottleField.playedByIndigonium.set(c2, true);
+                    AbstractDungeon.player.hand.group.remove(c2);
                     AbstractDungeon.player.drawPile.group.remove(c2);
+                    AbstractDungeon.player.discardPile.group.remove(c2);
                     AbstractDungeon.getCurrRoom().souls.remove(c2);
                     AbstractDungeon.player.limbo.group.add(c2);
-                    c2.current_y = -200.0F * Settings.scale;
-                    c2.target_x = (float)Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
-                    c2.target_y = (float)Settings.HEIGHT / 2.0F;
                     c2.targetAngle = 0.0F;
                     c2.lighten(false);
                     c2.drawScale = 0.12F;
@@ -82,7 +88,7 @@ public class BlackIndigonium extends BaseRelic implements CustomBottleRelic, Cus
                     this.addToTop(new NewQueueCardAction(c2, true, false, true));
                     this.addToTop(new UnlimboAction(c2));
                 }
-
+            }
         }
     }
 
@@ -100,6 +106,10 @@ public class BlackIndigonium extends BaseRelic implements CustomBottleRelic, Cus
             tips.clear();
             tips.add(new PowerTip(name, description));
             initializeTips();
+            if(ModConfig.ColorsBlack) {
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new PrismaDisruption(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                UnlockTracker.markCardAsSeen(PrismaDisruption.ID);
+            } else AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new AscendersBane(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
         }
     }
 

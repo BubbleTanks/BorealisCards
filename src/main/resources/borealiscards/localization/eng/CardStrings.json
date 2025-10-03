@@ -222,5 +222,9 @@
   "${modID}:BurningMontante": {
     "NAME": "Burning Montante",
     "DESCRIPTION": "Attacks that cost [E] [E] or more cost 1 more and are played !M! extra times."
+  },
+  "${modID}:PrismaDisruption": {
+    "NAME": "Prisma Disruption",
+    "DESCRIPTION": "Unplayable. NL stslib:Soulbound. NL Cards played while this is in your hand become Unplayable."
   }
 }

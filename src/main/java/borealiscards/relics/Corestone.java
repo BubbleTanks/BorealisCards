@@ -22,14 +22,14 @@ public class Corestone extends BaseRelic {
     public void atBattleStart() {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new InvinciblePower(AbstractDungeon.player, 5)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new InvinciblePower(AbstractDungeon.player, 3)));
     }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (!grayscale) {
             flash();
-            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, InvinciblePower.POWER_ID, 5));
+            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, InvinciblePower.POWER_ID, 3));
             grayscale = true;
         }
     }

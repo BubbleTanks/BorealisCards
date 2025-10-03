@@ -10,7 +10,7 @@
     "NAME": "Corestone",
     "FLAVOR": "You can hear faint, ethereal sounds from within.",
     "DESCRIPTIONS": [
-      "At the start of combat, gain 5 #yInvincible until you play a card."
+      "At the start of combat, gain 3 #yInvincible until you play a card."
     ]
   },
   "${modID}:BottledSin": {

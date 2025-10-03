@@ -8,9 +8,8 @@ public class ModConfig extends EasyConfigPanel {
         super(BorealisCards.modID, BorealisCards.makeID("ModConfig"));
     }
 
-    public static boolean UselessConfig = false;
-    public static boolean UselessConfig2 = false;
     public static boolean HappyPrideMoth = false;
+    public static boolean Shaders = true;
     public static boolean Relics = true;
     public static boolean ColorsRed = true;
     public static boolean ColorsGreen = true;
