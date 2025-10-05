@@ -59,5 +59,12 @@
       " or ",
       " [REMOVE_SPACE], play the other as well."
     ]
+  },
+  "${modID}:AdventuringPaint": {
+    "NAME": "Adventuring Paint",
+    "FLAVOR": "stanley",
+    "DESCRIPTIONS": [
+      "stanley"
+    ]
   }
 }
