@@ -10,24 +10,20 @@ varying vec2 v_texCoords;
 varying vec4 v_pos;
 
 uniform sampler2D u_texture;
-uniform vec2 u_resolution;
-
-vec4 rgba(vec2 offset) {
-    return v_color * texture2D(u_texture, v_texCoords + offset);
-}
-
-float NUMBER = 0.01;
-float NOMBER = 0.001;
-// idk just put numbers here and see what happens
+uniform vec2 u_screenSize; //width, height
 
 void main()
 {
-    vec4 outputColor = rgba(vec2(0,0));
-    vec2 colorOffset = vec2(NUMBER,NOMBER);
+    // Get Color
+    vec2 uv = gl_FragCoord.xy / u_screenSize;
+    vec4 texColor = texture(u_texture, uv);
 
-    outputColor.r = rgba(colorOffset).r;
-    outputColor.g = rgba(colorOffset).g;
-    outputColor.b = rgba(colorOffset).b;
+    // Change Color, here Im changing alpha, you would want to change rbg by some amount to your liking
+    texColor.r *= 1.35;
+    texColor.g *= 1.15;
+    texColor.b *= 0.05;
+    texColor.a *= 1.0;
 
-    gl_FragColor = outputColor;
+    // Set Color
+    gl_FragColor = texColor;
 }

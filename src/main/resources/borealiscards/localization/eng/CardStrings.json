@@ -225,6 +225,21 @@
   },
   "${modID}:PrismaDisruption": {
     "NAME": "Prisma Disruption",
-    "DESCRIPTION": "Unplayable. NL stslib:Soulbound. NL Cards played while this is in your hand become Unplayable."
+    "DESCRIPTION": "Unplayable. NL stslib:Soulbound. NL Cards played while NL this is in your hand NL become Unplayable."
+  },
+  "${modID}:HighVoltage": {
+    "NAME": "High Voltage",
+    "DESCRIPTION": "Deal !D! damage. NL Channel 3 Lightning.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Channel 4 Lightning."
+  },
+  "${modID}:ShockAndAwe": {
+    "NAME": "Shock and Awe",
+    "DESCRIPTION": "Whenever you Channel Lightning, Channel a random Orb.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Channel Lightning, Channel a random Orb."
+  },
+  "${modID}:JetFuelMixture": {
+    "NAME": "Jet Fuel Mixture",
+    "DESCRIPTION": "Ethereal. NL Whenever you play a Power, gain 1 additional stack of all other buffs and debuffs.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a Power, gain 1 additional stack of all other buffs and debuffs."
   }
 }

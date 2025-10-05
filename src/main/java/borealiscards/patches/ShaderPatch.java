@@ -3,6 +3,7 @@ package borealiscards.patches;
 import basemod.helpers.CardModifierManager;
 import borealiscards.BorealisCards;
 import borealiscards.cardmods.PrismaMod;
+import borealiscards.ui.ModConfig;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.GL30;
@@ -11,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.BufferUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
@@ -49,12 +51,13 @@ public class ShaderPatch {
 
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(AbstractCard __instance, SpriteBatch spriteBatch) {
-            if (!Settings.hideCards) {
-                if (CardModifierManager.hasModifier(__instance, PrismaMod.ID) && IS_WINDOWS && !isOnSteamDeck()) {
+            if (!Settings.hideCards && ModConfig.Shaders) {
+                if ((CardModifierManager.hasModifier(__instance, PrismaMod.ID)) && IS_WINDOWS && !isOnSteamDeck()) {
                     TextureRegion t = cardToTextureRegion(__instance, spriteBatch);
                     spriteBatch.setBlendFunction(GL20.GL_ONE, GL20.GL_ONE_MINUS_SRC_ALPHA);
                     ShaderProgram oldShader = spriteBatch.getShader();
                     spriteBatch.setShader(FOIL_SHINE);
+                    FOIL_SHINE.setUniformf("u_screenSize", new Vector2(Settings.WIDTH, Settings.HEIGHT));
                     spriteBatch.draw(t, -Settings.VERT_LETTERBOX_AMT, -Settings.HORIZ_LETTERBOX_AMT);
                     spriteBatch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
                     spriteBatch.setShader(oldShader);

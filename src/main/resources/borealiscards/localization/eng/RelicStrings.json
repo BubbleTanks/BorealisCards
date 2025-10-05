@@ -49,7 +49,7 @@
   },
   "${modID}:BlackIndigonium": {
     "NAME": "Black Indigonium",
-    "FLAVOR": "The bottle doesn't actually have a cork to keep the moth in. It seems to just like you.",
+    "FLAVOR": "It is black as midnight, despite the prismatic nature of the environment it forms in.",
     "DESCRIPTIONS": [
       "Upon pick up, choose #b2 cards in your deck. Playing one also plays the other.",
       " Become #rCursed - #rPrisma #rDisruption [REMOVE_SPACE].",

@@ -14,7 +14,7 @@ public static class BottleField {
     public static SpireField<Boolean> playedByIndigonium = new SpireField<>(() -> false);
 }
 
-@SpirePatch(clz = AbstractCard.class, method = "makeStatEquivalentCopy")
+@SpirePatch(clz = AbstractCard.class, method = "makeSameInstanceOf")
 public static class MakeStatEquivalentCopy {
     @SpirePostfixPatch
     public static AbstractCard plz(AbstractCard result, AbstractCard self) {

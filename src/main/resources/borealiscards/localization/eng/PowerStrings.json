@@ -99,7 +99,7 @@
   "${modID}:StargazerPower": {
     "NAME": "Stargazer",
     "DESCRIPTIONS": [
-      "Channel #b%d #yStarlight%s at the end of your turn."
+      "#yChannel #b%d #yStarlight%s at the end of your turn."
     ]
   },
   "${modID}:AcrimonyPower": {
@@ -148,6 +148,18 @@
     "NAME": "Burning Montante",
     "DESCRIPTIONS": [
       "Your #yAttacks that cost 2 or more cost 1 more, and are played #b%d additional time%s."
+    ]
+  },
+  "${modID}:ShockAndAwePower": {
+    "NAME": "Shock and Awe",
+    "DESCRIPTIONS": [
+      "#yChannel #b%d random #yOrb%s whenever you #yChannel #yLightning."
+    ]
+  },
+  "${modID}:JetFuelPower": {
+    "NAME": "Jet Fuel Mixture",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yPower, gain #b%d additional stack%s of all other buffs and debuffs."
     ]
   }
 }
