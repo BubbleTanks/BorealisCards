@@ -1,6 +1,6 @@
 package borealiscards.patches;
 
-import borealiscards.cards.Toxicology;
+import borealiscards.cards.silent.Toxicology;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

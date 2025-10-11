@@ -36,5 +36,11 @@
       "Unplayable. NL ",
       "It's overflowing with prismatic energy!"
     ]
+  },
+  "${modID}:TensionStance": {
+    "TEXT": [
+      "Tension",
+      "In this #yStance [REMOVE_SPACE], you draw 1 card whenever you play a card."
+    ]
   }
 }

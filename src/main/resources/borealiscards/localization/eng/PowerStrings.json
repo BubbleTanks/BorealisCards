@@ -49,15 +49,15 @@
     ]
   },
   "${modID}:CruelSunPower": {
-    "NAME": "Cruel Sun",
+    "NAME": "Solar Intensity",
     "DESCRIPTIONS": [
       "You cannot exit #yWrath."
     ]
   },
-  "${modID}:DoubleAttacksPower": {
-    "NAME": "Double Attacks",
+  "${modID}:DoubleCardsPower": {
+    "NAME": "Cruelty",
     "DESCRIPTIONS": [
-      "All your #yAttacks are played twice for the next #b%d turn%s."
+      "All your cards are played twice."
     ]
   },
   "${modID}:FracturePower": {
@@ -160,6 +160,24 @@
     "NAME": "Jet Fuel Mixture",
     "DESCRIPTIONS": [
       "Whenever you play a #yPower, gain #b%d additional stack%s of all other buffs and debuffs."
+    ]
+  },
+  "${modID}:WaterCoolingPower": {
+    "NAME": "Water Cooled",
+    "DESCRIPTIONS": [
+      "The next #b%d cost 0 card%s you play will be played an additional time."
+    ]
+  },
+  "${modID}:WaterfallPower": {
+    "NAME": "Waterfall",
+    "DESCRIPTIONS": [
+      "Whenever you enter #yCalm [REMOVE_SPACE], #yScry #b%d [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:TraumaturgyPower": {
+    "NAME": "Traumaturgy",
+    "DESCRIPTIONS": [
+      "Whenever you exit your #yStance [REMOVE_SPACE], enter #yTension [REMOVE_SPACE]."
     ]
   }
 }

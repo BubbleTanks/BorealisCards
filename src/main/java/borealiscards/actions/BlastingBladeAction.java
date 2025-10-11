@@ -27,7 +27,7 @@ public class BlastingBladeAction extends AbstractGameAction {
 
     public void update() {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        if(AbstractDungeon.player.currentBlock < 11 && AbstractDungeon.player.currentBlock > 0) {
+        if(AbstractDungeon.player.currentBlock < 7 && AbstractDungeon.player.currentBlock > 0) {
             addToBot(new DamageAction(p, new DamageInfo(p, magic, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         } else addToBot(new DamageAction(p, new DamageInfo(p, magic, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));

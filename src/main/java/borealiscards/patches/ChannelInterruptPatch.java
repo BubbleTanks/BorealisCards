@@ -1,5 +1,6 @@
 package borealiscards.patches;
 
+import borealiscards.SpireFields.ShockAndAweField;
 import borealiscards.powers.HyperPropellantPower;
 import borealiscards.powers.ShockAndAwePower;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
@@ -29,9 +30,11 @@ public class ChannelInterruptPatch {
         if (___duration == Settings.ACTION_DUR_FAST) {
             for(AbstractPower p : AbstractDungeon.player.powers) {
                 if (p.ID == ShockAndAwePower.POWER_ID) {
-                    if (___orbType.ID == Lightning.ORB_ID) {
+                    if (___orbType.ID == Lightning.ORB_ID && !ShockAndAweField.ShockField.aweShocked.get(___orbType)) {
                         for (int i = p.amount; i > 0; i--) {
-                            AbstractDungeon.actionManager.addToTop(new ChannelAction(AbstractOrb.getRandomOrb(true)));
+                            AbstractOrb aweOrb = AbstractOrb.getRandomOrb(true);
+                            ShockAndAweField.ShockField.aweShocked.set(aweOrb, true);
+                            AbstractDungeon.actionManager.addToTop(new ChannelAction(aweOrb));
                         }
                     }
                 }

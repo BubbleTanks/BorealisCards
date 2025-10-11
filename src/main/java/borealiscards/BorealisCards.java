@@ -5,7 +5,9 @@ import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import basemod.interfaces.*;
 import borealiscards.cards.BaseCard;
+import borealiscards.cards.silent.RopeDart;
 import borealiscards.patches.ParanoiaBoxPreventSkip;
+import borealiscards.potions.BasePotion;
 import borealiscards.relics.BaseRelic;
 import borealiscards.ui.ModConfig;
 import borealiscards.util.GeneralUtils;
@@ -18,6 +20,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.CenterGridCardSelectScreen;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
@@ -25,6 +28,7 @@ import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -53,7 +57,8 @@ public class BorealisCards implements
         AddAudioSubscriber,
         PostInitializeSubscriber,
         PostUpdateSubscriber,
-        StartGameSubscriber {
+        StartGameSubscriber,
+        OnCardUseSubscriber {
     public static boolean choosingTransformCard;
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -239,6 +244,7 @@ public class BorealisCards implements
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new ModConfig());
         killCompendium();
+        registerPotions();
     }
 
     /*----------Localization----------*/
@@ -442,6 +448,18 @@ public class BorealisCards implements
         }
     }
 
+    public static void registerPotions() {
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BasePotion.class) //In the same package as this class
+                .any(BasePotion.class, (info, potion) -> { //Run this code for any classes that extend this class
+                    //These three null parameters are colors.
+                    //If they're not null, they'll overwrite whatever color is set in the potions themselves.
+                    //This is an old feature added before having potions determine their own color was possible.
+                    BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
+                    //playerClass will make a potion character-specific. By default, it's null and will do nothing.
+                });
+    }
+
     @Override
     public void receivePostUpdate() {
         if(choosingTransformCard) {
@@ -460,6 +478,13 @@ public class BorealisCards implements
             CenterGridCardSelectScreen.centerGridSelect = false;
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
+        }
+    }
+
+    @Override
+    public void receiveCardUsed(AbstractCard useCard) {
+        if (useCard.cardID == Shiv.ID) {
+            AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.drawPile, (card -> card.cardID == RopeDart.ID), 42069));
         }
     }
 }

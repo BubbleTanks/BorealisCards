@@ -3,7 +3,7 @@ package borealiscards.relics;
 import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomSavable;
 import borealiscards.SpireFields.BottleFieldHandler;
-import borealiscards.cards.PrismaDisruption;
+import borealiscards.cards.curses.PrismaDisruption;
 import borealiscards.ui.ModConfig;
 import borealiscards.util.TwoInteger;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;

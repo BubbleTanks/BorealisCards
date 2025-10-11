@@ -2,6 +2,7 @@ package borealiscards.patches;
 
 import borealiscards.orbs.Starlight;
 import borealiscards.powers.OrbStarlightPower;
+import borealiscards.ui.ModConfig;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
@@ -66,7 +67,7 @@ public class StarlightOrbPatches {
     public static class StarlightOrbChaos {
         @SpireInsertPatch(rloc = 3, localvars = {"orbs"})
         public static void StarlightOrbChaosInsert(ArrayList<AbstractOrb> orbs) {
-            orbs.add(new Starlight());
+            if(ModConfig.ColorsBlue) orbs.add(new Starlight());
         }
     }
 
@@ -75,8 +76,8 @@ public class StarlightOrbPatches {
         @SpirePostfixPatch
         public static void StarlightOrbPrefix(AbstractOrb ___orb, @ByRef Color[] ___color, @ByRef Color[] ___color2) {
             if(___orb.ID == Starlight.ORB_ID) {
-                ___color[0] = Color.ROYAL;
-                ___color2[0] = Color.VIOLET;
+                ___color[0] = Color.ROYAL.cpy();
+                ___color2[0] = Color.VIOLET.cpy();
             }
         }
     }

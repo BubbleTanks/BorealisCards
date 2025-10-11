@@ -1,6 +1,6 @@
 package borealiscards.patches;
 
-import borealiscards.cards.BlazingVeins;
+import borealiscards.cards.ironclad.BlazingVeins;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;

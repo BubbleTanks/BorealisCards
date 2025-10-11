@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 @SpirePatch2(clz = GameActionManager.class, method = "incrementDiscard")
 public class TachycardiaPatch {
-    @SpireInsertPatch(rloc = 5)
+    @SpireInsertPatch(rloc = 4)
     public static void TachycardiaRloc() {
         for (AbstractPower p : AbstractDungeon.player.powers) {
             if (p.ID == TachycardiaPower.POWER_ID) {

@@ -23,7 +23,7 @@
   },
   "${modID}:BloodSurge": {
     "NAME": "Blood Surge",
-    "DESCRIPTION": "Unplayable until you lose HP this turn. NL Gain !M! Strength and heal 1 HP for every time you lost HP this combat.",
+    "DESCRIPTION": "Unplayable until you lose HP this turn. NL Gain !M! Strength and heal 1 HP for every time you lost HP this combat. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "I haven't lost HP this turn."
     ]
@@ -38,8 +38,8 @@
   },
   "${modID}:CruelSun": {
     "NAME": "Cruel Sun",
-    "DESCRIPTION": "Enter Wrath. NL This turn, your Attacks are played twice. NL You cannot exit Wrath this combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enter Wrath. NL This turn, your Attacks are played twice. NL You cannot exit Wrath this combat."
+    "DESCRIPTION": "Ethereal. NL All your cards are played twice. NL You cannot exit your Stance this combat.",
+    "UPGRADE_DESCRIPTION": "All your cards are played twice. NL You cannot your stance this combat."
   },
   "${modID}:CrushBones": {
     "NAME": "Crush Bones",
@@ -77,7 +77,7 @@
   },
     "${modID}:StormyPetrel": {
       "NAME": "Stormy Petrel",
-      "DESCRIPTION": "Deal !D! damage. If you are in Wrath, enter Calm. If you are in Calm, enter Wrath."
+      "DESCRIPTION": "Deal !D! damage. If you are in ${modID}:Tension, enter Calm. If you are in Calm, enter ${modID}:Tension."
     },
   "${modID}:Spinebuster": {
     "NAME": "Spinebuster",
@@ -168,8 +168,8 @@
   },
   "${modID}:Caustics": {
     "NAME": "Caustics",
-    "DESCRIPTION": "Add 2 *Shivs to your hand. NL This turn, your *Shivs apply 1 ${modID}:Acrimony. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add 2 *Shivs to your hand. NL This turn, your *Shivs apply 1 ${modID}:Acrimony."
+    "DESCRIPTION": "Add 2 *Shivs into your hand. NL This turn, your *Shivs apply 1 ${modID}:Acrimony. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add 2 *Shivs into your hand. NL This turn, your *Shivs apply 1 ${modID}:Acrimony."
   },
   "${modID}:HeavyFog": {
     "NAME": "Heavy Fog",
@@ -241,5 +241,57 @@
     "NAME": "Jet Fuel Mixture",
     "DESCRIPTION": "Ethereal. NL Whenever you play a Power, gain 1 additional stack of all other buffs and debuffs.",
     "UPGRADE_DESCRIPTION": "Whenever you play a Power, gain 1 additional stack of all other buffs and debuffs."
+  },
+  "${modID}:EmptyJar": {
+    "NAME": "Empty Jar",
+    "DESCRIPTION": "Discard !M! cards. NL Gain !B! Block."
+  },
+  "${modID}:Karambit": {
+    "NAME": "Karambit",
+    "DESCRIPTION": "Unplayable. NL If this card is discarded from your hand, deal !D! damage to random enemies for each unspent [E].",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
+  "${modID}:RopeDart": {
+    "NAME": "Rope Dart",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a *Shiv, add this from the draw pile to your hand."
+  },
+  "${modID}:SharpenedEdge": {
+    "NAME": "Sharpened Edge",
+    "DESCRIPTION": "Draw 5 cards. NL Fill the rest of your hand with *Shivs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw 5 cards. NL Fill the rest of your hand with *Shivs+. NL Exhaust."
+  },
+  "${modID}:AlphaTesting": {
+    "NAME": "Alpha Testing",
+    "DESCRIPTION": "Trigger the passive abilities of your Orbs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Trigger the passive abilities of your Orbs."
+  },
+  "${modID}:VoluntarySuicide": {
+    "NAME": "Voluntary Suicide",
+    "DESCRIPTION": "Deal !D! damage. Trigger the enemy's Poison."
+  },
+  "${modID}:WaterCooling": {
+    "NAME": "Water Cooling",
+    "DESCRIPTION": "The next X cost 0 cards you play are played an additional time.",
+    "UPGRADE_DESCRIPTION": "The next X+!M! cost 0 cards you play are played an additional time."
+  },
+  "${modID}:SystemFailure": {
+    "NAME": "System Failure",
+    "DESCRIPTION": "Evoke all your Orbs twice. NL Lose all but one of your Orb slots. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Evoke all your Orbs three times. NL Lose all but one of your Orb slots. NL Exhaust."
+  },
+  "${modID}:Anticipation": {
+    "NAME": "Anticipation",
+    "DESCRIPTION": "Retain. NL Enter ${modID}:Tension. NL Exhaust."
+  },
+  "${modID}:Clairvoyance": {
+    "NAME": "Clairvoyance",
+    "DESCRIPTION": "If you are in ${modID}:Tension, add 1 *Miracle and 1 *Insight to your hand, otherwise enter ${modID}:Tension.",
+    "UPGRADE_DESCRIPTION": "If you are in ${modID}:Tension, add 1 *Miracle+ and 1 *Insight+ to your hand, otherwise enter ${modID}:Tension."
+  },
+  "${modID}:SilentiumGradas": {
+    "NAME": "Silentium Gradas",
+    "DESCRIPTION": "Scry !M!. NL Enter ${modID}:Tension."
   }
 }

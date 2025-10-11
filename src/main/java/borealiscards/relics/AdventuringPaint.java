@@ -1,19 +1,17 @@
 package borealiscards.relics;
 
-import basemod.BaseMod;
-import borealiscards.ui.ModConfig;
 import borealiscards.util.RandomPathSelector;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
-import com.megacrit.cardcrawl.relics.PandorasBox;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
 
 import static borealiscards.BorealisCards.makeID;
 
+// this relic and all the associated wizardry brought to you by Cany0u Industries
+
 public class AdventuringPaint extends BaseRelic {
     public static final String ID = makeID(AdventuringPaint.class.getSimpleName());
+    private boolean lineFollower = false;
 
     public AdventuringPaint() {
         super(ID, RelicTier.BOSS, LandingSound.MAGICAL);
@@ -29,16 +27,27 @@ public class AdventuringPaint extends BaseRelic {
     public void beforeEnergyPrep() {
         if (AbstractDungeon.getCurrMapNode() != null &&
                 RandomPathSelector.isOnPath(AbstractDungeon.getCurrMapNode())) {
-            this.beginLongPulse();
-            this.flash();
+            lineFollower = true;
             ++AbstractDungeon.player.energy.energyMaster;
         }
     }
 
+    public void justEnteredRoom(AbstractRoom room) {
+        if (AbstractDungeon.getCurrMapNode() != null) {
+            if (RandomPathSelector.isOnPath(AbstractDungeon.getCurrMapNode())) {
+                if (grayscale) flash();
+                grayscale = false;
+            } else {
+                if (!grayscale) flash();
+                grayscale = true;
+            }
+        }
+    }
+
     public void onVictory() {
-        if (this.pulse) {
+        if (lineFollower) {
             --AbstractDungeon.player.energy.energyMaster;
-            this.stopPulse();
+            lineFollower = false;
         }
 
     }

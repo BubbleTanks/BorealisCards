@@ -1,0 +1,55 @@
+
+skeleton_1.png
+size: 64,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+base
+  rotate: false
+  xy: 1, 53
+  size: 33, 23
+  orig: 37, 27
+  offset: 2, 2
+  index: -1
+wrath
+  rotate: false
+  xy: 40, 1
+  size: 17, 15
+  orig: 21, 19
+  offset: 2, 2
+  index: -1
+divinity
+  rotate: false
+  xy: 37, 28
+  size: 17, 15
+  orig: 21, 19
+  offset: 2, 2
+  index: -1
+calm
+  rotate: false
+  xy: 36, 53
+  size: 17, 15
+  orig: 21, 19
+  offset: 2, 2
+  index: -1
+lid_lower
+  rotate: false
+  xy: 1, 28
+  size: 34, 23
+  orig: 34, 23
+  offset: 0, 0
+  index: -1
+lid_upper
+  rotate: false
+  xy: 1, 1
+  size: 37, 25
+  orig: 37, 25
+  offset: 0, 0
+  index: -1
+tension
+  rotate: false
+  xy: 36, 70
+  size: 15, 15
+  orig: 21, 19
+  offset: 3, 2
+  index: -1

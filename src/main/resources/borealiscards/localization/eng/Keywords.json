@@ -33,7 +33,7 @@
     "NAMES": [
       "Fracture"
     ],
-    "DESCRIPTION": "#yFractured creatures receive additional damage from Attacks. Each turn, #yFracture is reduced by 1."
+    "DESCRIPTION": "#yFractured creatures receive additional damage from Attacks."
   },
   {
     "PROPER_NAME": "Starlight",
@@ -47,6 +47,13 @@
     "NAMES": [
       "Acrimony"
     ],
-    "DESCRIPTION": "Enemies with #yAcrimony receive #b5% additional damage for every card in your hand. Each turn, #yAcrimony is reduced by 1."
+    "DESCRIPTION": "Enemies with #yAcrimony receive #b10% additional damage for every card in your hand."
+  },
+  {
+    "PROPER_NAME": "Tension",
+    "NAMES": [
+      "Tension"
+    ],
+    "DESCRIPTION": "In this #yStance [REMOVE_SPACE], you draw 1 card whenever you play a card."
   }
 ]

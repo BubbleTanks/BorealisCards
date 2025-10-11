@@ -13,7 +13,7 @@ public class AcrimonyPower extends BasePower {
     private static final PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;
     private static float cardsHand() {
-        return 1 + (AbstractDungeon.player.hand.group.size() * 0.05F);
+        return 1 + (AbstractDungeon.player.hand.group.size() * 0.1F);
     }
 
     public AcrimonyPower(AbstractCreature owner, int amount) {

@@ -44,7 +44,7 @@
     "NAME": "Sprighted Tiara",
     "FLAVOR": "It sparkles with faint electricity around the tips.",
     "DESCRIPTIONS": [
-      "At the end of your turns, deal #b5 damage to a random enemy."
+      "At the end of each turn, deal #b5 damage to a random enemy."
     ]
   },
   "${modID}:BlackIndigonium": {
@@ -62,9 +62,30 @@
   },
   "${modID}:AdventuringPaint": {
     "NAME": "Adventuring Paint",
-    "FLAVOR": "stanley",
+    "FLAVOR": "You know what? I think what we need right now is a bit of music to lighten the mood!",
     "DESCRIPTIONS": [
-      "stanley"
+      "Gain [E] at the start of each turn while following #yThe #yLine [REMOVE_SPACE]. #yThe #yLine #bknows #bthe #bbest #bpath #bfor #byou."
+    ]
+  },
+  "${modID}:MidnightBrew": {
+    "NAME": "Midnight Brew",
+    "FLAVOR": "The smell is indescribable. You're abhorred by it's presence.",
+    "DESCRIPTIONS": [
+      "Gain 1 Potion Slot. Obtain 1 Vial of Night."
+    ]
+  },
+  "${modID}:FadedStarmap": {
+    "NAME": "Faded Starmap",
+    "FLAVOR": "By the light of the stars, you will find your path.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you have no #yStarlight, Channel #b1 #yStarlight."
+    ]
+  },
+  "${modID}:FiftyEightLeafClover": {
+    "NAME": "58 Leaf Clover",
+    "FLAVOR": "This is hardly even a clover at this point.",
+    "DESCRIPTIONS": [
+      "Elite enemies always give #yRare card rewards."
     ]
   }
 }
