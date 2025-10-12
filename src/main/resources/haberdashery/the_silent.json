@@ -1,0 +1,106 @@
+{
+  "THE_SILENT": {
+"borealiscards:BottledMoth": {
+      "boneName": "Skull",
+      "large": false,
+      "drawOrder": {
+        "slotName": "skull",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "borealiscards_BottledMoth_kM8h.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.8639576,
+        "y": 0.8639576
+      },
+      "rotation": 0.0,
+      "position": {
+        "x": 26.28534,
+        "y": 16.288988
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "borealiscards:FiftyEightLeafClover": {
+      "boneName": "Skull",
+      "large": false,
+      "drawOrder": {
+        "slotName": "skull",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "borealiscards_FiftyEightLeafClover_wlht.png",
+      "flipHorizontal": true,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.5868263,
+        "y": 0.5868263
+      },
+      "rotation": 8.795104,
+      "position": {
+        "x": -12.54794,
+        "y": -9.670534
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "borealiscards:BlackIndigonium": {
+      "boneName": "Skull",
+      "large": false,
+      "drawOrder": {
+        "slotName": "skull",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.4777371,
+        "y": 0.4777371
+      },
+      "rotation": -12.539987,
+      "position": {
+        "x": 10.124839,
+        "y": 53.325306
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "borealiscards:MidnightBrew": {
+      "boneName": "Spine_3",
+      "large": false,
+      "drawOrder": {
+        "slotName": "face",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": true,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.5948979,
+        "y": 0.5948979
+      },
+      "rotation": -66.06653,
+      "position": {
+        "x": 44.012005,
+        "y": 2.0379934
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  }
+}

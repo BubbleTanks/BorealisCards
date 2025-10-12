@@ -1,0 +1,104 @@
+{
+  "IRONCLAD": {
+"borealiscards:BottledMoth": {
+      "boneName": "Leg_R_",
+      "large": false,
+      "drawOrder": {
+        "slotName": "eye",
+        "zIndex": 2
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.6868179,
+        "y": 0.6868179
+      },
+      "rotation": 135.33917,
+      "position": {
+        "x": 10.003091,
+        "y": 6.410786
+      },
+      "shear": {
+        "x": -8.972626,
+        "y": 0.0
+      }
+    },
+"borealiscards:FiftyEightLeafClover": {
+      "boneName": "Arm_R_3",
+      "large": false,
+      "drawOrder": {
+        "slotName": "glove_left",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": true,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.625,
+        "y": 0.625
+      },
+      "rotation": -77.80519,
+      "position": {
+        "x": 13.830872,
+        "y": -24.082287
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+"borealiscards:BlackIndigonium": {
+      "boneName": "Arm_L_1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "pauldron_right",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.61157024,
+        "y": 0.61157024
+      },
+      "rotation": 135.09679,
+      "position": {
+        "x": -4.5228853,
+        "y": -5.9635143
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "borealiscards:MidnightBrew": {
+      "boneName": "Leg_L_",
+      "large": false,
+      "drawOrder": {
+        "slotName": "shirt",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.625,
+        "y": 0.625
+      },
+      "rotation": 83.44942,
+      "position": {
+        "x": -11.819538,
+        "y": 10.166048
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  }
+}

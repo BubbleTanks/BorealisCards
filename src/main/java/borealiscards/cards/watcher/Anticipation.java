@@ -13,7 +13,7 @@ public class Anticipation extends BaseCard {
             CardColor.PURPLE,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.NONE,
+            CardTarget.SELF,
             1
     );
 

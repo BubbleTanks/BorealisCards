@@ -24,6 +24,7 @@ public class FindThePieces extends BaseCard {
     public FindThePieces() {
         super(ID, info);
         setSelfRetain(true);
+        setCostUpgrade(0);
     }
 
     @Override

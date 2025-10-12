@@ -1,0 +1,54 @@
+{
+  "HABERDASHERY_SHARED": {
+"borealiscards:ParanoiasBox": {
+      "boneName": "root",
+      "large": false,
+      "drawOrder": {
+        "slotName": "shadow",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.3836478,
+        "y": 1.3836478
+      },
+      "rotation": 0.0,
+      "position": {
+        "x": -14.5,
+        "y": 3.5000005
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.26404202
+      }
+    },
+"borealiscards:AdventuringPaint": {
+      "boneName": "root",
+      "large": false,
+      "drawOrder": {
+        "slotName": "shadow",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 0.0,
+      "position": {
+        "x": 142.5,
+        "y": 39.4
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  }
+}

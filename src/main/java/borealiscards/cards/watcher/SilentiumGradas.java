@@ -20,7 +20,7 @@ public class SilentiumGradas extends BaseCard {
 
     public SilentiumGradas() {
         super(ID, info);
-        setMagic(2,1);
+        setMagic(3,1);
     }
 
     @Override

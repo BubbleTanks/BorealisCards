@@ -35,7 +35,7 @@ public class Ironhand extends BaseCard {
 
     public Ironhand() {
         super(ID, info);
-        misc = 8;
+        misc = 18;
         setDamage(misc);
         setCostUpgrade(2);
     }

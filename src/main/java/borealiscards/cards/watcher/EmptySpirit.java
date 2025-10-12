@@ -28,8 +28,8 @@ public class EmptySpirit extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new MantraPower(p, magicNumber), magicNumber));
         addToBot(new NotStanceCheckAction("Neutral", new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
         addToBot(new ChangeStanceAction("Neutral"));
+        addToBot(new ApplyPowerAction(p, p, new MantraPower(p, magicNumber), magicNumber));
     }
 }

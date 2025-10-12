@@ -32,6 +32,10 @@ public class SystemFailure extends BaseCard {
             for (int i = 0; i < orbsCount; ++i) {
                 addToBot(new AnimateOrbAction(1));
                 addToBot(new EvokeWithoutRemovingOrbAction(1));
+                if(upgraded) {
+                    addToBot(new AnimateOrbAction(1));
+                    addToBot(new EvokeWithoutRemovingOrbAction(1));
+                }
                 addToBot(new AnimateOrbAction(1));
                 addToBot(new EvokeOrbAction(1));
             }

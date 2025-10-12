@@ -67,8 +67,8 @@
   },
   "${modID}:Splatter": {
     "NAME": "Splatter",
-    "DESCRIPTION": "Discard 2 cards. NL Deal !D! damage. Apply 6 Poison.",
-    "UPGRADE_DESCRIPTION": "Discard 1 card. NL Deal !D! damage. Apply 6 Poison."
+    "DESCRIPTION": "Discard 2 cards. NL Deal !D! damage. NL Apply 6 Poison.",
+    "UPGRADE_DESCRIPTION": "Discard 1 card. NL Deal !D! damage. NL Apply 6 Poison."
   },
   "${modID}:StackTrace": {
     "NAME": "Stack Trace",
@@ -293,5 +293,49 @@
   "${modID}:SilentiumGradas": {
     "NAME": "Silentium Gradas",
     "DESCRIPTION": "Scry !M!. NL Enter ${modID}:Tension."
+  },
+  "${modID}:EmptySpirit": {
+    "NAME": "Empty Spirit",
+    "DESCRIPTION": "Gain !M! Mantra. NL Exit your Stance."
+  },
+  "${modID}:SpinKick": {
+    "NAME": "Spin Kick",
+    "DESCRIPTION": "Deal !D! damage twice. NL Add 2 *Ponders into your hand."
+  },
+  "${modID}:Starshower": {
+    "NAME": "Starshower",
+    "DESCRIPTION": "Deal !D! damage to all enemies for every card in your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain NL Deal !D! damage to all enemies for every card in your hand. NL Exhaust."
+  },
+  "${modID}:Tenkan": {
+    "NAME": "Tenkan",
+    "DESCRIPTION": "Retain. NL Enter your previous Stance. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Enter your previous Stance.",
+    "EXTENDED_DESCRIPTION": [
+      "Last Stance: None.",
+      "Last Stance: Calm.",
+      "Last Stance: Wrath.",
+      "Last Stance: Tension.",
+      "Last Stance: Divinity.",
+      "Last Stance: Unknown!"
+    ]
+  },
+  "${modID}:Traumaturgy": {
+    "NAME": "Traumaturgy",
+    "DESCRIPTION": "If you are not in a Stance, enter Tension."
+  },
+  "${modID}:Waterfall": {
+    "NAME": "Waterfall",
+    "DESCRIPTION": "Whenever you enter Calm, Scry !M!."
+  },
+  "${modID}:Zen": {
+    "NAME": "Zen",
+    "DESCRIPTION": "Gain [E] [E] [E]. NL You cannot play Attacks this turn. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] [E]. NL You cannot play Attacks this turn. Exhaust."
+  },
+  "${modID}:Ponder": {
+    "NAME": "Ponder",
+    "DESCRIPTION": "Retain. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Scry 3. NL Exhaust."
   }
 }

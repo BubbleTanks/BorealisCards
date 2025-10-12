@@ -1,0 +1,106 @@
+{
+  "DEFECT": {
+"borealiscards:BottledMoth": {
+      "boneName": "Chest",
+      "large": false,
+      "drawOrder": {
+        "slotName": "mantle",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.6781609,
+        "y": 0.6781609
+      },
+      "rotation": 27.1773,
+      "position": {
+        "x": -45.100002,
+        "y": 44.7
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "borealiscards:FiftyEightLeafClover": {
+      "boneName": "Eye_up",
+      "large": false,
+      "drawOrder": {
+        "slotName": "Eye_up",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "borealiscards_FiftyEightLeafClover_Q5Ht.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.68421054,
+        "y": 0.68421054
+      },
+      "rotation": -32.198704,
+      "position": {
+        "x": -1.6014134,
+        "y": -1.9988682
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "borealiscards:MidnightBrew": {
+      "boneName": "bone7",
+      "large": false,
+      "drawOrder": {
+        "slotName": "left_finger_2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "borealiscards_MidnightBrew_TEMW.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 40.772614,
+      "position": {
+        "x": -11.809343,
+        "y": 22.721344
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "borealiscards:BlackIndigonium": {
+      "boneName": "Hips",
+      "large": false,
+      "drawOrder": {
+        "slotName": "crackedOrb",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 40.096233,
+      "position": {
+        "x": -2.2000003,
+        "y": 2.2
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  }
+}
