@@ -20,7 +20,7 @@ public class TraumaturgyPower extends BasePower {
     public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
         if (!oldStance.ID.equals(newStance.ID) && newStance.ID.equals(NeutralStance.STANCE_ID)) {
             flash();
-            addToBot(new ChangeStanceAction(new TensionStance()));
+            addToTop(new ChangeStanceAction(new TensionStance()));
         }
     }
 

@@ -31,21 +31,21 @@ public class Tenkan extends BaseCard {
     public void applyPowers() {
 
         if(PreviousStancePatch.previousStance.ID == NeutralStance.STANCE_ID){
-            rawDescription = cardStrings.DESCRIPTION + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[0]);
+            rawDescription = this.rawDescription + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[0]);
         }
         else if(PreviousStancePatch.previousStance.ID == CalmStance.STANCE_ID){
-            rawDescription = cardStrings.DESCRIPTION + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[1]);
+            rawDescription = this.rawDescription + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[1]);
         }
         else if(PreviousStancePatch.previousStance.ID == WrathStance.STANCE_ID){
-            rawDescription = cardStrings.DESCRIPTION + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[2]);
+            rawDescription = this.rawDescription + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[2]);
         }
         else if(PreviousStancePatch.previousStance.ID == TensionStance.STANCE_ID){
-            rawDescription = cardStrings.DESCRIPTION + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[3]);
+            rawDescription = this.rawDescription + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[3]);
         }
         else if(PreviousStancePatch.previousStance.ID == DivinityStance.STANCE_ID){
-            rawDescription = cardStrings.DESCRIPTION + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[4]);
+            rawDescription = this.rawDescription + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[4]);
         }
-        else rawDescription = cardStrings.DESCRIPTION + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[5]);
+        else rawDescription = this.rawDescription + " NL " + String.format(cardStrings.EXTENDED_DESCRIPTION[5]);
 
         initializeDescription();
 
