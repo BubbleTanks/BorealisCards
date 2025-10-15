@@ -25,7 +25,7 @@ public class WaterCoolingAction extends AbstractGameAction {
     public void update() {
         int effect = EnergyPanel.totalCount;
         if (energyOnUse != -1) {
-            effect = energyOnUse + 1;
+            effect = energyOnUse;
         }
 
         if (p.hasRelic("Chemical X")) {

@@ -27,7 +27,7 @@ public class DevastatingStrike extends BaseCard {
     public DevastatingStrike() {
         super(ID, info);
         setDamage(22, 6);
-        setMagic(5);
+        setMagic(3);
         setExhaust(true);
         tags.add(CardTags.STRIKE);
     }

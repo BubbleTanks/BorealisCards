@@ -81,7 +81,7 @@
   "${modID}:MordhauPower": {
     "NAME": "Mordhau",
     "DESCRIPTIONS": [
-      "Your #yAttacks apply #yFracture for the next #b%d turn%s."
+      "Your #yAttacks apply #yFracture to all enemies for #b%d turn%s."
     ]
   },
   "${modID}:PublicVoidPower": {
@@ -105,13 +105,13 @@
   "${modID}:AcrimonyPower": {
     "NAME": "Acrimony",
     "DESCRIPTIONS": [
-      "Receive #b5%% additional damage for every card in your hand. Reduce #yAcrimony by #b1 each turn."
+      "Receive #b10%% additional damage for every card in your hand. Reduce #yAcrimony by #b1 each turn."
     ]
   },
   "${modID}:CausticsPower": {
     "NAME": "Caustics",
     "DESCRIPTIONS": [
-      "Your #yShivs apply #b1 #yAcrimony for the next #b%d turn%s."
+      "Your #yShivs apply #b1 #yAcrimony for #b%d turn%s."
     ]
   },
   "${modID}:SadomasochismPower": {
@@ -177,7 +177,7 @@
   "${modID}:TraumaturgyPower": {
     "NAME": "Traumaturgy",
     "DESCRIPTIONS": [
-      "Whenever you exit your #yStance [REMOVE_SPACE], enter #yTension [REMOVE_SPACE]."
+      "If you are not in a #yStance [REMOVE_SPACE], enter #yTension [REMOVE_SPACE]."
     ]
   }
 }

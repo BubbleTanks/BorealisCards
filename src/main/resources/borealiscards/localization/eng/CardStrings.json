@@ -134,7 +134,7 @@
   },
   "${modID}:Backpedal": {
     "NAME": "Backpedal",
-    "DESCRIPTION": "Gain !B! Block. If you lost HP this turn, gain !${modID}:block2! Block."
+    "DESCRIPTION": "Gain !B! Block. If you lost HP this turn, gain !${modID}:block2! additional Block."
   },
   "${modID}:DotExe": {
     "NAME": "DOT EXE",

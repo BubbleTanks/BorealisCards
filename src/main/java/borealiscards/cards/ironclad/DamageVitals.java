@@ -25,6 +25,7 @@ public class DamageVitals extends BaseCard {
         setDamage(9, 3);
         setMagic(2,0);
         setExhaust(true);
+        tags.add(CardTags.HEALING);
     }
 
     @Override
