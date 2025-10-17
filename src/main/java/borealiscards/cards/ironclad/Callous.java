@@ -12,7 +12,7 @@ public class Callous extends BaseCard {
             CardColor.RED,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.SELF,
+            CardTarget.ENEMY,
             1
     );
 

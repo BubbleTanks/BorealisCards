@@ -22,6 +22,7 @@ public class SpiritWalk extends BaseCard {
     public SpiritWalk() {
         super(ID, info);
         MultiCardPreview.add(this, new Smite(), new Safety());
+        setCostUpgrade(0);
     }
 
     @Override

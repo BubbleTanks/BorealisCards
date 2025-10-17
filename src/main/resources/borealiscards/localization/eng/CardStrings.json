@@ -1,14 +1,4 @@
 {
-  "${modID}:ExampleCard": {
-    "NAME": "Name",
-    "DESCRIPTION": "Description. NL Second line.",
-    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
-    "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
-    ]
-  },
   "${modID}:Bonk": {
     "NAME": "Bonk",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL The image behaved. It wasted like twenty minutes of my time."
@@ -39,7 +29,7 @@
   "${modID}:CruelSun": {
     "NAME": "Cruel Sun",
     "DESCRIPTION": "Ethereal. NL All your cards are played twice. NL You cannot exit your Stance this combat.",
-    "UPGRADE_DESCRIPTION": "All your cards are played twice. NL You cannot your stance this combat."
+    "UPGRADE_DESCRIPTION": "All your cards are played twice. NL You cannot exit your Stance this combat."
   },
   "${modID}:CrushBones": {
     "NAME": "Crush Bones",
@@ -330,8 +320,8 @@
   },
   "${modID}:Zen": {
     "NAME": "Zen",
-    "DESCRIPTION": "Gain [E] [E] [E]. NL You cannot play Attacks this turn. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] [E]. NL You cannot play Attacks this turn. Exhaust."
+    "DESCRIPTION": "Gain [E] [E] [E]. NL You cannot play Attacks this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] [E]. NL You cannot play Attacks this turn. NL Exhaust."
   },
   "${modID}:Ponder": {
     "NAME": "Ponder",

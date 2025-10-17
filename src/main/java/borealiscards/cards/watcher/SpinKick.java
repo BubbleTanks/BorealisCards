@@ -22,7 +22,7 @@ public class SpinKick extends BaseCard {
 
     public SpinKick() {
         super(ID, info);
-        setDamage(8,4);
+        setDamage(8,2);
         cardsToPreview = new Ponder();
     }
 
