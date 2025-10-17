@@ -1,6 +1,7 @@
 package borealiscards.cards.ironclad;
 
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -14,7 +15,7 @@ public class ScorchedSteel extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.RED,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.UNCOMMON ,
             CardTarget.NONE,
             1
     );

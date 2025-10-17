@@ -36,7 +36,6 @@ public class DevastatingStrikeOLD extends BaseCard implements StartupCard {
         cardsToPreview = new BloodSurge();
         setDamage(DAMAGE);
         setExhaust(true);
-        setDisplayRarity(CardRarity.RARE);
         tags.add(CardTags.STRIKE);
     }
 
