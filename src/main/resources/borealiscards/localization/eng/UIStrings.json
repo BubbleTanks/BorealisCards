@@ -6,9 +6,12 @@
     ]
   },
   "${modID}:ModConfig": {
-    "TEXT_DICT": {"HappyPrideMoth": "Happy Pride Moth?",
+    "TEXT_DICT": {
+      "HappyPrideMoth": "Happy Pride Moth?",
       "Shaders": "Enable Shaders.",
       "Relics": "Enable Relics.",
+      "ShopCards": "Enable Shop card rarity.",
+      "ExoticCards": "Enable Exotic card rarity.",
       "ColorsRed": "Enable Ironclad cards.",
       "ColorsGreen": "Enable Silent cards.",
       "ColorsBlue": "Enable Defect cards.",

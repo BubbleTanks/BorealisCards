@@ -327,5 +327,14 @@
     "NAME": "Ponder",
     "DESCRIPTION": "Retain. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Scry 3. NL Exhaust."
+  },
+  "${modID}:DynamoEngine": {
+    "NAME": "Dynamo Engine",
+    "DESCRIPTION": "Draw 1 card for every Power played this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card for every Power played this combat."
+  },
+  "${modID}:OverdriveBooster": {
+    "NAME": "Overdrive Booster",
+    "DESCRIPTION": "Double your MAXIMUM Orb Slots. Gain !M! Orb Slots."
   }
 }

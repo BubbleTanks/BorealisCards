@@ -1,6 +1,7 @@
 package borealiscards.cards.defect;
 
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.powers.JetFuelPower;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,7 +13,7 @@ public class JetFuelMixture extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.POWER,
-            CardRarity.RARE,
+            CustomRarity.EXOTIC,
             CardTarget.SELF,
             5
     );

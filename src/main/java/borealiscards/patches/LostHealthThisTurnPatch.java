@@ -36,7 +36,7 @@ public class LostHealthThisTurnPatch {
             hurtThisTurn = false;
         }
 
-        public static class Locator extends SpireInsertLocator {
+        private static class Locator extends SpireInsertLocator {
             @Override
             public int[] Locate(CtBehavior ctBehavior) throws Exception {
                 return LineFinder.findInOrder(ctBehavior, new Matcher.MethodCallMatcher(AbstractPlayer.class, "applyStartOfTurnRelics"));

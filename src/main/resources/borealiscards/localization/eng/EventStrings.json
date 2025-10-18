@@ -17,5 +17,11 @@
       "[Leave]",
       "Select card to remove. (You can also stick extra text like this in here.)"
     ]
+  },"${modID}:BonfirePatch": {
+  "NAME": "waga baga bobo, check your mailbox",
+  "DESCRIPTIONS": [
+    "The flames glow a #y~brilliant~ #y~gold!~ NL The spirits dance around you excitedly, offering a piece of the flame to bring with you. NL You gain 100 #ygold and you are #ghealed to full HP.",
+    "The flames #p@blast@ #p@outwards,@ engulfing you in #p@ethereal@ #p@cinders.@ NL Intense #p@pain@ reels through your body, before settling into a ~powerful~ ~energy~ resounding within you. NL Your Max HP increases by #b10 and you are #ghealed to full HP. NL #p~You~ #p~also~ #p~feel~ #p~a~ #p~strange~ #p~call~ #p~from~ #p~the~ #p~flames...~"
+    ]
   }
 }

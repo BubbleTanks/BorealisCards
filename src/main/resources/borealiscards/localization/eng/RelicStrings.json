@@ -80,5 +80,11 @@
     "DESCRIPTIONS": [
       "Elite enemies always give #yRare card rewards."
     ]
-  }
+  },"${modID}:BonfireHearth": {
+  "NAME": "Bonfire Hearth",
+  "FLAVOR": "Your heartbeat has a strange, empowering warmth.",
+  "DESCRIPTIONS": [
+    "Whenever you enter a Rest Site, gain 10% Max HP."
+  ]
+}
 }
