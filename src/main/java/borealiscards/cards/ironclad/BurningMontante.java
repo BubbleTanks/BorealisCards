@@ -13,7 +13,7 @@ public class BurningMontante extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.RED,
             CardType.POWER,
-            CardRarity.RARE,
+            CustomRarity.EXOTIC,
             CardTarget.SELF,
             2
     );

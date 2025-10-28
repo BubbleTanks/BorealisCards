@@ -17,7 +17,7 @@ public class Traumaturgy extends BaseCard {
             CardColor.PURPLE,
             CardType.POWER,
             CardRarity.RARE,
-            CardTarget.NONE,
+            CardTarget.SELF,
             2
     );
 

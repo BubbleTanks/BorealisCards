@@ -18,7 +18,7 @@ public class Tenkan extends BaseCard {
             CardColor.PURPLE,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.NONE,
+            CardTarget.SELF,
             0
     );
 

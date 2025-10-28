@@ -1,8 +1,11 @@
 package borealiscards.actions;
 
+import borealiscards.vfx.LivingBladeEffect;
+import borealiscards.vfx.LivingWindEffect;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,7 +15,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 import java.util.UUID;
 
@@ -52,12 +54,13 @@ public class LivingBladeAction extends AbstractGameAction {
 
         if (magic > 0) {
             for(int i = 0; i < magic; ++i) {
+                Color livingColor = new Color(MathUtils.random(0.6F)+0.4F, MathUtils.random(0.6F)+0.4F, MathUtils.random(0.6F)+0.4F, 1.0F);
                 if (i == 0) {
                     this.addToBot(new SFXAction("ATTACK_WHIRLWIND"));
-                    this.addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
                 }
-
-                addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_HORIZONTAL));
+                this.addToBot(new VFXAction(new LivingWindEffect(livingColor.cpy(), MathUtils.randomBoolean())));
+                addToBot(new LivingBladeEffect(m, livingColor.cpy()));
+                addToBot(new LivingBladeDamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
             }
 
             if (!freeToPlayOnce) {

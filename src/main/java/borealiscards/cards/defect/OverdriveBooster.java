@@ -2,6 +2,7 @@ package borealiscards.cards.defect;
 
 import borealiscards.cards.BaseCard;
 import borealiscards.patches.OverdriveBoosterPatch;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
@@ -13,7 +14,7 @@ public class OverdriveBooster extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.POWER,
-            CardRarity.RARE,
+            CustomRarity.SHOP,
             CardTarget.SELF,
             3
     );

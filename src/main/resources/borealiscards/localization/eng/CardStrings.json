@@ -92,8 +92,8 @@
   },
   "${modID}:Vanish": {
     "NAME": "Vanish",
-    "DESCRIPTION": "Apply 1 Poison for every card that was discarded this combat.",
-    "UPGRADE_DESCRIPTION": "Apply 1 Poison for every card that was discarded this combat +3.",
+    "DESCRIPTION": "Apply 2 Poison for every card that was discarded this combat.",
+    "UPGRADE_DESCRIPTION": "Apply 2 Poison for every card that was discarded this combat +3.",
     "EXTENDED_DESCRIPTION": [
       " NL (Applies %d Poison.)"
     ]
@@ -104,7 +104,7 @@
   },
   "${modID}:FindThePieces": {
     "NAME": "Find the Pieces",
-    "DESCRIPTION": "Retain. NL Gain 1 Mantra for every card in your hand that was created this combat.",
+    "DESCRIPTION": "Retain. NL Gain 2 Mantra for every card in your hand that was created this combat.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain %d Mantra.)"
     ]
@@ -178,7 +178,7 @@
   },
   "${modID}:BlazingVeins": {
     "NAME": "Blazing Veins",
-    "DESCRIPTION": "Unplayable. NL If you Exhaust a card while this is in your hand, lose !M! HP and add a copy of it to your discard.",
+    "DESCRIPTION": "Unplayable. NL If you Exhaust a card while this is in your hand, lose !M! HP and add a copy of that card to your discard.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
@@ -211,7 +211,8 @@
   },
   "${modID}:BurningMontante": {
     "NAME": "Burning Montante",
-    "DESCRIPTION": "Attacks that cost [E] [E] or more cost 1 more and are played !M! extra times."
+    "DESCRIPTION": "Attacks that cost [E] [E] or more cost 1 more and are played !M! extra time.",
+    "UPGRADE_DESCRIPTION": "Attacks that cost [E] [E] or more cost 1 more and are played !M! extra times."
   },
   "${modID}:PrismaDisruption": {
     "NAME": "Prisma Disruption",
@@ -229,8 +230,8 @@
   },
   "${modID}:JetFuelMixture": {
     "NAME": "Jet Fuel Mixture",
-    "DESCRIPTION": "Ethereal. NL Whenever you play a Power, gain 1 additional stack of all other buffs and debuffs.",
-    "UPGRADE_DESCRIPTION": "Whenever you play a Power, gain 1 additional stack of all other buffs and debuffs."
+    "DESCRIPTION": "Ethereal. NL Whenever you play a Power, gain !M! additional stacks of all other buffs and debuffs.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a Power, gain !M! additional stacks of all other buffs and debuffs."
   },
   "${modID}:EmptyJar": {
     "NAME": "Empty Jar",
@@ -336,5 +337,81 @@
   "${modID}:OverdriveBooster": {
     "NAME": "Overdrive Booster",
     "DESCRIPTION": "Double your MAXIMUM Orb Slots. Gain !M! Orb Slots."
+  },
+  "${modID}:Carcinogen": {
+    "NAME": "Carcinogen",
+    "DESCRIPTION": "Remove the enemy's Artifact. NL Apply !M! Poison. NL Exhaust."
+  },
+  "${modID}:SonicBoom": {
+    "NAME": "Sonic Boom",
+    "DESCRIPTION": "Deal !D! damage. NL If this is played twice in one turn, take an extra turn."
+  },
+  "${modID}:TryCatch": {
+    "NAME": "Try Catch",
+    "DESCRIPTION": "Channel nothing. NL The next Orb you Channel is added to this.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Channel nothing. NL The next Orb you Channel is added to this.",
+    "EXTENDED_DESCRIPTION": [
+      "Channel 1 ",
+      ", ",
+      "and ",
+      "Channel nothing.",
+      "Innate. NL ",
+      " NL The next Orb you Channel is added to this.",
+      " "
+    ]
+  },
+  "${modID}:DreamlandExpress": {
+    "NAME": "Dreamland Express",
+    "DESCRIPTION": "Deal !D! damage. NL Dreamland Express deals !M! more damage this turn. NL Add a copy to your hand. NL Exhaust."
+  },
+  "${modID}:MagnesiumHammer": {
+    "NAME": "Magnesium Hammer",
+    "DESCRIPTION": "Deal !D! damage. NL Increase this by your Strength this combat."
+  },
+  "${modID}:MachPunch": {
+    "NAME": "Mach Punch",
+    "DESCRIPTION": "Plays when drawn. NL Deal !D! damage. NL Draw 1 card."
+  },
+  "${modID}:ShoulderBash": {
+    "NAME": "Shoulder Bash",
+    "DESCRIPTION": "Deal !D! damage. If the enemy does not intend to attack, it loses !M! Strength.",
+    "EXTENDED_DESCRIPTION": [
+      "That enemy intends to attack!"
+    ]
+  },
+  "${modID}:Obliterate": {
+    "NAME": "Obliterate",
+    "DESCRIPTION": "Innate. NL Deal !D! damage. NL If this kills, play this card again.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies. NL If this kills, play this card again."
+  },
+  "${modID}:CrossStrike": {
+    "NAME": "Cross Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Vulnerable, apply !M! Weak."
+  },
+  "${modID}:ThreadOfFate": {
+    "NAME": "Thread of Fate",
+    "DESCRIPTION": "Scry your entire draw pile.",
+    "UPGRADE_DESCRIPTION": "Shuffle your discard pile into your draw pile. NL Scry your entire draw pile."
+
+  },
+  "${modID}:HandOfGod": {
+    "NAME": "Godhand",
+    "DESCRIPTION": "Deal !D! damage. NL Permanently reduce this card's damage by 1 after combat."
+  },
+  "${modID}:BloodHunting": {
+    "NAME": "Blood Hunting",
+    "DESCRIPTION": "This enemy takes double damage for !M! turns. NL Exhaust."
+  },
+  "${modID}:SlamRam": {
+    "NAME": "Slam Ram",
+    "DESCRIPTION": "If this is the first card played this turn, play all Attacks in your hand. NL Gain !M! Weak, Vulnerable, and Frail. NL Exhaust."
+  },
+  "${modID}:UndyingSpear": {
+    "NAME": "Undying Spear",
+    "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, raise your Max HP by !M!."
+  },
+  "${modID}:GodOfWar": {
+    "NAME": "God of War",
+v    "DESCRIPTION": "Costs 1 less [E]  for each Attack played this combat. NL Deal !D! damage. NL If Fatal, permanently double this card's damage. NL Exhaust."
   }
 }

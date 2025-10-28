@@ -12,7 +12,7 @@ public class Mordhau extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.RED,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             0
     );

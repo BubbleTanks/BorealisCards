@@ -3,6 +3,7 @@ package borealiscards.cards.watcher;
 import basemod.helpers.CardModifierManager;
 import borealiscards.cardmods.FindThePiecesMod;
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,7 +17,7 @@ public class FindThePieces extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.PURPLE,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CustomRarity.SHOP,
             CardTarget.SELF,
             1
     );
@@ -37,7 +38,7 @@ public class FindThePieces extends BaseCard {
             }
         }
 
-        addToBot(new ApplyPowerAction(p, p, new MantraPower(p, findThePieces)));
+        addToBot(new ApplyPowerAction(p, p, new MantraPower(p, findThePieces * 2)));
     }
 
     public void applyPowers() {
@@ -50,7 +51,7 @@ public class FindThePieces extends BaseCard {
         }
 
         if (findThePieces > 0) {
-            rawDescription = cardStrings.DESCRIPTION + String.format(cardStrings.EXTENDED_DESCRIPTION[0], findThePieces);
+            rawDescription = cardStrings.DESCRIPTION + String.format(cardStrings.EXTENDED_DESCRIPTION[0], findThePieces * 2);
             initializeDescription();
         }
 

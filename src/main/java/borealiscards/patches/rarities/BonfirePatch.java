@@ -1,13 +1,16 @@
 package borealiscards.patches.rarities;
 
+import borealiscards.relics.BonfireHearth;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.shrines.Bonfire;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
@@ -32,10 +35,10 @@ public class BonfirePatch {
                 AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.VIOLET.cpy(), true));
                 AbstractDungeon.player.increaseMaxHp(10, false);
                 AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
-                //if (!AbstractDungeon.player.hasRelic(BonfireHearth.ID)) {
-                //    AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F,
-                //            RelicLibrary.getRelic(BonfireHearth.ID).makeCopy());
-                //}
+                if (!AbstractDungeon.player.hasRelic(BonfireHearth.ID)) {
+                    AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F,
+                            RelicLibrary.getRelic(BonfireHearth.ID).makeCopy());
+                }
             }
         }
     }

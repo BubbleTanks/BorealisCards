@@ -64,7 +64,7 @@
     "NAME": "Midnight Brew",
     "FLAVOR": "The smell is indescribable. You're abhorred by it's presence.",
     "DESCRIPTIONS": [
-      "Gain 1 Potion Slot. Obtain 1 Vial of Night."
+      "Gain #b1 Potion slot. Obtain #b1 #rVial #rof #rNight [REMOVE_SPACE]."
     ]
   },
   "${modID}:FadedStarmap": {
@@ -84,7 +84,63 @@
   "NAME": "Bonfire Hearth",
   "FLAVOR": "Your heartbeat has a strange, empowering warmth.",
   "DESCRIPTIONS": [
-    "Whenever you enter a Rest Site, gain 10% Max HP."
+    "Whenever you enter a Rest Site, gain #b15% Max HP."
   ]
-}
+},
+  "${modID}:GoldenCookie": {
+    "NAME": "Golden Cookie",
+    "FLAVOR": "Ooh, shiny!",
+    "DESCRIPTIONS": [
+      "Gain #b200 #yGold at the start of combat. Lose #b40 #yGold at the end of your turns."
+    ]
+  },
+  "${modID}:ChippedJade": {
+    "NAME": "Chipped Jade",
+    "FLAVOR": "A few scrapes here and there, but it still sparkles as brightly as ever.",
+    "DESCRIPTIONS": [
+      "The first time a card is played each combat that costs #b3 or more, gain [E] [E] and draw #b2 cards."
+    ]
+  },
+  "${modID}:Shiitake": {
+    "NAME": "Shiitake",
+    "FLAVOR": "\"I highly recommend this with a pinch of salt.\" - Ranwid",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turns. Lose #b3 maximum hand size."
+    ]
+  },
+  "${modID}:Neloprephine": {
+    "NAME": "Neloprephine",
+    "FLAVOR": "Doesn't numb the pain, but keeps you on your feet.",
+    "DESCRIPTIONS": [
+      "At the start of Boss and Elite combats, gain #b4 #yRegen [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:GlassGuonStone": {
+    "NAME": "Glass Guon Stone",
+    "FLAVOR": "Shockingly impact resistant, yet prone to shattering.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you haven't lost HP this combat, gain #b6 #yBlock [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:MarauderAnt": {
+    "NAME": "Marauder Ant",
+    "FLAVOR": "It's impressive size is matched only by it's equally impressive strength.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you have #b6 or less #yBlock [REMOVE_SPACE], double your #yBlock [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:Yumako": {
+    "NAME": "Yumako",
+    "FLAVOR": "Best to maintain it's freshness, or it will spoil quite quickly.",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, gain #b18 #yGold [REMOVE_SPACE]. No longer works if you climb 3 floors without adding a card to your deck."
+    ]
+  },
+  "${modID}:AshCoveredBuckler": {
+    "NAME": "Ash Covered Buckler",
+    "FLAVOR": "The charred wood is still smoldering, even so long after the battle.",
+    "DESCRIPTIONS": [
+      "Whenever you end your turn with #b25 or more #yBlock [REMOVE_SPACE], gain #b2 #yStrength [REMOVE_SPACE]."
+    ]
+  }
 }

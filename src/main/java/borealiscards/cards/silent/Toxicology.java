@@ -1,6 +1,7 @@
 package borealiscards.cards.silent;
 
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,8 +11,8 @@ public class Toxicology extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.GREEN,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
+            CustomRarity.SHOP,
+            CardTarget.NONE,
             -2
     );
 

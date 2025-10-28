@@ -16,7 +16,7 @@ public class SystemFailure extends BaseCard {
             CardColor.BLUE,
             CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.NONE,
+            CardTarget.SELF,
             2
     );
 

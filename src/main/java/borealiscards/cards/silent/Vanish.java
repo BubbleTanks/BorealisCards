@@ -2,6 +2,7 @@ package borealiscards.cards.silent;
 
 import borealiscards.cards.BaseCard;
 import borealiscards.patches.DiscardedThisCombatPatch;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -14,7 +15,7 @@ public class Vanish extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.GREEN,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CustomRarity.SHOP,
             CardTarget.ENEMY,
             1
     );
@@ -27,7 +28,7 @@ public class Vanish extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(DiscardedThisCombatPatch.cardsDiscardedThisCombat+magicNumber > 0) {
-            addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, DiscardedThisCombatPatch.cardsDiscardedThisCombat + magicNumber), DiscardedThisCombatPatch.cardsDiscardedThisCombat + magicNumber, AbstractGameAction.AttackEffect.POISON));
+            addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, (DiscardedThisCombatPatch.cardsDiscardedThisCombat * 2) + magicNumber), DiscardedThisCombatPatch.cardsDiscardedThisCombat + magicNumber, AbstractGameAction.AttackEffect.POISON));
         }
     }
 
@@ -35,7 +36,7 @@ public class Vanish extends BaseCard {
         int poisonCount = DiscardedThisCombatPatch.cardsDiscardedThisCombat+magicNumber;
 
         if (poisonCount > 0) {
-            rawDescription = cardStrings.DESCRIPTION + String.format(cardStrings.EXTENDED_DESCRIPTION[0], poisonCount);
+            rawDescription = cardStrings.DESCRIPTION + String.format(cardStrings.EXTENDED_DESCRIPTION[0], poisonCount * 2);
             initializeDescription();
         }
 

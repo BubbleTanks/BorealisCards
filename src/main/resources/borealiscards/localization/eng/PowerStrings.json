@@ -173,5 +173,17 @@
     "DESCRIPTIONS": [
       "If you are not in a #yStance [REMOVE_SPACE], enter #yTension [REMOVE_SPACE]."
     ]
+  },
+  "${modID}:TryCatchPower": {
+    "NAME": "Try Catch",
+    "DESCRIPTIONS": [
+      "The next Orb you #yChannel will be added to #yTry #yCatch [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:BloodHuntPower": {
+    "NAME": "Blood Hunt",
+    "DESCRIPTIONS": [
+      "Receive doubled damage from #yAttacks. Reduces by #b1 each turn."
+    ]
   }
 }

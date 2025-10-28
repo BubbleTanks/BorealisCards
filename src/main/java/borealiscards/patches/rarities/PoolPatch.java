@@ -90,7 +90,7 @@ public class PoolPatch {
     }
 
     private static boolean ExoticChance() {
-        int roll = AbstractDungeon.cardRng.random(3);
+        int roll = AbstractDungeon.cardRng.random(49);
         if(roll == 1) return true;
         return false;
     }
@@ -104,23 +104,31 @@ public class PoolPatch {
         return rarity;
     }
 
-/*
-    @SpirePatch2(clz = AbstractRoom.class, method = "getCardRarity", paramtypez = {int.class, boolean.class})
-    @SpirePatch2(clz = MonsterRoomElite.class, method = "getCardRarity")
-    @SpirePatch2(clz = MonsterRoomBoss.class, method = "getCardRarity")
-    @SpirePatch2(clz = AbstractDungeon.class, method = "getCardRarityFallback")
-    public static class RollRarity {
-        @SpirePostfixPatch
-        public static AbstractCard.CardRarity Rarity(AbstractCard.CardRarity __result) {
-            if(ModConfig.ExoticCards && __result == AbstractCard.CardRarity.RARE) {
-                if(ExoticChance()) {
-                    return CustomRarity.EXOTIC;
+    @SpirePatch2(clz = AbstractDungeon.class, method = "getRewardCards")
+    public static class ExoticAntiBreak {
+        @SpireInsertPatch(locator = Locator.class, localvars = {"retVal", "rarity"})
+        public static void ExoticFallback(ArrayList<AbstractCard> retVal, @ByRef AbstractCard.CardRarity[] rarity) {
+            if(!exoticCardPool.isEmpty()) {
+                int i = 0;
+                for (AbstractCard c : retVal) {
+                    if (c.rarity == CustomRarity.EXOTIC) {
+                        i++;
+                    }
+                }
+                if (rarity[0] == CustomRarity.EXOTIC && i >= exoticCardPool.size()) {
+                    rarity[0] = CustomRarity.RAREDUMMY;
                 }
             }
-            return __result;
         }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "hasRelic");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+
     }
-*/
 
     @SpirePatch2(clz = AbstractDungeon.class, method = "getCard", paramtypez = {AbstractCard.CardRarity.class})
     public static class RarityWasRolled {
@@ -134,6 +142,9 @@ public class PoolPatch {
                     BorealisCards.logger.warn("Warning! No Exotic cards found!");
                     return SpireReturn.Return(AbstractDungeon.rareCardPool.getRandomCard(true));
                 }
+            }
+            if(rarity == CustomRarity.RAREDUMMY) {
+                return SpireReturn.Return(AbstractDungeon.rareCardPool.getRandomCard(true));
             }
             return SpireReturn.Continue();
         }

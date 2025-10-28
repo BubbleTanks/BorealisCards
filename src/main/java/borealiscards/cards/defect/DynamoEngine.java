@@ -15,7 +15,7 @@ public class DynamoEngine extends BaseCard {
             CardColor.BLUE,
             CardType.SKILL,
             CustomRarity.SHOP,
-            CardTarget.SELF,
+            CardTarget.NONE,
             0
     );
 

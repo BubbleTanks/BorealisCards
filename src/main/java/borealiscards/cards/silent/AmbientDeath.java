@@ -14,7 +14,7 @@ public class AmbientDeath extends BaseCard {
             CardColor.GREEN,
             CardType.SKILL,
             CardRarity.RARE,
-            CardTarget.SELF,
+            CardTarget.NONE,
             -2
     );
 

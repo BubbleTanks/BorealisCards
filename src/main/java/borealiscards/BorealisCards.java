@@ -5,8 +5,11 @@ import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import basemod.interfaces.*;
 import borealiscards.cards.BaseCard;
+import borealiscards.cards.ironclad.DreamlandExpress;
 import borealiscards.cards.silent.RopeDart;
+import borealiscards.cards.watcher.HandOfGod;
 import borealiscards.patches.ParanoiaBoxPreventSkip;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.potions.BasePotion;
 import borealiscards.relics.BaseRelic;
 import borealiscards.ui.ModConfig;
@@ -36,6 +39,7 @@ import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.screens.runHistory.RunHistoryScreen;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import org.apache.logging.log4j.LogManager;
@@ -58,7 +62,9 @@ public class BorealisCards implements
         PostInitializeSubscriber,
         PostUpdateSubscriber,
         StartGameSubscriber,
-        OnCardUseSubscriber {
+        OnCardUseSubscriber,
+        OnPlayerTurnStartSubscriber,
+        PostBattleSubscriber{
     public static boolean choosingTransformCard;
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -245,6 +251,8 @@ public class BorealisCards implements
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new ModConfig());
         killCompendium();
         registerPotions();
+
+        ReflectionHacks.setPrivateStaticFinal(RunHistoryScreen.class, "orderedRarity", new AbstractCard.CardRarity[] { AbstractCard.CardRarity.SPECIAL, CustomRarity.EXOTIC, AbstractCard.CardRarity.RARE, CustomRarity.SHOP, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardRarity.COMMON, AbstractCard.CardRarity.BASIC, AbstractCard.CardRarity.CURSE });
     }
 
     /*----------Localization----------*/
@@ -485,6 +493,21 @@ public class BorealisCards implements
     public void receiveCardUsed(AbstractCard useCard) {
         if (useCard.cardID == Shiv.ID) {
             AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.drawPile, (card -> card.cardID == RopeDart.ID), 42069));
+        }
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        DreamlandExpress.playedThisTurn = 0;
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            if (c.cardID == HandOfGod.ID) {
+                c.misc--;
+                c.baseDamage = c.misc;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 package borealiscards.cards.ironclad;
 
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.powers.BatteringRamPower;
 import borealiscards.util.CardStats;
 import borealiscards.vfx.BatteringRamEffect;
@@ -17,7 +18,7 @@ public class BatteringRam extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.RED,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CustomRarity.SHOP,
             CardTarget.ENEMY,
             2
     );

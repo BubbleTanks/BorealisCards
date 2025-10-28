@@ -14,7 +14,7 @@ public class SilentiumGradas extends BaseCard {
             CardColor.PURPLE,
             CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.NONE,
+            CardTarget.SELF,
             1
     );
 

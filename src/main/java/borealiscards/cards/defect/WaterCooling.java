@@ -12,7 +12,7 @@ public class WaterCooling extends BaseCard {
             CardColor.BLUE,
             CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.NONE,
+            CardTarget.SELF,
             -1
     );
 

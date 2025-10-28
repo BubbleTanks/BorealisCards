@@ -1,6 +1,7 @@
 package borealiscards.cards.ironclad;
 
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.powers.FoolhardyPower;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,7 +13,7 @@ public class Foolhardy extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.RED,
             CardType.POWER,
-            CardRarity.UNCOMMON,
+            CustomRarity.SHOP,
             CardTarget.SELF,
             2
     );

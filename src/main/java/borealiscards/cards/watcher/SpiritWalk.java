@@ -15,7 +15,7 @@ public class SpiritWalk extends BaseCard {
             CardColor.PURPLE,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             1
     );
 

@@ -12,7 +12,7 @@ public class ShockAndAwe extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.POWER,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
             2
     );

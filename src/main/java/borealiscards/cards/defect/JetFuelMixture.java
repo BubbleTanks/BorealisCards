@@ -21,11 +21,12 @@ public class JetFuelMixture extends BaseCard {
     public JetFuelMixture() {
         super(ID, info);
         setEthereal(true,false);
+        setMagic(2);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new JetFuelPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new JetFuelPower(p, magicNumber)));
     }
 }
 

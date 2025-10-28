@@ -11,7 +11,7 @@ public class BlazingVeins extends BaseCard {
             CardColor.RED,
             CardType.SKILL,
             CardRarity.RARE,
-            CardTarget.SELF,
+            CardTarget.NONE,
             -2
     );
 

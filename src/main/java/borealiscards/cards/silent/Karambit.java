@@ -14,7 +14,7 @@ public class Karambit extends BaseCard {
             CardColor.GREEN,
             CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.SELF,
+            CardTarget.ENEMY,
             -2
     );
 
