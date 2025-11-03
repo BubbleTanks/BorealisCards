@@ -142,5 +142,47 @@
     "DESCRIPTIONS": [
       "Whenever you end your turn with #b25 or more #yBlock [REMOVE_SPACE], gain #b2 #yStrength [REMOVE_SPACE]."
     ]
+  },
+  "${modID}:CosmicStrawberry": {
+    "NAME": "Cosmic Strawberry",
+    "FLAVOR": "\"Uhh, this one is clearly inedible.\" - Ranwid",
+    "DESCRIPTIONS": [
+      "At the start of each combat, play a random #yRare card in your draw pile."
+    ]
+  },
+  "${modID}:Blacklight": {
+    "NAME": "Blacklight",
+    "FLAVOR": "The wavelengths can be impressively volatile, given prolonged exposure.",
+    "DESCRIPTIONS": [
+      "#yPoison triggers when it is applied, and reduces by #b2 instead of #b1 [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:ElectricFurnace": {
+    "NAME": "Electric Furnace",
+    "FLAVOR": "Finally! An effective way to process this iron!",
+    "DESCRIPTIONS": [
+      "Whenever you play a cost #b3 or higher card, Channel #b1 #yPlasma [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:RadHazard": {
+    "NAME": "Rad Hazard",
+    "FLAVOR": "Only a scale replica of the original watercraft, but just as slippery and swift as ever.",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, discard your #gGreen cards then draw that many cards. Reduce your maximum hand size by #b1 this turn whenever you shuffle your draw pile."
+    ]
+  },
+  "${modID}:StrangeDiamond": {
+    "NAME": "Strange Diamond",
+    "FLAVOR": "Even in the dark, it seems to shine as if light is passing through it.",
+    "DESCRIPTIONS": [
+      "After playing #b10 cards while in #yDivinity [REMOVE_SPACE], enter #yDivinity at the start of your next turn."
+    ]
+  },
+  "${modID}:BigDonut": {
+    "NAME": "Big Donut",
+    "FLAVOR": "It's big.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b21 without healing."
+    ]
   }
 }

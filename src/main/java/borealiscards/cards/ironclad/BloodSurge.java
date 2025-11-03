@@ -24,8 +24,9 @@ public class BloodSurge extends BaseCard {
 
     public BloodSurge() {
         super(ID, info);
-        setMagic(1,1);
+        setMagic(1,0);
         setExhaust(true);
+        setCostUpgrade(0);
         tags.add(CardTags.HEALING);
     }
 

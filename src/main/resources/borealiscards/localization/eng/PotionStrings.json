@@ -2,7 +2,7 @@
   "${modID}:VialOfNight": {
     "NAME": "Vial of Night",
     "DESCRIPTIONS": [
-      "Gain #b%d #yStrength. Gain #b%d #yDexterity. Lose #b2 Max HP. Obtain #b1 #yVial #yof #yNight."
+      "Gain #b%d #yStrength. Gain #b%d #yDexterity. Lose #b2 Max HP. Obtain #b1 #rVial #rof #rNight."
     ]
   }
 }

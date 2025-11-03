@@ -412,6 +412,6 @@
   },
   "${modID}:GodOfWar": {
     "NAME": "God of War",
-v    "DESCRIPTION": "Costs 1 less [E]  for each Attack played this combat. NL Deal !D! damage. NL If Fatal, permanently double this card's damage. NL Exhaust."
+    "DESCRIPTION": "Costs 1 less [E]  for each Attack played this combat. NL Deal !D! damage. NL If Fatal, permanently double this card's damage. NL Exhaust."
   }
 }

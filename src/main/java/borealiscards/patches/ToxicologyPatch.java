@@ -1,7 +1,6 @@
 package borealiscards.patches;
 
 import borealiscards.cards.silent.Toxicology;
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
@@ -27,12 +26,12 @@ public class ToxicologyPatch {
     @SpireInsertPatch (
             rloc = 16
     )
-    public static void Insert(ApplyPowerAction __instance, AbstractCreature target, AbstractCreature source, @ByRef AbstractPower[] ___powerToApply) {
-        if (source != null && source.isPlayer && target != source && ___powerToApply[0].ID.equals("Poison")) {
+    public static void Insert(ApplyPowerAction __instance, AbstractCreature target, AbstractCreature source, AbstractPower ___powerToApply) {
+        if (source != null && source.isPlayer && target != source && ___powerToApply.ID.equals("Poison")) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c.cardID == Toxicology.ID) {
                     c.flash();
-                    ___powerToApply[0].amount += c.magicNumber;
+                    ___powerToApply.amount += c.magicNumber;
                     __instance.amount += c.magicNumber;
                 }
             }
