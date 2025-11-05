@@ -17,7 +17,7 @@ public class GlassGuonStone extends BaseRelic {
     public void onPlayerEndTurn() {
         if(!grayscale) {
             this.flash();
-            this.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 6));
+            this.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 4));
             this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
     }

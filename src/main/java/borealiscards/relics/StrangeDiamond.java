@@ -1,5 +1,6 @@
 package borealiscards.relics;
 
+import basemod.helpers.RelicType;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -14,6 +15,7 @@ public class StrangeDiamond extends BaseRelic {
 
     public StrangeDiamond() {
         super(ID, RelicTier.RARE, LandingSound.CLINK);
+        relicType = RelicType.PURPLE;
     }
 
     @Override

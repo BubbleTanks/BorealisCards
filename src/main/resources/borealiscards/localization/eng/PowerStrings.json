@@ -185,5 +185,11 @@
     "DESCRIPTIONS": [
       "Receive doubled damage from #yAttacks. Reduces by #b1 each turn."
     ]
+  },
+  "${modID}:UndistortPower": {
+    "NAME": "Undistorted",
+    "DESCRIPTIONS": [
+      "Your hand size is 99 for #b%d turn%s."
+    ]
   }
 }

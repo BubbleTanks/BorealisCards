@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class Carcinogen extends BaseCard {
     public static final String ID = makeID(Carcinogen.class.getSimpleName());
@@ -30,6 +31,7 @@ public class Carcinogen extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RemoveSpecificPowerAction(m, p, ArtifactPower.POWER_ID));
+        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -2)));
         addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber), magicNumber, AbstractGameAction.AttackEffect.POISON));
     }
 }

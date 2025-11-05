@@ -91,7 +91,7 @@
     "NAME": "Golden Cookie",
     "FLAVOR": "Ooh, shiny!",
     "DESCRIPTIONS": [
-      "Gain #b200 #yGold at the start of combat. Lose #b40 #yGold at the end of your turns."
+      "Gain #b300 #yGold at the start of combat. Lose #b40 #yGold at the end of your turns."
     ]
   },
   "${modID}:ChippedJade": {
@@ -119,7 +119,7 @@
     "NAME": "Glass Guon Stone",
     "FLAVOR": "Shockingly impact resistant, yet prone to shattering.",
     "DESCRIPTIONS": [
-      "At the end of your turn, if you haven't lost HP this combat, gain #b6 #yBlock [REMOVE_SPACE]."
+      "At the end of your turn, if you haven't lost HP this combat, gain #b4 #yBlock [REMOVE_SPACE]."
     ]
   },
   "${modID}:MarauderAnt": {
@@ -183,6 +183,65 @@
     "FLAVOR": "It's big.",
     "DESCRIPTIONS": [
       "Upon pickup, raise your Max HP by #b21 without healing."
+    ]
+  },
+  "${modID}:AlloyWorshipUnit": {
+    "NAME": "Alloy Worship Unit",
+    "FLAVOR": "A former Solus core, overridden and refitted for new purpose.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain temporary #yStrength equal to the cost of the cards in your hand. Whenever you play an #yAttack, lose #b2 HP."
+    ]
+  },
+  "${modID}:SleepingButterfly": {
+    "NAME": "Sleeping Butterfly",
+    "FLAVOR": "Try not to wake her up, she's had a long day.",
+    "DESCRIPTIONS": [
+      "Whenever you #yRest, you may ignore paths when choosing the next room to travel."
+    ]
+  },
+  "${modID}:BottledBorealis": {
+    "NAME": "Bottled Borealis",
+    "FLAVOR": "The inside glimmers with chromatic light, just as beautiful as the jar it's contained by.",
+    "DESCRIPTIONS": [
+      "Upon pick up, choose a #yShop or #pExotic card. Start each combat with this card in your hand.",
+      "Choose a card for ",
+      "Start each combat with ",
+      " in your hand."
+    ]
+  },
+  "${modID}:FabricWings": {
+    "NAME": "Fabric Wings",
+    "FLAVOR": "A dream come true! So long as your dream doesn't involve actually flying.",
+    "DESCRIPTIONS": [
+      "Gain #b2 #yBlock whenever you play a #ycost #y0 #ycard [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:RyeBread": {
+    "NAME": "Rye Bread",
+    "FLAVOR": "\n \n \n \n \n \n \n \n \n \n \n  Now, if I recall correctly, there was a bakery nearby. I said to him, \"Orville, let me go get you some rye bread.\" Now, I'm unsure if elephants enjoy rye bread, but I assure you that Orville does. Now, this was on a Tuesday, which was good, because rye bread was always fresh on Tuesday. They made sourdough bread on Monday, and threw it out Wednesday... Or rather, they sold it at a discount for people wanting to feed it to the ducks, and then, prob'ly at the end of the day, finally, they threw it all out. I-I don't recall.",
+    "DESCRIPTIONS": [
+      "Whenever you play a #ySkill [REMOVE_SPACE], deal #b1 damage to a random enemy."
+    ]
+  },
+  "${modID}:AntennaHeadband": {
+    "NAME": "Antenna Headband",
+    "FLAVOR": "Feathery and pretty! May cause sound sensitivity.",
+    "DESCRIPTIONS": [
+      "You may take any amount of actions at #yRest #ySites. Lose #b2 Max HP after taking an action at a #yRest #ySite [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:Americano": {
+    "NAME": "Americano",
+    "FLAVOR": "Eugh, who the hell can even drink this?",
+    "DESCRIPTIONS": [
+      "Starter Strikes and Defends cost #b0."
+    ]
+  },
+  "${modID}:Ankh": {
+    "NAME": "Ankh",
+    "FLAVOR": "An ancient symbol of eternal life.",
+    "DESCRIPTIONS": [
+      "While you are not in a #yStance [REMOVE_SPACE], you can no longer be debuffed."
     ]
   }
 }

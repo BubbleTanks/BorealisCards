@@ -15,7 +15,7 @@ public class GoldenCookie extends BaseRelic {
     public void atBattleStart() {
         addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         flash();
-        AbstractDungeon.player.gainGold(200);
+        AbstractDungeon.player.gainGold(300);
     }
 
     public void onPlayerEndTurn() {

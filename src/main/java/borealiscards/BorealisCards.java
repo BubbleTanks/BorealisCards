@@ -11,6 +11,7 @@ import borealiscards.cards.watcher.HandOfGod;
 import borealiscards.patches.ParanoiaBoxPreventSkip;
 import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.potions.BasePotion;
+import borealiscards.relics.AntennaHeadband;
 import borealiscards.relics.BaseRelic;
 import borealiscards.ui.ModConfig;
 import borealiscards.util.GeneralUtils;
@@ -31,6 +32,7 @@ import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -64,7 +66,8 @@ public class BorealisCards implements
         StartGameSubscriber,
         OnCardUseSubscriber,
         OnPlayerTurnStartSubscriber,
-        PostBattleSubscriber{
+        PostBattleSubscriber,
+        PostCampfireSubscriber {
     public static boolean choosingTransformCard;
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -509,5 +512,20 @@ public class BorealisCards implements
                 c.baseDamage = c.misc;
             }
         }
+    }
+
+    @Override
+    public boolean receivePostCampfire() {
+        if (AbstractDungeon.player.hasRelic(AntennaHeadband.ID)) {
+            if (AbstractDungeon.player.maxHealth <= 2) {
+                while (AbstractDungeon.player.currentHealth > 0) {
+                    AbstractDungeon.player.damage(new DamageInfo(null, 99999, DamageInfo.DamageType.HP_LOSS));
+                    // WHERE YOU THINK YOU'RE GOING FLINT LOCKWOOD
+                }
+                AbstractDungeon.player.maxHealth = 0;
+                AbstractDungeon.player.currentHealth = 0;
+            } else AbstractDungeon.player.decreaseMaxHealth(2);
+        }
+        return true;
     }
 }
