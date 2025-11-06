@@ -191,5 +191,17 @@
     "DESCRIPTIONS": [
       "Your hand size is 99 for #b%d turn%s."
     ]
+  },
+  "${modID}:HeartbeatPower": {
+    "NAME": "Heartbeat",
+    "DESCRIPTIONS": [
+      "The first time you play an #yAttack each turn, enter #yCalm [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:PotentialPower": {
+    "NAME": "Unlocked Potential",
+    "DESCRIPTIONS": [
+      "Gain #b%d #yRelic%s after combat."
+    ]
   }
 }

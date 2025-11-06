@@ -1,12 +1,16 @@
 package borealiscards.patches;
 
+import borealiscards.cards.watcher.Firewatch;
 import borealiscards.powers.CruelSunPower;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.stances.AbstractStance;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
 
 @SpirePatch2(
         clz = ChangeStanceAction.class, method = "update"
@@ -22,6 +26,25 @@ public class StanceInterruptPatch {
             __instance.isDone = true;
             return SpireReturn.Return();
         }
+
         return SpireReturn.Continue();
+    }
+
+    @SpireInsertPatch(locator = Locator.class)
+    public static void firewatch() {
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c.cardID == Firewatch.ID) {
+                ((Firewatch)c).vigorUp();
+            }
+        }
+    }
+
+    private static class Locator extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+            Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractStance.class, "ID");
+            int[] var = LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            var[0] += 1;
+            return var;
+        }
     }
 }

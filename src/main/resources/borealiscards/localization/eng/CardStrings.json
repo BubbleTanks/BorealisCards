@@ -448,5 +448,49 @@
     "EXTENDED_DESCRIPTION": [
       "remove from your deck."
       ]
+  },
+  "${modID}:Heartbeat": {
+    "NAME": "Heartbeat",
+    "DESCRIPTION": "The first time you play an Attack each turn, enter Calm.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first time you play an Attack each turn, enter Calm."
+  },
+  "${modID}:DormantStrike": {
+    "NAME": "Dormant Strike",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When Retained, add a copy into your hand without this ability. NL Exhaust."
+  },
+  "${modID}:DormantStrikeCopy": {
+    "NAME": "Dormant Strike",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL Exhaust."
+  },
+  "${modID}:Firewatch": {
+    "NAME": "Firewatch",
+    "DESCRIPTION": "Retain. NL Gain !M! Vigor. NL Increase this by !${modID}:vigorIncrease! whenever you change Stances while this is in your hand."
+  },
+  "${modID}:UnlockPotential": {
+    "NAME": "Unlock Potential",
+    "DESCRIPTION": "Unplayable unless you are in Divinity. NL Exit your Stance. NL Add a Relic to this combat's rewards.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Unplayable unless you are in Divinity. NL Exit your Stance. NL Add a Relic to this combat's rewards.",
+    "EXTENDED_DESCRIPTION": [
+      "I haven't reached Divinity."
+    ]
+  },
+  "${modID}:FumeHood": {
+    "NAME": "Fume Hood",
+    "DESCRIPTION": "Gain Block equal to the enemy's Poison.",
+    "EXTENDED_DESCRIPTION": [
+      "That enemy doesn't have Poison!"
+    ]
+  },
+  "${modID}:Haze": {
+    "NAME": "Haze",
+    "DESCRIPTION": "Lose !M! Block. NL Gain 2 Blur."
+  },
+  "${modID}:Misdirection": {
+    "NAME": "Misdirection",
+    "DESCRIPTION": "Choose up to !M! card in your draw pile. NL Add it to your hand, then discard it.",
+    "UPGRADE_DESCRIPTION": "Choose up to !M! cards in your draw pile. NL Add them to your hand, then discard them.",
+    "EXTENDED_DESCRIPTION": [
+      "add to your hand and discard."
+    ]
   }
 }
