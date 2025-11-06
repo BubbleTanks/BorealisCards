@@ -83,9 +83,12 @@ public class BlacklightPatch {
     @SpirePatch2(clz = PoisonLoseHpAction.class, method = "update")
     public static class PoisonAction {
         @SpireInsertPatch(locator = Locator.class, localvars = {"p"})
-        public static void blacklightReduction(AbstractPower p) {
+        public static void blacklightReduction(AbstractPower p, AbstractGameAction __instance) {
             if (AbstractDungeon.player.hasRelic(Blacklight.ID)) {
                 p.amount--;
+                if (p.amount < 0) {
+                    p.amount = 0;
+                }
             }
         }
 

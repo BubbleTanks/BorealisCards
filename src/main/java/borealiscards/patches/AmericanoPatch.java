@@ -13,7 +13,7 @@ public class AmericanoPatch {
     public static class BasicCostDown {
         @SpirePrefixPatch
         public static SpireReturn<Boolean> coffee(AbstractCard __instance) {
-            if (AbstractDungeon.player.hasRelic(Americano.ID)) {
+            if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(Americano.ID)) {
                 if (__instance.hasTag(AbstractCard.CardTags.STARTER_STRIKE) || __instance.hasTag(AbstractCard.CardTags.STARTER_DEFEND)) {
                     return SpireReturn.Return(true);
                 }
