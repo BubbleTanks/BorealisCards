@@ -1,5 +1,7 @@
 package borealiscards.patches;
 
+import borealiscards.powers.BasePower;
+import borealiscards.powers.IridiumToxinsPower;
 import borealiscards.powers.SadomasochismPower;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
@@ -32,6 +34,16 @@ public class SadomasochismPatch {
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p.ID == SadomasochismPower.POWER_ID) {
                     AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, p.amount));
+                }
+                if (p.ID == IridiumToxinsPower.POWER_ID) {
+                    AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            ((BasePower)p).amount2  += p.amount;
+                            p.updateDescription();
+                            this.isDone = true;
+                        }
+                    });
                 }
             }
         }

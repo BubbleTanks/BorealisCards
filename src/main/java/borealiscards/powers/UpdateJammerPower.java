@@ -1,6 +1,7 @@
 package borealiscards.powers;
 
 import borealiscards.BorealisCards;
+import borealiscards.cards.defect.UpdateJammer;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,8 +39,12 @@ public class UpdateJammerPower extends BasePower {
                 addToBot(new ApplyPowerAction(owner, owner, new OrbStarlightPower(owner, 1)));
                 break;
             default:
-                BorealisCards.logger.warn("Modded orb detected!");
-                AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, DESCRIPTIONS[1], true));
+                BorealisCards.logger.info("Modded orb detected!");
+                if (!UpdateJammer.hasWarned) {
+                    AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, DESCRIPTIONS[1], true));
+                    UpdateJammer.hasWarned = true;
+                }
+                addToBot(new ApplyPowerAction(owner, owner, new OrbMysteryPower(owner, orb, 1)));
                 break;
         }
         flash();

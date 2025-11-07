@@ -75,7 +75,7 @@ public class TryCatch extends BaseCard {
 
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard retVal = super.makeStatEquivalentCopy();
-        ((TryCatch)retVal).CaughtOrbs = this.CaughtOrbs;
+        ((TryCatch)retVal).CaughtOrbs = new ArrayList<>(this.CaughtOrbs);
         ((TryCatch)retVal).updateTryDescription();
         return retVal;
     }

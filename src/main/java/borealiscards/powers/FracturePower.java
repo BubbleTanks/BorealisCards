@@ -14,6 +14,7 @@ public class FracturePower extends BasePower {
 
     public FracturePower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        this.priority = 4;
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {

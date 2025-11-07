@@ -1,6 +1,8 @@
 package borealiscards.patches;
 
 import borealiscards.cards.silent.Toxicology;
+import borealiscards.powers.BasePower;
+import borealiscards.powers.IridiumToxinsPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
@@ -33,6 +35,13 @@ public class ToxicologyPatch {
                     c.flash();
                     ___powerToApply.amount += c.magicNumber;
                     __instance.amount += c.magicNumber;
+                }
+            }
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p.ID == IridiumToxinsPower.POWER_ID) {
+                    p.flash();
+                    ___powerToApply.amount += ((BasePower)p).amount2;
+                    __instance.amount += ((BasePower)p).amount2;
                 }
             }
         }

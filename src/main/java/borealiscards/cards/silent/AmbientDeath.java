@@ -20,8 +20,8 @@ public class AmbientDeath extends BaseCard {
 
     public AmbientDeath() {
         super(ID, info);
-        setMagic(1,1);
-
+        setMagic(1,0);
+        setEthereal(true, false);
     }
 
     @Override

@@ -492,5 +492,32 @@
     "EXTENDED_DESCRIPTION": [
       "add to your hand and discard."
     ]
+  },
+  "${modID}:EdgeAlignment": {
+    "NAME": "Edge Alignment",
+    "DESCRIPTION": "Whenever you discard a Shiv, Exhaust it and Shivs deal !M! additional damage."
+  },
+  "${modID}:IridiumToxins": {
+    "NAME": "Iridium Toxins",
+    "DESCRIPTION": "Whenever you apply Poison, increase applied Poison by !M! for the rest of combat."
+  },
+  "${modID}:ElectricBaghnakhs": {
+    "NAME": "Electric Baghnakhs",
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL cost 0 cards by !M! this combat."
+  },
+  "${modID}:OverloadedCircuits": {
+    "NAME": "Overloaded Circuits",
+    "DESCRIPTION": "Deal !D! damage. NL Double the number of times this hits for each Power in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Hits ",
+      " time",
+      "s",
+      ".)"
+    ]
+  },
+  "${modID}:ReturnNull": {
+    "NAME": "Return Null",
+    "DESCRIPTION": "Shuffle a Void into your draw pile. NL Put !M! random cost 0 cards from your draw pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Shuffle a Void into your discard pile. NL Put !M! random cost 0 cards from your draw pile into your hand."
   }
 }

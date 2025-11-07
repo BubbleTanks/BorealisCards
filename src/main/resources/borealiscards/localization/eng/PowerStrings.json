@@ -9,7 +9,7 @@
     "NAME": "Update Jammer",
     "DESCRIPTIONS": [
       "Orbs continue their passive effects after being #yEvoked.",
-      "I can't jam this!"
+      "Update Jammer may have unpredictable results with modded orbs!"
     ]
   },
   "${modID}:OrbShockPower": {
@@ -40,6 +40,13 @@
     "NAME": "Jammed Starlight",
     "DESCRIPTIONS": [
       "Activate #b%d passive #yStarlight%s at the start of your turn."
+    ]
+  },
+  "${modID}:OrbMysteryPower": {
+    "NAME": "Jammed ",
+    "DESCRIPTIONS": [
+      "Activate #b%d passive #y%s%s at the start or end of your turn.",
+      "Mystery"
     ]
   },
   "${modID}:CruelSunPower": {
@@ -202,6 +209,31 @@
     "NAME": "Unlocked Potential",
     "DESCRIPTIONS": [
       "Gain #b%d #yRelic%s after combat."
+    ]
+  },
+  "${modID}:BlacklightPoison": {
+    "NAME": "Poison",
+    "DESCRIPTIONS": [
+      "At the start of its turn and whenever #yPoison is applied, loses #b",
+      " HP, then reduce #yPoison by #b2 [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:EdgeAlignmentPower": {
+    "NAME": "Edge Alignment",
+    "DESCRIPTIONS": [
+      "Whenever you discard a #yShiv [REMOVE_SPACE], #yExhaust it and #yShivs deal #b%d additional damage."
+    ]
+  },
+  "${modID}:ElectricBaghnakhsPower": {
+    "NAME": "Electric Baghnakhs",
+    "DESCRIPTIONS": [
+      "Increases attack damage of cost 0 cards by #b%d [REMOVE_SPACE]."
+    ]
+  },
+  "${modID}:IridiumToxinsPower": {
+    "NAME": "Iridium Toxins",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yPoison [REMOVE_SPACE], increase applied #yPoison by #b%d for the rest of combat.\n (Currently applies #b%d additional #yPoison [REMOVE_SPACE])"
     ]
   }
 }
