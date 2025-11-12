@@ -38,6 +38,9 @@ public class UpdateJammerPower extends BasePower {
             case "borealiscards:Starlight":
                 addToBot(new ApplyPowerAction(owner, owner, new OrbStarlightPower(owner, 1)));
                 break;
+            case "borealiscards:Horizon":
+                addToBot(new ApplyPowerAction(owner, owner, new OrbHorizonPower(owner, 1)));
+                break;
             default:
                 BorealisCards.logger.info("Modded orb detected!");
                 if (!UpdateJammer.hasWarned) {

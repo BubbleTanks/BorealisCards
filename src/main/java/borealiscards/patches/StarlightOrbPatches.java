@@ -1,5 +1,6 @@
 package borealiscards.patches;
 
+import borealiscards.orbs.Horizon;
 import borealiscards.orbs.Starlight;
 import borealiscards.powers.OrbStarlightPower;
 import borealiscards.ui.ModConfig;
@@ -68,6 +69,10 @@ public class StarlightOrbPatches {
         @SpireInsertPatch(rloc = 3, localvars = {"orbs"})
         public static void StarlightOrbChaosInsert(ArrayList<AbstractOrb> orbs) {
             if(ModConfig.ColorsBlue) orbs.add(new Starlight());
+            int blackHoleChance = AbstractDungeon.cardRng.random(1,500);
+            if (blackHoleChance == 500) {
+                if(ModConfig.ColorsBlue) orbs.add(new Horizon());
+            }
         }
     }
 
@@ -78,6 +83,10 @@ public class StarlightOrbPatches {
             if(___orb.ID == Starlight.ORB_ID) {
                 ___color[0] = Color.ROYAL.cpy();
                 ___color2[0] = Color.VIOLET.cpy();
+            }
+            if(___orb.ID == Horizon.ORB_ID) {
+                ___color[0] = Color.WHITE.cpy();
+                ___color2[0] = Color.BLACK.cpy();
             }
         }
     }

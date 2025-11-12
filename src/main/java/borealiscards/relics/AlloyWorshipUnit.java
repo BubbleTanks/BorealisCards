@@ -24,7 +24,7 @@ public class AlloyWorshipUnit extends BaseRelic {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            addToTop(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 2));
+            addToTop(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
         }
     }
 

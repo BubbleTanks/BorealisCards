@@ -3,6 +3,7 @@ package borealiscards.cards.silent;
 import basemod.BaseMod;
 import borealiscards.cards.BaseCard;
 import borealiscards.util.CardStats;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
@@ -37,9 +38,15 @@ public class SharpenedEdge extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(5));
-        int handRemaining = BaseMod.MAX_HAND_SIZE - AbstractDungeon.player.hand.size();
-        for(int i = 0; i < handRemaining; ++i) {
-            addToBot(new MakeTempCardInHandAction(cardsToPreview));
-        }
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                int handRemaining = BaseMod.MAX_HAND_SIZE - AbstractDungeon.player.hand.size();
+                for(int i = 0; i < handRemaining; ++i) {
+                    addToBot(new MakeTempCardInHandAction(cardsToPreview));
+                    this.isDone = true;
+                }
+            }
+        });
     }
 }

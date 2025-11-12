@@ -11,7 +11,6 @@ import borealiscards.cards.watcher.HandOfGod;
 import borealiscards.patches.ParanoiaBoxPreventSkip;
 import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.potions.BasePotion;
-import borealiscards.relics.AntennaHeadband;
 import borealiscards.relics.BaseRelic;
 import borealiscards.ui.ModConfig;
 import borealiscards.util.GeneralUtils;
@@ -32,7 +31,6 @@ import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -72,6 +70,10 @@ public class BorealisCards implements
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
+    public static final String HORIZON_CHANNEL_SFX_KEY = makeID("HorizonChannel");
+    private static final String HORIZON_CHANNEL_SFX_WAV = getWavFile("HorizonChannel");
+    public static final String HORIZON_EVOKE_SFX_KEY = makeID("HorizonEvoke");
+    private static final String HORIZON_EVOKE_SFX_WAV = getWavFile("HorizonEvoke");
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
 
@@ -347,7 +349,13 @@ public class BorealisCards implements
 
     @Override
     public void receiveAddAudio() {
+        BaseMod.addAudio(HORIZON_CHANNEL_SFX_KEY, HORIZON_CHANNEL_SFX_WAV);
+        BaseMod.addAudio(HORIZON_EVOKE_SFX_KEY, HORIZON_EVOKE_SFX_WAV);
         loadAudio(Sounds.class);
+    }
+
+    public static String getWavFile(String fileName) {
+        return "borealiscards/audio/" + fileName + ".wav";
     }
 
     private static final String[] AUDIO_EXTENSIONS = { ".ogg", ".wav", ".mp3" }; //There are more valid types, but not really worth checking them all here
@@ -516,16 +524,7 @@ public class BorealisCards implements
 
     @Override
     public boolean receivePostCampfire() {
-        if (AbstractDungeon.player.hasRelic(AntennaHeadband.ID)) {
-            if (AbstractDungeon.player.maxHealth <= 2) {
-                while (AbstractDungeon.player.currentHealth > 0) {
-                    AbstractDungeon.player.damage(new DamageInfo(null, 99999, DamageInfo.DamageType.HP_LOSS));
-                    // WHERE YOU THINK YOU'RE GOING FLINT LOCKWOOD
-                }
-                AbstractDungeon.player.maxHealth = 0;
-                AbstractDungeon.player.currentHealth = 0;
-            } else AbstractDungeon.player.decreaseMaxHealth(2);
-        }
+
         return true;
     }
 }

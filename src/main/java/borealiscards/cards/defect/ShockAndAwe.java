@@ -20,11 +20,12 @@ public class ShockAndAwe extends BaseCard {
     public ShockAndAwe() {
         super(ID, info);
         setInnate(false,true);
+        setMagic(1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ShockAndAwePower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new ShockAndAwePower(p, magicNumber)));
     }
 }
 

@@ -2,6 +2,7 @@ package borealiscards.cards.ironclad;
 
 import borealiscards.actions.IronhandAction;
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -18,7 +19,7 @@ public class Ironhand extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.RED,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CustomRarity.SHOP,
             CardTarget.ENEMY,
             3
     );

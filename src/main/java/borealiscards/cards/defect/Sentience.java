@@ -1,45 +1,33 @@
 package borealiscards.cards.defect;
 
-import basemod.abstracts.CustomSavable;
 import borealiscards.cards.BaseCard;
 import borealiscards.patches.rarities.CustomRarity;
-import borealiscards.powers.UpdateJammerPower;
+import borealiscards.powers.SentiencePower;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class UpdateJammer extends BaseCard implements CustomSavable<Boolean> {
-    public static final String ID = makeID(UpdateJammer.class.getSimpleName());
+public class Sentience extends BaseCard {
+    public static final String ID = makeID(Sentience.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.POWER,
             CustomRarity.EXOTIC,
             CardTarget.SELF,
-            3
+            2
     );
 
-    public static boolean hasWarned = false;
-
-    public UpdateJammer() {
+    public Sentience() {
         super(ID, info);
-        setCostUpgrade(2);
+        setInnate(false,true);
+        setEthereal(true);
+        setMagic(1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new UpdateJammerPower(p)));
-    }
-
-
-    @Override
-    public Boolean onSave() {
-        return hasWarned;
-    }
-
-    @Override
-    public void onLoad(Boolean b) {
-        hasWarned = b;
+        addToBot(new ApplyPowerAction(p, p, new SentiencePower(p, magicNumber)));
     }
 }
 

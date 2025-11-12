@@ -3,6 +3,7 @@ package borealiscards.patches;
 import borealiscards.SpireFields.ShockAndAweField;
 import borealiscards.cards.defect.TryCatch;
 import borealiscards.powers.HyperPropellantPower;
+import borealiscards.powers.SentiencePower;
 import borealiscards.powers.ShockAndAwePower;
 import borealiscards.powers.TryCatchPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
@@ -52,6 +53,19 @@ public class ChannelInterruptPatch {
                 ((TryCatchPower)p).TriedCatch = true;
                 ((TryCatch)((TryCatchPower)p).TryCatch).CaughtOrbs.add(___orbType.makeCopy());
                 ((TryCatch)((TryCatchPower)p).TryCatch).updateTryDescription();
+            }
+            if (p.ID == SentiencePower.POWER_ID) {
+                if (!ShockAndAweField.ShockField.sentient.get(___orbType)) {
+                    for (int i = p.amount; i > 0; i--) {
+                        AbstractOrb sentientOrb = ___orbType.makeCopy();
+                        if (ShockAndAweField.ShockField.aweShocked.get(___orbType)) {
+                            ShockAndAweField.ShockField.aweShocked.set(sentientOrb, true);
+                        }
+                        ShockAndAweField.ShockField.sentient.set(sentientOrb, true);
+                        ShockAndAweField.ShockField.sentient.set(___orbType, true);
+                        AbstractDungeon.actionManager.addToBottom(new ChannelAction(sentientOrb));
+                    }
+                }
             }
         }
     }

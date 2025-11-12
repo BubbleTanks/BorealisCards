@@ -189,7 +189,7 @@
     "NAME": "Alloy Worship Unit",
     "FLAVOR": "A former Solus core, overridden and refitted for new purpose.",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain temporary #yStrength equal to the cost of the cards in your hand. Whenever you play an #yAttack, lose #b2 HP."
+      "At the start of your turn, gain temporary #yStrength equal to the cost of the cards in your hand. Whenever you play an #yAttack, lose #b1 HP."
     ]
   },
   "${modID}:SleepingButterfly": {

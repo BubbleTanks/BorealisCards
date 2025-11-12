@@ -37,5 +37,12 @@
       "Shop",
       "Exotic"
     ]
+  },
+  "${modID}:IHateThisFuckingShovel": {
+    "TEXT": [
+      "Return",
+      "Skip Relic",
+      "Proceed"
+    ]
   }
 }

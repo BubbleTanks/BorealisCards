@@ -14,7 +14,7 @@ public class OverdriveBooster extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.POWER,
-            CustomRarity.SHOP,
+            CardRarity.RARE,
             CardTarget.SELF,
             3
     );

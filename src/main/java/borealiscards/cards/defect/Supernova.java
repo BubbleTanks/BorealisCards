@@ -1,33 +1,30 @@
 package borealiscards.cards.defect;
 
 import borealiscards.cards.BaseCard;
+import borealiscards.orbs.Horizon;
 import borealiscards.patches.rarities.CustomRarity;
-import borealiscards.powers.JetFuelPower;
 import borealiscards.util.CardStats;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class JetFuelMixture extends BaseCard {
-    public static final String ID = makeID(JetFuelMixture.class.getSimpleName());
+public class Supernova extends BaseCard {
+    public static final String ID = makeID(Supernova.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
-            CardType.POWER,
-            CustomRarity.SHOP,
+            CardType.SKILL,
+            CustomRarity.EXOTIC,
             CardTarget.SELF,
-            5
+            1
     );
 
-    public JetFuelMixture() {
+    public Supernova() {
         super(ID, info);
-        setEthereal(true,false);
-        setMagic(2);
+        setInnate(false,true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new JetFuelPower(p, magicNumber)));
+        addToBot(new ChannelAction(new Horizon()));
     }
 }
-
-// wawa :3

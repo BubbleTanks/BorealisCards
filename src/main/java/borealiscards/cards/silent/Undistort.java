@@ -14,7 +14,7 @@ public class Undistort extends BaseCard {
     public static final String ID = makeID(Undistort.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.GREEN,
-            CardType.ATTACK,
+            CardType.SKILL,
             CustomRarity.EXOTIC,
             CardTarget.SELF,
             2

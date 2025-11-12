@@ -18,14 +18,14 @@ public class IronhandAction extends AbstractGameAction {
 
         for(AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c.uuid.equals(uuid)) {
-                c.misc ++;
+                c.misc += 2;
                 c.applyPowers();
                 c.baseDamage = c.misc;
             }
         }
 
         for(AbstractCard c : GetAllInBattleInstances.get(uuid)) {
-            c.misc ++;
+            c.misc += 2;
             c.applyPowers();
             c.baseDamage = c.misc;
         }

@@ -235,5 +235,11 @@
     "DESCRIPTIONS": [
       "Whenever you apply #yPoison [REMOVE_SPACE], increase applied #yPoison by #b%d for the rest of combat.\n (Currently applies #b%d additional #yPoison [REMOVE_SPACE])"
     ]
+  },
+  "${modID}:SentiencePower": {
+    "NAME": "Sentience",
+    "DESCRIPTIONS": [
+      "Whenever you #yChannel an orb, #yChannel it again."
+    ]
   }
 }

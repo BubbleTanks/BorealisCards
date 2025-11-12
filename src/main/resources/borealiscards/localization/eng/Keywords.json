@@ -26,5 +26,12 @@
       "Tension"
     ],
     "DESCRIPTION": "In this #yStance [REMOVE_SPACE], you draw 1 card whenever you play a card."
+  },
+  {
+    "PROPER_NAME": "Horizon",
+    "NAMES": [
+      "Horizon"
+    ],
+    "DESCRIPTION": "Orb: Gives #yFocus every turn. When #yEvoked, activates all other #yEvoke effects."
   }
 ]

@@ -2,7 +2,6 @@ package borealiscards.cards.defect;
 
 import borealiscards.cards.BaseCard;
 import borealiscards.orbs.Starlight;
-import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -20,7 +19,7 @@ public class StarCannon extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.ATTACK,
-            CustomRarity.SHOP,
+            CardRarity.UNCOMMON,
             CardTarget.ALL_ENEMY,
             2
     );
@@ -42,9 +41,10 @@ public class StarCannon extends BaseCard {
                     if (o.ID == Starlight.ORB_ID) {
                         this.addToBot(new SFXAction("ATTACK_HEAVY"));
                         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-                        addToBot(new DamageAllEnemiesAction(p, magicNumber, damageTypeForTurn, AttackEffect.NONE));
+                        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AttackEffect.NONE));
                     }
                 }
+                this.isDone = true;
             }
         });
 

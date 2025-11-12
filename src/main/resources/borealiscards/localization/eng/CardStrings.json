@@ -174,7 +174,7 @@
   },
   "${modID}:Ironhand": {
     "NAME": "Ironhand",
-    "DESCRIPTION": "Deal !D! damage. If you lose HP while this card is in your hand, permanently increase it's damage by 1."
+    "DESCRIPTION": "Deal !D! damage. If you lose HP while this card is in your hand, permanently increase it's damage by 2."
   },
   "${modID}:BlazingVeins": {
     "NAME": "Blazing Veins",
@@ -432,7 +432,7 @@
   },
   "${modID}:StarCannon": {
     "NAME": "Star Cannon",
-    "DESCRIPTION": "Channel 2 Starlight. NL Deal !D! damage to all enemies for each channeled Starlight."
+    "DESCRIPTION": "Channel 2 Starlight. NL Deal !D! damage to all enemies for each Channeled Starlight."
   },
   "${modID}:DivineSmite": {
     "NAME": "Divine Smite",
@@ -519,5 +519,15 @@
     "NAME": "Return Null",
     "DESCRIPTION": "Shuffle a Void into your draw pile. NL Put !M! random cost 0 cards from your draw pile into your hand.",
     "UPGRADE_DESCRIPTION": "Shuffle a Void into your discard pile. NL Put !M! random cost 0 cards from your draw pile into your hand."
+  },
+  "${modID}:Sentience": {
+    "NAME": "Sentience",
+    "DESCRIPTION": "Ethereal. NL Whenever you Channel an orb, Channel it again.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Ethereal. NL Whenever you Channel an orb, Channel it again."
+  },
+  "${modID}:Supernova": {
+    "NAME": "Supernova",
+    "DESCRIPTION": "Channel 1 ${modID}:Horizon.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Channel 1 ${modID}:Horizon."
   }
 }

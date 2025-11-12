@@ -8,5 +8,6 @@ public class ShockAndAweField {
     @SpirePatch(clz = AbstractOrb.class, method = SpirePatch.CLASS)
     public static class ShockField {
         public static SpireField<Boolean> aweShocked = new SpireField<>(() -> false);
+        public static SpireField<Boolean> sentient = new SpireField<>(() -> false);
     }
 }
