@@ -1,7 +1,9 @@
 package borealiscards.relics;
 
+import borealiscards.BorealisCards;
 import borealiscards.potions.VialOfNight;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 
 import static borealiscards.BorealisCards.makeID;
@@ -11,6 +13,7 @@ public class MidnightBrew extends BaseRelic {
 
     public MidnightBrew() {
         super(ID, RelicTier.BOSS, LandingSound.FLAT);
+        this.tips.add(new PowerTip(BorealisCards.keywords.get("Vial of Night").PROPER_NAME, BorealisCards.keywords.get("Vial of Night").DESCRIPTION));
     }
 
     public void onEquip() {

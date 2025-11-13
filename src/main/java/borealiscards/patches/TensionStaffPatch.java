@@ -1,5 +1,6 @@
 package borealiscards.patches;
 
+import basemod.ReflectionHacks;
 import borealiscards.stances.TensionStance;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -31,15 +32,9 @@ public class TensionStaffPatch {
             __instance.eyeState.setAnimation(0, "Tension", true);
             return SpireReturn.Return();
         } else {
-            ___eyeAtlas[0] = new TextureAtlas(Gdx.files.internal("images/characters/watcher/eye_anim/skeleton.atlas"));
-            SkeletonJson json = new SkeletonJson(___eyeAtlas[0]);
-            json.setScale(Settings.scale / 1.0F);
-            SkeletonData skeletonData = json.readSkeletonData(Gdx.files.internal("images/characters/watcher/eye_anim/skeleton.json"));
-            ___eyeSkeleton[0] = new Skeleton(skeletonData);
-            ___eyeSkeleton[0].setColor(Color.WHITE);
-            ___eyeStateData[0] = new AnimationStateData(skeletonData);
-            __instance.eyeState = new AnimationState(___eyeStateData[0]);
-            ___eyeStateData[0].setDefaultMix(0.2F);
+
+            ReflectionHacks.privateMethod(Watcher.class, "loadEyeAnimation").invoke(__instance);
+
         }
         return SpireReturn.Continue();
     }

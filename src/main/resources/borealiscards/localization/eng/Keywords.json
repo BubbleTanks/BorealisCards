@@ -33,5 +33,13 @@
       "Horizon"
     ],
     "DESCRIPTION": "Orb: Gives #yFocus every turn. When #yEvoked, activates all other #yEvoke effects."
+  },
+  {
+    "ID": "Vial of Night",
+    "PROPER_NAME": "Vial of Night",
+    "NAMES": [
+      "VialOfNight"
+    ],
+    "DESCRIPTION": "Gain #b%d #yStrength. Gain #b%d #yDexterity. Lose #b2 Max HP. Obtain #b1 #rVial #rof #rNight."
   }
 ]

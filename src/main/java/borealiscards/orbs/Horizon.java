@@ -15,7 +15,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.FocusPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
+
+import java.util.ArrayList;
 
 import static borealiscards.BorealisCards.*;
 
@@ -28,6 +31,7 @@ public class Horizon extends CustomOrb {
     private final float vfxIntervalMax = 0.04F;
     private static final float ORB_WAVY_DIST = 0.04F;
     private static final float PI_4 = 12.566371F;
+    private ArrayList<AbstractGameEffect> purgeEffects = new ArrayList<>();
 
     public Horizon() {
         super(
@@ -77,15 +81,26 @@ public class Horizon extends CustomOrb {
 
     public void triggerEvokeAnimation() {
         CardCrawlGame.sound.play(HORIZON_EVOKE_SFX_KEY, 0.1F);
-        AbstractDungeon.effectsQueue.add(new HorizonEvokeEffect(cX, cY));
+        AbstractDungeon.effectsQueue.add(new HorizonEvokeEffect(cX, cY, purgeEffects));
     }
 
     public void updateAnimation() {
         super.updateAnimation();
+        AbstractGameEffect horizonParticle = new HorizonParticle(this);
+        purgeEffects.add(horizonParticle);
         angle += Gdx.graphics.getDeltaTime() * 45.0F;
         vfxTimer -= Gdx.graphics.getDeltaTime();
         if (vfxTimer < 0.0F) {
-            AbstractDungeon.effectList.add(new HorizonParticle(this));
+            AbstractDungeon.effectList.add(horizonParticle);
+            ArrayList<AbstractGameEffect> eKill = new ArrayList<>();
+            for (AbstractGameEffect e : purgeEffects) {
+                if (e.isDone) {
+                    eKill.add(e);
+                }
+            }
+            for (AbstractGameEffect e : eKill) {
+                purgeEffects.remove(e);
+            }
             vfxTimer = MathUtils.random(vfxIntervalMin, vfxIntervalMax);
         }
     }

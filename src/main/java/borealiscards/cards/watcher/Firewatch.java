@@ -20,8 +20,8 @@ public class Firewatch extends BaseCard {
 
     public Firewatch() {
         super(ID, info);
-        setMagic(4,2);
-        setCustomVar("vigorIncrease", VariableType.MAGIC, 4,2);
+        setMagic(3,1);
+        setCustomVar("vigorIncrease", VariableType.MAGIC, 3,1);
         setSelfRetain(true);
     }
 

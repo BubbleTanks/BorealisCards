@@ -1,11 +1,13 @@
 package borealiscards.relics;
 
 import borealiscards.patches.rarities.CustomRarity;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.ArrayList;
 
@@ -42,8 +44,17 @@ public class CosmicStrawberry extends BaseRelic {
         c2.drawScale = 0.12F;
         c2.targetDrawScale = 0.75F;
         c2.applyPowers();
-        this.addToTop(new NewQueueCardAction(c2, true, false, true));
-        this.addToTop(new UnlimboAction(c2));
+        int energy = EnergyPanel.getCurrentEnergy();
+        EnergyPanel.setEnergy(AbstractDungeon.player.energy.energyMaster);
+        addToTop(new AbstractGameAction() {
+            @Override
+            public void update() {
+                EnergyPanel.setEnergy(energy);
+                this.isDone = true;
+            }
+        });
+        addToTop(new NewQueueCardAction(c2, true, false, true));
+        addToTop(new UnlimboAction(c2));
     }
 
     @Override

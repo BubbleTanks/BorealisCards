@@ -22,6 +22,7 @@ public class SystemFailure extends BaseCard {
 
     public SystemFailure() {
         super(ID, info);
+        setMagic(2,1);
     }
 
     @Override
@@ -30,9 +31,7 @@ public class SystemFailure extends BaseCard {
         int orbsMax = AbstractDungeon.player.maxOrbs;
         if (orbsCount > 0) {
             for (int i = 0; i < orbsCount; ++i) {
-                addToBot(new AnimateOrbAction(1));
-                addToBot(new EvokeWithoutRemovingOrbAction(1));
-                if(upgraded) {
+                for (int j = 0; j < magicNumber - 1; ++j) {
                     addToBot(new AnimateOrbAction(1));
                     addToBot(new EvokeWithoutRemovingOrbAction(1));
                 }

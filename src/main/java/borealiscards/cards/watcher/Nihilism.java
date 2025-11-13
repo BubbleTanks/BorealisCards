@@ -47,11 +47,18 @@ public class Nihilism extends BaseCard {
                         AbstractCard b = null;
                         for (AbstractCard a : AbstractDungeon.player.masterDeck.group) {
                             if (a.uuid == c.uuid) {
-                                AbstractDungeon.effectList.add(new PurgeCardEffect(a));
                                 b = a;
                             }
                         }
-                        AbstractDungeon.player.masterDeck.removeCard(b);
+                        if(b != null) {
+                            AbstractDungeon.player.masterDeck.removeCard(b);
+                        }
+                        c.targetAngle = 0.0F;
+                        c.stopGlowing();
+                        c.drawScale = 0.12F;
+                        c.targetDrawScale = 0.75F;
+                        c.applyPowers();
+                        AbstractDungeon.effectList.add(new PurgeCardEffect(c));
                         AbstractDungeon.player.hand.removeCard(c);
 
                         this.isDone = true;

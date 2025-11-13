@@ -1,6 +1,7 @@
 package borealiscards.cards.silent;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import borealiscards.cards.BaseCard;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -10,8 +11,9 @@ import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
-public class SharpenedEdge extends BaseCard {
+public class SharpenedEdge extends BaseCard implements CustomSavable<Boolean> {
     public static final String ID = makeID(SharpenedEdge.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.GREEN,
@@ -20,6 +22,8 @@ public class SharpenedEdge extends BaseCard {
             CardTarget.NONE,
             2
     );
+
+    public static boolean hasWarned = false;
 
     public SharpenedEdge() {
         super(ID, info);
@@ -42,11 +46,29 @@ public class SharpenedEdge extends BaseCard {
             @Override
             public void update() {
                 int handRemaining = BaseMod.MAX_HAND_SIZE - AbstractDungeon.player.hand.size();
-                for(int i = 0; i < handRemaining; ++i) {
-                    addToBot(new MakeTempCardInHandAction(cardsToPreview));
-                    this.isDone = true;
+                if (handRemaining > 10){
+                    handRemaining = 10;
+                    if (!hasWarned) {
+                        AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, cardStrings.EXTENDED_DESCRIPTION[0], true));
+                        hasWarned = true;
+                    }
                 }
+
+                for (int i = 0; i < handRemaining; ++i) {
+                    addToBot(new MakeTempCardInHandAction(cardsToPreview));
+                }
+                this.isDone = true;
             }
         });
+    }
+
+    @Override
+    public Boolean onSave() {
+        return hasWarned;
+    }
+
+    @Override
+    public void onLoad(Boolean b) {
+        hasWarned = b;
     }
 }

@@ -55,4 +55,12 @@ public class SonicBoom extends BaseCard {
             addToBot(new PressEndTurnButtonAction());
         }
     }
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+
+        if (PlayedThisTurn()) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+    }
 }

@@ -1,7 +1,9 @@
 package borealiscards.relics;
 
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static borealiscards.BorealisCards.makeID;
 
@@ -24,6 +26,13 @@ public class Yumako extends BaseRelic {
             AbstractDungeon.player.gainGold(18);
             counter--;
         }
+    }
+
+    public boolean canSpawn() {
+        if (super.canSpawn()) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

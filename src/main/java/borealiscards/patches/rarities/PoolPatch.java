@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.shop.Merchant;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import javassist.expr.ExprEditor;
+import javassist.expr.FieldAccess;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -50,26 +52,6 @@ public class PoolPatch {
 
     @SpirePatch2(clz = ShopScreen.class, method = "purchaseCard")
     public static class StupidFuckingRatPatch {
-        @SpireInsertPatch(locator = Locator1.class, localvars = {"c"})
-        public static void MerchantPurchasedShopCards(AbstractCard hoveredCard, @ByRef AbstractCard[] c) {
-            if(ModConfig.ShopCards && hoveredCard.rarity == CustomRarity.SHOP && !srcShopCardPool.isEmpty()) {
-                if (AbstractDungeon.cardRng.randomBoolean()) {
-                    c[0] = srcShopCardPool.getRandomCard(true).makeCopy();
-                } else {
-                    c[0] = AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.UNCOMMON).makeCopy();
-                }
-            }
-        }
-
-        private static class Locator1 extends SpireInsertLocator {
-            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
-                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "color");
-                return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher)[1]};
-            }
-        }
-
-
-
         @SpireInsertPatch(locator = Locator2.class, localvars = {"c", "tempRarity"})
         public static void MerchantPurchasedColorlessCards(AbstractCard.CardRarity tempRarity, @ByRef AbstractCard[] c) {
             if(ModConfig.ShopCards && tempRarity == AbstractCard.CardRarity.UNCOMMON && !srcShopCardPool.isEmpty()) {
@@ -86,6 +68,31 @@ public class PoolPatch {
                 Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "relics");
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
+        }
+
+
+        @SpireInstrumentPatch
+        public static ExprEditor MummifiedHandCheck() {
+            return new ExprEditor() {
+                public void edit(FieldAccess f) throws CannotCompileException {
+                    if (f.getClassName().equals(AbstractCard.class.getName()) && f.getFieldName().equals("color")) {
+                        f.replace("if (" + StupidFuckingRatPatch.class.getName() + ".Do(hoveredCard)) {" +
+                                "$_ = " + AbstractCard.CardColor.class.getName() + ".COLORLESS;" +
+                                "} else {" +
+                                "$_ = $proceed($$);" +
+                                "}");
+                    }
+                }
+            };
+        }
+
+        @SuppressWarnings("unused")
+        public static boolean Do(AbstractCard ratDo) {
+            if (ratDo.rarity == CustomRarity.SHOP) {
+                return true;
+            }
+
+            return false;
         }
     }
 

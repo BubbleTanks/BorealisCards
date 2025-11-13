@@ -53,15 +53,18 @@ public class TryCatch extends BaseCard {
     public void updateTryDescription() {
         String tryCatchString = cardStrings.EXTENDED_DESCRIPTION[0];
         for (AbstractOrb o : CaughtOrbs) {
+            String orbName = "*"+o.name;
+            orbName.replace(" ", " *");
+
             if(CaughtOrbs.size() == 1) {
-                tryCatchString += o.name + LocalizedStrings.PERIOD + cardStrings.EXTENDED_DESCRIPTION[5];
+                tryCatchString += orbName + LocalizedStrings.PERIOD + cardStrings.EXTENDED_DESCRIPTION[5];
             } else if (!CaughtOrbs.isEmpty()) {
                 if (CaughtOrbs.indexOf(o) != CaughtOrbs.size() - 1) {
-                    tryCatchString += o.name;
+                    tryCatchString += orbName;
                     if (CaughtOrbs.size() != 2) tryCatchString += cardStrings.EXTENDED_DESCRIPTION[1];
                 } else {
                     if (CaughtOrbs.size() == 2) tryCatchString += cardStrings.EXTENDED_DESCRIPTION[6];
-                    tryCatchString += cardStrings.EXTENDED_DESCRIPTION[2] + o.name + LocalizedStrings.PERIOD + cardStrings.EXTENDED_DESCRIPTION[5];
+                    tryCatchString += cardStrings.EXTENDED_DESCRIPTION[2] + orbName + LocalizedStrings.PERIOD + cardStrings.EXTENDED_DESCRIPTION[5];
                 }
             }
         }

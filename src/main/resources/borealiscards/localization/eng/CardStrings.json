@@ -71,7 +71,8 @@
     },
   "${modID}:Spinebuster": {
     "NAME": "Spinebuster",
-    "DESCRIPTION": "Deal !D! damage. If the enemy has Vulnerable, apply !M! ${modID}:Fracture."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Vulnerable, apply !M! ${modID}:Fracture."
+
   },
   "${modID}:Plunge": {
     "NAME": "Plunge",
@@ -119,7 +120,7 @@
   },
   "${modID}:Stargazer": {
     "NAME": "Stargazer",
-    "DESCRIPTION": "Channel 1 ${modID}:Starlight at the end of your turns.",
+    "DESCRIPTION": "Channel 1 ${modID}:Starlight at the end of your turn.",
     "UPGRADE_DESCRIPTION": "Innate. NL Channel 1 ${modID}:Starlight at the end of your turn."
   },
   "${modID}:Backpedal": {
@@ -167,7 +168,8 @@
   },
   "${modID}:AmbientDeath": {
     "NAME": "Ambient Death",
-    "DESCRIPTION": "Unplayable. NL If this card is discarded from your hand, for the rest of combat your Skills apply !M! Poison to all enemies.",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL If this card is discarded from your hand, for the rest of combat your Skills apply !M! Poison to all enemies.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL If this card is discarded from your hand, for the rest of combat your Skills apply !M! Poison to all enemies.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
@@ -251,7 +253,10 @@
   "${modID}:SharpenedEdge": {
     "NAME": "Sharpened Edge",
     "DESCRIPTION": "Draw 5 cards. NL Fill the rest of your hand with *Shivs. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw 5 cards. NL Fill the rest of your hand with *Shivs+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Draw 5 cards. NL Fill the rest of your hand with *Shivs+. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't create more than 10 Shivs!"
+    ]
   },
   "${modID}:AlphaTesting": {
     "NAME": "Alpha Testing",
@@ -269,8 +274,7 @@
   },
   "${modID}:SystemFailure": {
     "NAME": "System Failure",
-    "DESCRIPTION": "Evoke all your Orbs twice. NL Lose all but one of your Orb slots. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Evoke all your Orbs three times. NL Lose all but one of your Orb slots. NL Exhaust."
+    "DESCRIPTION": "Evoke all your Orbs !M! times. NL Lose all but one of your Orb slots. NL Exhaust."
   },
   "${modID}:Anticipation": {
     "NAME": "Anticipation",
@@ -340,7 +344,7 @@
   },
   "${modID}:Carcinogen": {
     "NAME": "Carcinogen",
-    "DESCRIPTION": "Remove the enemy's Artifact. NL Enemy loses 2 Strength. NL Apply !M! Poison. NL Exhaust."
+    "DESCRIPTION": "Remove the enemy's Artifact. Enemy loses 2 Strength. NL Apply !M! Poison. NL Exhaust."
   },
   "${modID}:SonicBoom": {
     "NAME": "Sonic Boom",
@@ -374,7 +378,7 @@
   },
   "${modID}:ShoulderBash": {
     "NAME": "Shoulder Bash",
-    "DESCRIPTION": "Deal !D! damage. If the enemy does not intend to attack, it loses !M! Strength.",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy does not intend to attack, it loses !M! Strength.",
     "EXTENDED_DESCRIPTION": [
       "That enemy intends to attack!"
     ]
@@ -396,7 +400,7 @@
   },
   "${modID}:HandOfGod": {
     "NAME": "Godhand",
-    "DESCRIPTION": "Deal !D! damage. NL Permanently reduce this card's damage by 1 after combat."
+    "DESCRIPTION": "Deal !D! damage. NL After combat, permanently reduce this card's damage by 1."
   },
   "${modID}:BloodHunting": {
     "NAME": "Blood Hunting",
@@ -404,7 +408,7 @@
   },
   "${modID}:SlamRam": {
     "NAME": "Slam Ram",
-    "DESCRIPTION": "If this is the first card played this turn, play all Attacks in your hand. NL Gain !M! Weak, Vulnerable, and Frail. NL Exhaust."
+    "DESCRIPTION": "Play all Attacks in your hand. NL Gain !M! Weak, Vulnerable, and Frail. NL Exhaust."
   },
   "${modID}:UndyingSpear": {
     "NAME": "Undying Spear",
@@ -529,5 +533,9 @@
     "NAME": "Supernova",
     "DESCRIPTION": "Channel 1 ${modID}:Horizon.",
     "UPGRADE_DESCRIPTION": "Innate. NL Channel 1 ${modID}:Horizon."
+  },
+  "${modID}:ReverseGrip": {
+    "NAME": "Reverse Grip",
+    "DESCRIPTION": "Deal !D! damage to yourself."
   }
 }

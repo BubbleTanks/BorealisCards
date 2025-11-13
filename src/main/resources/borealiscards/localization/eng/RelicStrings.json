@@ -126,7 +126,7 @@
     "NAME": "Marauder Ant",
     "FLAVOR": "It's impressive size is matched only by it's equally impressive strength.",
     "DESCRIPTIONS": [
-      "At the end of your turn, if you have #b6 or less #yBlock [REMOVE_SPACE], double your #yBlock [REMOVE_SPACE]."
+      "If you do not play any #yAttacks during your turn, gain #b8 #yBlock [REMOVE_SPACE]."
     ]
   },
   "${modID}:Yumako": {
