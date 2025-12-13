@@ -13,14 +13,14 @@ public class RopeDart extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.GREEN,
             CardType.ATTACK,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             0
     );
 
     public RopeDart() {
         super(ID, info);
-        setDamage(4,2);
+        setDamage(8,4);
     }
 
     @Override

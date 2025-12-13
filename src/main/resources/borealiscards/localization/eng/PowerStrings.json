@@ -42,6 +42,12 @@
       "Activate #b%d passive #yStarlight%s at the start of your turn."
     ]
   },
+  "${modID}:OrbHorizonPower": {
+    "NAME": "Jammed Horizon",
+    "DESCRIPTIONS": [
+      "Activate #b%d passive #yHorizon%s at the start of your turn."
+    ]
+  },
   "${modID}:OrbMysteryPower": {
     "NAME": "Jammed ",
     "DESCRIPTIONS": [
@@ -240,6 +246,12 @@
     "NAME": "Sentience",
     "DESCRIPTIONS": [
       "Whenever you #yChannel an orb, #yChannel it again."
+    ]
+  },
+  "${modID}:IncensedPower": {
+    "NAME": "Incensed Fury",
+    "DESCRIPTIONS": [
+      "Cannot exit #yWrath [REMOVE_SPACE]."
     ]
   }
 }

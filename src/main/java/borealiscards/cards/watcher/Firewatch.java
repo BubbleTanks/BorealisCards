@@ -1,7 +1,6 @@
 package borealiscards.cards.watcher;
 
 import borealiscards.cards.BaseCard;
-import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +12,7 @@ public class Firewatch extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.PURPLE,
             CardType.SKILL,
-            CustomRarity.SHOP,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             2
     );

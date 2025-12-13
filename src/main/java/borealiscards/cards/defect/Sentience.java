@@ -1,19 +1,20 @@
 package borealiscards.cards.defect;
 
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import borealiscards.cards.BaseCard;
-import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.powers.SentiencePower;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@NoCompendium
 public class Sentience extends BaseCard {
     public static final String ID = makeID(Sentience.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
             CardType.POWER,
-            CustomRarity.EXOTIC,
+            CardRarity.SPECIAL,
             CardTarget.SELF,
             2
     );

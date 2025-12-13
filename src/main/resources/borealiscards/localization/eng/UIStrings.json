@@ -44,5 +44,17 @@
       "Skip Relic",
       "Proceed"
     ]
+  },
+  "${modID}:SpiceReward": {
+    "TEXT": [
+      "Add a card to your deck",
+      "Choose a Card"
+    ]
+  },
+  "${modID}:NeowRewards": {
+    "TEXT": [
+      "#gChoose #ga #gshop #gCard #gto #gobtain ]",
+      "[ #rLose #ryour #rstarting #rRelic #gObtain #ga #grandom #gexotic #gCard ]"
+    ]
   }
 }

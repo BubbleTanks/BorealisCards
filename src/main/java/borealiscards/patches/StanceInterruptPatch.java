@@ -2,6 +2,7 @@ package borealiscards.patches;
 
 import borealiscards.cards.watcher.Firewatch;
 import borealiscards.powers.CruelSunPower;
+import borealiscards.powers.IncensedPower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -19,9 +20,9 @@ import javassist.CtBehavior;
 public class StanceInterruptPatch {
     @SpirePrefixPatch
     public static SpireReturn<Void> Prefix(ChangeStanceAction __instance) {
-        if(AbstractDungeon.player.hasPower(CruelSunPower.POWER_ID)) {
+        if(AbstractDungeon.player.hasPower(CruelSunPower.POWER_ID) || AbstractDungeon.player.hasPower(IncensedPower.POWER_ID)) {
             for(AbstractPower p : AbstractDungeon.player.powers) {
-                if(p.ID == CruelSunPower.POWER_ID) p.flash();
+                if(p.ID == CruelSunPower.POWER_ID || p.ID == IncensedPower.POWER_ID) p.flash();
             }
             __instance.isDone = true;
             return SpireReturn.Return();

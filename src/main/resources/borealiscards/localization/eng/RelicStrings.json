@@ -8,7 +8,7 @@
   },
   "${modID}:BottledSin": {
     "NAME": "Bottled Sin",
-    "FLAVOR": "Hatred calls out from it's glass prison, beckoning you to remove the stopper.",
+    "FLAVOR": "Hatred calls out from its glass prison, beckoning you to remove the stopper.",
     "DESCRIPTIONS": [
       "Upon pick up, choose a #rCurse. Start each combat with this card in your hand.",
       "Choose a card for ",
@@ -124,7 +124,7 @@
   },
   "${modID}:MarauderAnt": {
     "NAME": "Marauder Ant",
-    "FLAVOR": "It's impressive size is matched only by it's equally impressive strength.",
+    "FLAVOR": "Its impressive size is matched only by its equally impressive strength.",
     "DESCRIPTIONS": [
       "If you do not play any #yAttacks during your turn, gain #b8 #yBlock [REMOVE_SPACE]."
     ]
@@ -203,7 +203,7 @@
     "NAME": "Bottled Borealis",
     "FLAVOR": "The inside glimmers with chromatic light, just as beautiful as the jar it's contained by.",
     "DESCRIPTIONS": [
-      "Upon pick up, choose a #yShop or #pExotic card. Start each combat with this card in your hand.",
+      "Upon pick up, choose a #gShop or #pExotic card. Start each combat with this card in your hand.",
       "Choose a card for ",
       "Start each combat with ",
       " in your hand."

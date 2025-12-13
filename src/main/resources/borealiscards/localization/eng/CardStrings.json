@@ -58,7 +58,7 @@
   "${modID}:Splatter": {
     "NAME": "Splatter",
     "DESCRIPTION": "Discard 2 cards. NL Deal !D! damage. NL Apply 6 Poison.",
-    "UPGRADE_DESCRIPTION": "Discard 1 card. NL Deal !D! damage. NL Apply 6 Poison."
+    "UPGRADE_DESCRIPTION": "Discard 1 card. NL Deal !D! damage. NL Apply 5 Poison."
   },
   "${modID}:StackTrace": {
     "NAME": "Stack Trace",
@@ -159,8 +159,7 @@
   },
   "${modID}:Caustics": {
     "NAME": "Caustics",
-    "DESCRIPTION": "Add 2 *Shivs into your hand. NL This turn, your *Shivs apply 1 ${modID}:Acrimony. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add 2 *Shivs into your hand. NL This turn, your *Shivs apply 1 ${modID}:Acrimony."
+    "DESCRIPTION": "Add 2 *Shivs into your hand. NL Apply !M! ${modID}:Acrimony to all enemies."
   },
   "${modID}:HeavyFog": {
     "NAME": "Heavy Fog",
@@ -436,7 +435,7 @@
   },
   "${modID}:StarCannon": {
     "NAME": "Star Cannon",
-    "DESCRIPTION": "Channel 2 Starlight. NL Deal !D! damage to all enemies for each Channeled Starlight."
+    "DESCRIPTION": "Channel 2 ${modID}:Starlight. NL Deal !D! damage to all enemies for each Channeled ${modID}:Starlight."
   },
   "${modID}:DivineSmite": {
     "NAME": "Divine Smite",
@@ -537,5 +536,25 @@
   "${modID}:ReverseGrip": {
     "NAME": "Reverse Grip",
     "DESCRIPTION": "Deal !D! damage to yourself."
+  },
+  "${modID}:AmbrosialSpice": {
+    "NAME": "Ambrosial Spice",
+    "DESCRIPTION": "Become [#af7bed]Incensed.",
+    "EXTENDED_DESCRIPTION" : [
+      "Become [#e67bed]Greatly [#e67bed]Incensed.",
+      "[#db4bba]Just [#db4bba]one [#db4bba]more...",
+      "[#d92e80]More.",
+      "[#c7042e]MORE."
+    ]
+  },
+  "${modID}:ArcticCircle": {
+    "NAME": "Arctic Circle",
+    "DESCRIPTION": "Channel X Frost X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Channel X+1 Frost X+1 times. NL Exhaust."
+  },
+  "${modID}:BigSeal": {
+    "NAME": "Big Seal",
+    "DESCRIPTION": "Add a *Big *Seal to your deck.",
+    "UPGRADE_DESCRIPTION": "Add a *Big *Seal+ to your deck."
   }
 }

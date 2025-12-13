@@ -22,7 +22,7 @@ public class Starshower extends BaseCard {
 
     public Starshower() {
         super(ID, info);
-        setDamage(5);
+        setDamage(4);
         setSelfRetain(false,true);
         isMultiDamage = true;
     }

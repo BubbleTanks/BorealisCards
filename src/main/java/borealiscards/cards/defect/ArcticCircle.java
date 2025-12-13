@@ -1,33 +1,29 @@
 package borealiscards.cards.defect;
 
+import borealiscards.actions.ArcticCircleAction;
 import borealiscards.cards.BaseCard;
 import borealiscards.patches.rarities.CustomRarity;
-import borealiscards.powers.JetFuelPower;
 import borealiscards.util.CardStats;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class JetFuelMixture extends BaseCard {
-    public static final String ID = makeID(JetFuelMixture.class.getSimpleName());
+public class ArcticCircle extends BaseCard {
+    public static final String ID = makeID(ArcticCircle.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.BLUE,
-            CardType.POWER,
-            CustomRarity.EXOTIC,
+            CardType.SKILL,
+            CustomRarity.SHOP,
             CardTarget.SELF,
-            5
+            -1
     );
 
-    public JetFuelMixture() {
+    public ArcticCircle() {
         super(ID, info);
-        setEthereal(true,false);
-        setMagic(2);
+        setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new JetFuelPower(p, magicNumber)));
+        this.addToBot(new ArcticCircleAction(p, this.energyOnUse, this.upgraded, this.freeToPlayOnce));
     }
 }
-
-// wawa :3

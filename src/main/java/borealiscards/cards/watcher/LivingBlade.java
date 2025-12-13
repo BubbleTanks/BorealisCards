@@ -2,6 +2,7 @@ package borealiscards.cards.watcher;
 
 import borealiscards.actions.LivingBladeAction;
 import borealiscards.cards.BaseCard;
+import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,7 +13,7 @@ public class LivingBlade extends BaseCard {
     private static final CardStats info = new CardStats(
             CardColor.PURPLE,
             CardType.ATTACK,
-            CardRarity.RARE,
+            CustomRarity.SHOP,
             CardTarget.ENEMY,
             -1
     );

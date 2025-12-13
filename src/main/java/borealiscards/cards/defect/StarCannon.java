@@ -27,6 +27,7 @@ public class StarCannon extends BaseCard {
     public StarCannon() {
         super(ID, info);
         setDamage(5,2);
+        this.isMultiDamage = true;
     }
 
     @Override
