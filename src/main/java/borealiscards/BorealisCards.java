@@ -3,8 +3,10 @@ package borealiscards;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ReflectionHacks;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import borealiscards.cards.BaseCard;
+import borealiscards.cards.curses.ElectromagneticInstability;
 import borealiscards.cards.ironclad.DreamlandExpress;
 import borealiscards.cards.silent.RopeDart;
 import borealiscards.cards.watcher.HandOfGod;
@@ -12,6 +14,9 @@ import borealiscards.patches.ParanoiaBoxPreventSkip;
 import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.potions.BasePotion;
 import borealiscards.relics.BaseRelic;
+import borealiscards.relics.ElectromagneticEqualizer;
+import borealiscards.relics.HypnoticWatch;
+import borealiscards.relics.MarketGardener;
 import borealiscards.ui.ModConfig;
 import borealiscards.util.GeneralUtils;
 import borealiscards.util.KeywordInfo;
@@ -100,6 +105,9 @@ public class BorealisCards implements
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards();
+        if (!Loader.isModLoaded("researchersmod")) {
+            BaseMod.addCard(new ElectromagneticInstability());
+        }
     }
 
     @Override
@@ -116,9 +124,6 @@ public class BorealisCards implements
                 card instanceof BaseCard
         ).collect(Collectors.toList()));
         cardsToRemove.addAll(AbstractDungeon.colorlessCardPool.group.stream().filter(card ->
-                card instanceof BaseCard
-        ).collect(Collectors.toList()));
-        cardsToRemove.addAll(AbstractDungeon.curseCardPool.group.stream().filter(card ->
                 card instanceof BaseCard
         ).collect(Collectors.toList()));
 
@@ -138,9 +143,6 @@ public class BorealisCards implements
             if(!ModConfig.ColorsGray && c.color == AbstractCard.CardColor.COLORLESS) {
                 removeCard(c);
             }
-            if(!ModConfig.ColorsBlack && c.color == AbstractCard.CardColor.CURSE) {
-                removeCard(c);
-            }
         }
 
 
@@ -156,7 +158,6 @@ public class BorealisCards implements
         AbstractDungeon.srcUncommonCardPool.removeCard(c);
         AbstractDungeon.srcRareCardPool.removeCard(c);
         AbstractDungeon.srcColorlessCardPool.removeCard(c);
-        AbstractDungeon.srcCurseCardPool.removeCard(c);
         // the great pool wall
     }
 
@@ -199,11 +200,6 @@ public class BorealisCards implements
             if(!ModConfig.ColorsGray && c.color == AbstractCard.CardColor.COLORLESS) {
                 CardLibrary.cards.remove(c.cardID);
             }
-            if(!ModConfig.ColorsBlack && c.color == AbstractCard.CardColor.CURSE) {
-                CardLibrary.cards.remove(c.cardID);
-                ReflectionHacks.<HashMap>getPrivateStatic(CardLibrary.class, "curses").remove(c.cardID);
-
-            }
         }
 
         for(AbstractRelic r : relicsToRemove) {
@@ -242,6 +238,11 @@ public class BorealisCards implements
                     if (info.seen)
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
+        if (!Loader.isModLoaded("researchersmod")) {
+            BaseMod.addRelic(new HypnoticWatch(), RelicType.SHARED);
+            BaseMod.addRelic(new MarketGardener(), RelicType.SHARED);
+            BaseMod.addRelic(new ElectromagneticEqualizer(), RelicType.SHARED);
+        }
     }
 
     @Override

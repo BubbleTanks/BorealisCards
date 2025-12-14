@@ -243,5 +243,25 @@
     "DESCRIPTIONS": [
       "While you are not in a #yStance [REMOVE_SPACE], you can no longer be debuffed."
     ]
+  },"${modID}:MarketGardener": {
+  "NAME": "Market Gardener",
+  "FLAVOR": "\"SCREAMIN' EAGLEEEEES!!!\" - The Soldier",
+  "DESCRIPTIONS": [
+    "The last #yAttack you play each combat deals double damage the first time you play it next combat."
+  ]
+},
+  "${modID}:HypnoticWatch": {
+    "NAME": "Hypnotic Watch",
+    "FLAVOR": "Wisdom is a circle...what you receive...you must give back...",
+    "DESCRIPTIONS": [
+      "Shuffle a #yDazed into your draw pile at the start of your turn. Whenever you draw a #yStatus for the first time each turn, #yExhaust it, gain [E] [REMOVE_SPACE], and draw #b1 card."
+    ]
+  },
+  "${modID}:ElectromagneticEqualizer": {
+    "NAME": "Electromagnetic Equalizer",
+    "FLAVOR": "\"Powerful energy harmonizes around the central point, arcing and dancing within the sphere.\" - The Architect",
+    "DESCRIPTIONS": [
+      "Gain [E] and draw #b2 cards at start of your turn. Upon pickup, obtain #b3 #rElectromagnetic #rInstabilities."
+    ]
   }
 }

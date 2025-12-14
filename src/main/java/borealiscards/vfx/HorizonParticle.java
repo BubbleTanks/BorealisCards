@@ -44,8 +44,8 @@ public class HorizonParticle extends AbstractGameEffect {
         this.rotation = MathUtils.random(360.0F, 0.0F);
         this.oY = MathUtils.random(-30.0F, -27.0F) * Settings.scale;
         this.oX = MathUtils.random(-100.0F, -90.0F) * Settings.scale;
-        this.y = horizon.cY + oY;
-        this.x = horizon.cX + oX;
+        this.y = horizon.cY + oY * Settings.scale;
+        this.x = horizon.cX + oX * Settings.scale;
         vX = MathUtils.random(30.0F, 35.0F) * Settings.scale;
         vY = (MathUtils.random(-3.0F, 3.0F) - 18.0F) * Settings.scale;
 

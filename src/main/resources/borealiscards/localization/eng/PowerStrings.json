@@ -253,5 +253,11 @@
     "DESCRIPTIONS": [
       "Cannot exit #yWrath [REMOVE_SPACE]."
     ]
+  },
+  "${modID}:InstabilityPower": {
+    "NAME": "Instability",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b%d less card%s. If you end a turn without playing a card, remove all #yInstability."
+    ]
   }
 }

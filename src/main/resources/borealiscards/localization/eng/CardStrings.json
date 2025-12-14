@@ -556,5 +556,8 @@
     "NAME": "Big Seal",
     "DESCRIPTION": "Add a *Big *Seal to your deck.",
     "UPGRADE_DESCRIPTION": "Add a *Big *Seal+ to your deck."
+  },"${modID}:ElectromagneticInstability": {
+    "NAME": "Electromagnetic Instability",
+    "DESCRIPTION": "Unplayable. NL Cannot be removed from your deck. When entering your hand, gain 1 ${modID}:Instability."
   }
 }

@@ -41,5 +41,13 @@
       "VialOfNight"
     ],
     "DESCRIPTION": "Gain #b%d #yStrength. Gain #b%d #yDexterity. Lose #b2 Max HP. Obtain #b1 #rVial #rof #rNight."
-  }
+  },
+  {
+    "ID": "Instability",
+    "PROPER_NAME": "Instability",
+    "NAMES": [
+      "Instability"
+    ],
+    "DESCRIPTION": "At the start of your turn, draw less cards. If you end a turn without playing a card, remove all #yInstability."
+}
 ]

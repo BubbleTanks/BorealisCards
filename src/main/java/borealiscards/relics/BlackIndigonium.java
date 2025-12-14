@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.curses.AscendersBane;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -106,10 +105,8 @@ public class BlackIndigonium extends BaseRelic implements CustomBottleRelic, Cus
             tips.clear();
             tips.add(new PowerTip(name, description));
             initializeTips();
-            if(ModConfig.ColorsBlack) {
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new PrismaDisruption(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                UnlockTracker.markCardAsSeen(PrismaDisruption.ID);
-            } else AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new AscendersBane(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new PrismaDisruption(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+            UnlockTracker.markCardAsSeen(PrismaDisruption.ID);
         }
     }
 
@@ -121,10 +118,7 @@ public class BlackIndigonium extends BaseRelic implements CustomBottleRelic, Cus
     }
 
     private String john() {
-        if(ModConfig.ColorsBlack) {
             return DESCRIPTIONS[1];
-        }
-        return DESCRIPTIONS[2];
     }
 
     public boolean canSpawn() {

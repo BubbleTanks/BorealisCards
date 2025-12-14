@@ -18,6 +18,5 @@ public class ModConfig extends EasyConfigPanel {
     public static boolean ColorsBlue = true;
     public static boolean ColorsPurple = true;
     public static boolean ColorsGray = true;
-    public static boolean ColorsBlack = true;
 //    public static boolean ColorsDarkBlue = true;
 }

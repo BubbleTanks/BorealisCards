@@ -16,8 +16,7 @@
       "ColorsGreen": "Enable Silent cards.",
       "ColorsBlue": "Enable Defect cards.",
       "ColorsPurple": "Enable Watcher cards.",
-      "ColorsGray": "Enable Colorless cards.",
-      "ColorsBlack": "Enable Curses."
+      "ColorsGray": "Enable Colorless cards."
     }
   },
   "${modID}:PrismaMod": {
