@@ -88,10 +88,10 @@
   ]
 },
   "${modID}:GoldenCookie": {
-    "NAME": "Golden Cookie",
+    "NAME": "Golden Cookies",
     "FLAVOR": "Ooh, shiny!",
     "DESCRIPTIONS": [
-      "Gain #b300 #yGold at the start of combat. Lose #b40 #yGold at the end of your turns."
+      "Gain #b200 #yGold at the start of combat. Lose #b25 #yGold at the end of your turns."
     ]
   },
   "${modID}:ChippedJade": {
@@ -175,7 +175,7 @@
     "NAME": "Strange Diamond",
     "FLAVOR": "Even in the dark, it seems to shine as if light is passing through it.",
     "DESCRIPTIONS": [
-      "After playing #b10 cards while in #yDivinity [REMOVE_SPACE], enter #yDivinity at the start of your next turn."
+      "After playing #b5 cards while in #yDivinity [REMOVE_SPACE], enter #yDivinity at the start of your next turn."
     ]
   },
   "${modID}:BigDonut": {
@@ -189,7 +189,7 @@
     "NAME": "Alloy Worship Unit",
     "FLAVOR": "A former Solus core, overridden and refitted for new purpose.",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain temporary #yStrength equal to the cost of the cards in your hand. Whenever you play an #yAttack, lose #b1 HP."
+      "At the start of your turn, gain temporary #yStrength equal to the cost of the cards in your hand. Whenever you play an #yAttack, take #b1 damage."
     ]
   },
   "${modID}:SleepingButterfly": {

@@ -1,12 +1,12 @@
 package borealiscards.orbs;
 
 import basemod.abstracts.CustomOrb;
+import borealiscards.actions.HorizonAction;
 import borealiscards.vfx.HorizonEvokeEffect;
 import borealiscards.vfx.HorizonParticle;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -53,25 +53,7 @@ public class Horizon extends CustomOrb {
     }
 
     public void onEvoke() {
-
-        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-            @Override
-            public void update() {
-                for (AbstractOrb o : AbstractDungeon.player.orbs) {
-                    if (o.ID != Horizon.ORB_ID) {
-                        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                            @Override
-                            public void update() {
-                                o.onEvoke();
-                                o.triggerEvokeAnimation();
-                                this.isDone = true;
-                            }
-                        });
-                    }
-                }
-                this.isDone = true;
-            }
-        });
+        AbstractDungeon.actionManager.addToTop(new HorizonAction());
     }
 
     public void onStartOfTurn() {

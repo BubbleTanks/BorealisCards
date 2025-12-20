@@ -25,6 +25,7 @@ public class Starshower extends BaseCard {
         setDamage(4);
         setSelfRetain(false,true);
         isMultiDamage = true;
+        setExhaust(true);
     }
 
     @Override

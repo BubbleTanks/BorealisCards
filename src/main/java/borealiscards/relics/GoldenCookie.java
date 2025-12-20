@@ -15,11 +15,11 @@ public class GoldenCookie extends BaseRelic {
     public void atBattleStart() {
         addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         flash();
-        AbstractDungeon.player.gainGold(300);
+        AbstractDungeon.player.gainGold(200);
     }
 
     public void onPlayerEndTurn() {
-        AbstractDungeon.player.loseGold(40);
+        AbstractDungeon.player.loseGold(25);
     }
 
     @Override

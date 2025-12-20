@@ -24,7 +24,7 @@ public class StrangeDiamond extends BaseRelic {
     }
 
     public void atTurnStart() {
-        if (counter >= 10) {
+        if (counter >= 5) {
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new ChangeStanceAction(DivinityStance.STANCE_ID));
@@ -34,7 +34,7 @@ public class StrangeDiamond extends BaseRelic {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (AbstractDungeon.player.stance.ID == DivinityStance.STANCE_ID && !(!(counter < 10))) {
+        if (AbstractDungeon.player.stance.ID == DivinityStance.STANCE_ID && !(!(counter < 5))) {
             flash();
             counter++;
         }
