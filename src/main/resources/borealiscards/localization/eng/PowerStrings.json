@@ -231,7 +231,7 @@
     ]
   },
   "${modID}:ElectricBaghnakhsPower": {
-    "NAME": "Electric Baghnakhs",
+    "NAME": "Electrified",
     "DESCRIPTIONS": [
       "Increases attack damage of cost 0 cards by #b%d [REMOVE_SPACE]."
     ]

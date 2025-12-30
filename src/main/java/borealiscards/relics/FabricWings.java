@@ -18,6 +18,7 @@ public class FabricWings extends BaseRelic {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.costForTurn == 0) {
             addToTop(new GainBlockAction(AbstractDungeon.player, 2));
+            flash();
         }
     }
 

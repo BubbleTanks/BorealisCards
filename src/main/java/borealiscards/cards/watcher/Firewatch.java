@@ -26,8 +26,7 @@ public class Firewatch extends BaseCard {
 
     public void vigorUp() {
         baseMagicNumber += customVar("vigorIncrease");
-        this.isMagicNumberModified = true;
-        super.applyPowers();
+        applyPowers();
     }
 
     public void applyPowers() {

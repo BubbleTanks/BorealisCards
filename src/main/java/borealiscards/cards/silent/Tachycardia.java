@@ -14,12 +14,12 @@ public class Tachycardia extends BaseCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            2
+            1
     );
 
     public Tachycardia() {
         super(ID, info);
-        setMagic(1,0);
+        setMagic(1,1);
         setCostUpgrade(1);
     }
 
