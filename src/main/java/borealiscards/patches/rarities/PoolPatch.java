@@ -97,7 +97,7 @@ public class PoolPatch {
     }
 
     private static boolean ExoticChance() {
-        int roll = AbstractDungeon.cardRng.random(49);
+        int roll = AbstractDungeon.cardRng.random(74);
         if(roll == 1) return true;
         return false;
     }

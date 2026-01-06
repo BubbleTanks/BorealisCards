@@ -57,7 +57,7 @@
   },
   "${modID}:Splatter": {
     "NAME": "Splatter",
-    "DESCRIPTION": "Discard 2 cards. NL Deal !D! damage. NL Apply 6 Poison.",
+    "DESCRIPTION": "Discard 2 cards. NL Deal !D! damage. NL Apply 5 Poison.",
     "UPGRADE_DESCRIPTION": "Discard 1 card. NL Deal !D! damage. NL Apply 5 Poison."
   },
   "${modID}:StackTrace": {
@@ -251,8 +251,8 @@
   },
   "${modID}:SharpenedEdge": {
     "NAME": "Sharpened Edge",
-    "DESCRIPTION": "Draw 5 cards. NL Fill the rest of your hand with *Shivs. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw 5 cards. NL Fill the rest of your hand with *Shivs+. NL Exhaust.",
+    "DESCRIPTION": "Draw 4 cards. NL Fill the rest of your hand with *Shivs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw 4 cards. NL Fill the rest of your hand with *Shivs+. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "I can't create more than 10 Shivs!"
     ]
@@ -414,7 +414,7 @@
     "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, raise your Max HP by !M!."
   },
   "${modID}:GodOfWar": {
-    "NAME": "God of War",
+    "NAME": "Nova Blade",
     "DESCRIPTION": "Costs 1 less [E]  for each Attack played this combat. NL Deal !D! damage. NL If Fatal, permanently double this card's damage. NL Exhaust."
   },
   "${modID}:Expedite": {

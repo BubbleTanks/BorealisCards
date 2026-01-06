@@ -41,7 +41,7 @@ public class SharpenedEdge extends BaseCard implements CustomSavable<Boolean> {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(5));
+        addToBot(new DrawCardAction(4));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {

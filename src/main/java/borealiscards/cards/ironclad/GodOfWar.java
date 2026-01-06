@@ -19,14 +19,14 @@ public class GodOfWar extends BaseCard {
             CardType.ATTACK,
             CustomRarity.EXOTIC,
             CardTarget.ENEMY,
-            25
+            20
     );
 
     public GodOfWar() {
         super(ID, info);
         misc = 15;
         setDamage(misc);
-        setCostUpgrade(20);
+        setCostUpgrade(15);
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null) {
             this.configureCostsOnNewCard();
         }

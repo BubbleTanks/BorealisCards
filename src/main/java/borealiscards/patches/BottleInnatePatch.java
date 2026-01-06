@@ -16,7 +16,7 @@ public class BottleInnatePatch {
         return new ExprEditor() {
             public void edit(FieldAccess f) throws CannotCompileException {
                 if (f.getClassName().equals(AbstractCard.class.getName()) && f.getFieldName().equals("inBottleFlame")) {
-                    f.replace("$_ = $proceed($$) || ((Boolean)" + BottleFieldHandler.BottleField.class.getName() +".inBottleMoth.get(c)).booleanValue() || ((Boolean)" + BottleFieldHandler.BottleField.class.getName() +".inBottleSin.get(c)).booleanValue() || ((Boolean)" + BottleFieldHandler.BottleField.class.getName() +".inBottleBorealis.get(c)).booleanValue();");
+                    f.replace("$_ = $proceed($$) || ((Boolean)" + BottleFieldHandler.BottleField.class.getName() +".inBottleMoth.get(c)).booleanValue() || ((Boolean)" + BottleFieldHandler.BottleField.class.getName() +".inBottleBorealis.get(c)).booleanValue();");
                 }
             }
         };

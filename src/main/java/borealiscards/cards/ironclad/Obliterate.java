@@ -25,6 +25,7 @@ public class Obliterate extends BaseCard {
     public Obliterate() {
         super(ID, info);
         setDamage(42);
+        setInnate(true);
     }
 
     public void upgrade() {

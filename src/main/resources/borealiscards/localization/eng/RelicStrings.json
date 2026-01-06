@@ -10,10 +10,10 @@
     "NAME": "Bottled Sin",
     "FLAVOR": "Hatred calls out from its glass prison, beckoning you to remove the stopper.",
     "DESCRIPTIONS": [
-      "Upon pick up, choose a #rCurse. Start each combat with this card in your hand.",
+      "Upon pick up, choose a #rCurse. Start each combat with this card on the bottom of your draw pile.",
       "Choose a card for ",
       "Start each combat with ",
-      " in your hand."
+      " on the bottom of your draw pile."
     ]
   },
   "${modID}:ParanoiasBox": {
