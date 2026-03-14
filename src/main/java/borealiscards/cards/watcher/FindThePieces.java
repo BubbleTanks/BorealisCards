@@ -6,11 +6,13 @@ import borealiscards.cards.BaseCard;
 import borealiscards.patches.rarities.CustomRarity;
 import borealiscards.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
+import com.megacrit.cardcrawl.stances.DivinityStance;
 
 public class FindThePieces extends BaseCard {
     public static final String ID = makeID(FindThePieces.class.getSimpleName());
@@ -38,7 +40,9 @@ public class FindThePieces extends BaseCard {
             }
         }
 
-        addToBot(new ApplyPowerAction(p, p, new MantraPower(p, findThePieces * 2)));
+        if (findThePieces == 5 && !AbstractDungeon.player.hasPower("Mantra")) {
+            addToBot(new ChangeStanceAction(new DivinityStance()));
+        } else addToBot(new ApplyPowerAction(p, p, new MantraPower(p, findThePieces * 2)));
     }
 
     public void applyPowers() {

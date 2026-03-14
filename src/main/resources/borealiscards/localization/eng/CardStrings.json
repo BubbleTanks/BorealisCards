@@ -479,7 +479,8 @@
   },
   "${modID}:FumeHood": {
     "NAME": "Fume Hood",
-    "DESCRIPTION": "Gain Block equal to the enemy's Poison.",
+    "DESCRIPTION": "Gain Block equal to the enemy's Poison. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the enemy's Poison.",
     "EXTENDED_DESCRIPTION": [
       "That enemy doesn't have Poison!"
     ]

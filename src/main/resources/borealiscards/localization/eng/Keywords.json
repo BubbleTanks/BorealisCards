@@ -40,7 +40,7 @@
     "NAMES": [
       "VialOfNight"
     ],
-    "DESCRIPTION": "Gain #b%d #yStrength. Gain #b%d #yDexterity. Lose #b2 Max HP. Obtain #b1 #rVial #rof #rNight."
+    "DESCRIPTION": "Gain #b2 #yStrength. Gain #b2 #yDexterity. Lose #b2 Max HP. Obtain #b1 #rVial #rof #rNight."
   },
   {
     "ID": "Instability",

@@ -17,13 +17,12 @@ public class Undistort extends BaseCard {
             CardType.SKILL,
             CustomRarity.EXOTIC,
             CardTarget.SELF,
-            2
+            1
     );
 
     public Undistort() {
         super(ID, info);
-        setMagic(6);
-        setCostUpgrade(1);
+        setMagic(6, 2);
     }
 
     @Override

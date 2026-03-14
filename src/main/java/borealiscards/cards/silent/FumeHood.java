@@ -22,6 +22,7 @@ public class FumeHood extends BaseCard {
 
     public FumeHood() {
         super(ID, info);
+        setExhaust(true,false);
     }
 
     @Override

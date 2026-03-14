@@ -1,9 +1,7 @@
 package borealiscards.relics;
 
-import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import borealiscards.actions.RedrawColorCardsAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -23,6 +21,9 @@ public class RadHazard extends BaseRelic {
         addToBot(new RedrawColorCardsAction(AbstractCard.CardColor.GREEN));
     }
 
+    // This shit was a bad idea but I'm leaving it in in case I change my mind.
+
+/*
     public void onShuffle() {
         addToTop(new AbstractGameAction() {
             @Override
@@ -49,7 +50,7 @@ public class RadHazard extends BaseRelic {
         BaseMod.MAX_HAND_SIZE += handPenalty;
         handPenalty = 0;
     }
-
+*/
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
